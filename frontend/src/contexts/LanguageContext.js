@@ -432,8 +432,16 @@ export const LanguageProvider = ({ children }) => {
     localStorage.setItem('academy_language', newLanguage);
   };
 
-  const t = (key) => {
-    return translations[language][key] || key;
+  const t = (key, variables = {}) => {
+    let translation = translations[language][key] || key;
+    
+    // Replace variables in the format {{variableName}}
+    Object.keys(variables).forEach(variable => {
+      const regex = new RegExp(`{{${variable}}}`, 'g');
+      translation = translation.replace(regex, variables[variable]);
+    });
+    
+    return translation;
   };
 
   const value = {
