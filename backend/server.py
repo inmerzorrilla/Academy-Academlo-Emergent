@@ -51,6 +51,7 @@ class User(BaseModel):
     email: str
     phone: str
     is_admin: bool = False
+    is_super_admin: bool = False
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     last_login: Optional[datetime] = None
 
