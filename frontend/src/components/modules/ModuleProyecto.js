@@ -263,7 +263,7 @@ export const ModuleProyecto = () => {
                     type="url"
                     value={projectUrl}
                     onChange={(e) => setProjectUrl(e.target.value)}
-                    placeholder="https://tu-proyecto.emergent.sh/"
+                    placeholder={t('projectUrlPlaceholder')}
                     className="bg-gray-900 border-gray-600 text-white"
                     data-testid="project-url-input"
                   />
