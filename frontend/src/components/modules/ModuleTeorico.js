@@ -175,7 +175,7 @@ export const ModuleTeorico = () => {
                         <i className="fas fa-lightbulb mr-2"></i>
                         Respuesta:
                       </h4>
-                      <p className="text-gray-300 leading-relaxed">{question.answer}</p>
+                      <p className="text-primary leading-relaxed">{question.answer}</p>
                     </div>
                     
                     {/* Code Example */}
