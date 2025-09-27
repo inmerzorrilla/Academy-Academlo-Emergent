@@ -325,7 +325,7 @@ export const ModuleProyecto = () => {
               {t('wantToBeCompleteProgrammer')}
             </h3>
             <p className="text-xl mb-6 text-gray-300">
-              Estudia en Academlo y complementa tu educación con ACADEMY
+              {t('studyAtAcademlo')}
             </p>
             <a 
               href="https://www.academlo.com/" 
