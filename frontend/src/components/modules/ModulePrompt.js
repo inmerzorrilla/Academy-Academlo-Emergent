@@ -358,6 +358,39 @@ export const ModulePrompt = () => {
                 data-testid="prompt-textarea"
               />
               
+              {userPrompt.trim() && (
+                <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 p-4 rounded-lg border border-cyan-500/20">
+                  <h4 className="text-cyan-400 font-semibold mb-2 flex items-center">
+                    <i className="fas fa-rocket mr-2"></i>
+                    ¡Prueba tu prompt en Emergent!
+                  </h4>
+                  <p className="text-sm text-gray-300 mb-3">
+                    Copia tu prompt y pégalo en Emergent para que te ayude a crear algo genial.
+                  </p>
+                  <div className="flex gap-2">
+                    <Button
+                      onClick={() => {
+                        navigator.clipboard.writeText(userPrompt);
+                        toast.success('Prompt copiado al portapapeles');
+                      }}
+                      className="btn-ghost text-sm"
+                    >
+                      <i className="fas fa-copy mr-2"></i>
+                      Copiar Prompt
+                    </Button>
+                    <a
+                      href="https://app.emergent.sh/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-futuristic text-sm"
+                    >
+                      <i className="fas fa-external-link-alt mr-2"></i>
+                      Abrir Emergent
+                    </a>
+                  </div>
+                </div>
+              )}
+              
               <div className="flex justify-between items-center">
                 <div className="flex items-center space-x-4">
                   <Button
