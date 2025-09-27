@@ -344,9 +344,9 @@ export const ModulePrompt = () => {
           <CardHeader>
             <CardTitle className="text-xl text-gradient flex items-center">
               <i className="fas fa-edit mr-2"></i>
-              Área de Práctica
+              {t('practiceArea')}
             </CardTitle>
-            <p className="text-gray-400">Escribe tu propio prompt o usa el micrófono para dictarlo</p>
+            <p className="text-primary">{t('practiceAreaDesc')}</p>
           </CardHeader>
           
           <CardContent className="space-y-6">
