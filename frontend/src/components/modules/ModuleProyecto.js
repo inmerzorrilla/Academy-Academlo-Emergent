@@ -62,7 +62,7 @@ export const ModuleProyecto = () => {
       });
       
       setProgress(response.data);
-      toast.success('¡Proyecto enviado exitosamente! Módulo completado al 100% 🎉');
+      toast.success(t('projectSubmittedSuccessfully'));
     } catch (error) {
       console.error('Error updating progress:', error);
       toast.error('Error al enviar el proyecto');
