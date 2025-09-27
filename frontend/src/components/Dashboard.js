@@ -68,7 +68,7 @@ export const Dashboard = () => {
         toast.success(t('certificateDownloadedSuccess'));
       } catch (error) {
         console.error('Error downloading certificate:', error);
-        toast.error('Error al descargar el certificado');
+        toast.error(t('errorDownloadingCertificate'));
       }
     } else {
       toast.error('Completa todos los módulos para obtener tu certificado');
