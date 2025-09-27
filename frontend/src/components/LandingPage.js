@@ -204,7 +204,7 @@ export const LandingPage = () => {
           
           <div className="mt-8 pt-8 border-t border-gray-800 text-center">
             <p className="text-gray-400">
-              © 2025 ACADEMY - Powered by Emergent + Academlo
+              © 2025 ACADEMY - {t('poweredBy')}
             </p>
             <p className="text-sm text-gray-500 mt-2">
               Quantum Intelligence • Digital Autonomy • Augmented Reality
