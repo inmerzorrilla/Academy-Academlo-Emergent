@@ -580,6 +580,7 @@ const translations = {
     useful: '¿Útil?',
     buyMeACoffee: 'Invítame un Café',
     supportMessage: '¡Tu apoyo ayuda a mantener ACADEMY gratis!',
+    promptModuleProgress: 'Progreso del Módulo Prompt',
     
     // Project Module
     createYourProject: 'Crea tu Proyecto con Emergent',
