@@ -266,6 +266,14 @@ const translations = {
     completedAllModulesReadyForCertificate: 'You have completed all ACADEMY modules. You are ready to get your certificate!',
     viewCertificateInDashboard: 'View Certificate in Dashboard',
     
+    // Additional Project Module
+    backToDashboard: 'Back to Dashboard',
+    projectModule: 'Project Module',
+    finalProject: 'Final Project',
+    projectModuleProgress: 'Project Module Progress',
+    projectCompletedAndSubmitted: 'Project completed and submitted',
+    pendingProjectCompletion: 'Pending project completion',
+    
     // Project Module
     createYourProject: 'Create your Project with Emergent',
     yourMission: 'Your mission',
