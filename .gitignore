@@ -77,4 +77,23 @@ agenthub/agents/youtube/db
 .cache/
 
 # Mobile development
-android-sdk/ 
+android-sdk/
+
+# Academy specific files
+academy_logo.png
+academlo_logo.png
+emergent_logo.png
+*.pdf
+supervisor.log
+test_result.md
+
+# Emergent specific
+.emergent/
+.emergent-*
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local 
