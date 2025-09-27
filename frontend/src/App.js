@@ -1,53 +1,68 @@
-import { useEffect } from "react";
-import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import './App.css';
+import { LandingPage } from './components/LandingPage';
+import { AuthPage } from './components/AuthPage';
+import { Dashboard } from './components/Dashboard';
+import { AdminDashboard } from './components/AdminDashboard';
+import { ModuleTeorico } from './components/modules/ModuleTeorico';
+import { ModuleEscucha } from './components/modules/ModuleEscucha';
+import { ModulePrompt } from './components/modules/ModulePrompt';
+import { ModuleProyecto } from './components/modules/ModuleProyecto';
+import { LanguageProvider } from './contexts/LanguageContext';
+import { ThemeProvider } from './contexts/ThemeContext';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { Toaster } from 'sonner';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
+function AppContent() {
+  const { user, isAuthenticated } = useAuth();
 
   return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/auth" element={<AuthPage />} />
+        <Route 
+          path="/dashboard" 
+          element={isAuthenticated ? <Dashboard /> : <Navigate to="/auth" />} 
+        />
+        <Route 
+          path="/admin" 
+          element={isAuthenticated && user?.is_admin ? <AdminDashboard /> : <Navigate to="/dashboard" />} 
+        />
+        <Route 
+          path="/module/teorico" 
+          element={isAuthenticated ? <ModuleTeorico /> : <Navigate to="/auth" />} 
+        />
+        <Route 
+          path="/module/escucha" 
+          element={isAuthenticated ? <ModuleEscucha /> : <Navigate to="/auth" />} 
+        />
+        <Route 
+          path="/module/prompt" 
+          element={isAuthenticated ? <ModulePrompt /> : <Navigate to="/auth" />} 
+        />
+        <Route 
+          path="/module/proyecto" 
+          element={isAuthenticated ? <ModuleProyecto /> : <Navigate to="/auth" />} 
+        />
+      </Routes>
+      <Toaster position="top-right" richColors />
     </div>
   );
-};
+}
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <AuthProvider>
+      <LanguageProvider>
+        <ThemeProvider>
+          <Router>
+            <AppContent />
+          </Router>
+        </ThemeProvider>
+      </LanguageProvider>
+    </AuthProvider>
   );
 }
 
