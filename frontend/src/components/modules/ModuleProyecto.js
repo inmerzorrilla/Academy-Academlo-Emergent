@@ -340,6 +340,8 @@ export const ModuleProyecto = () => {
           </CardContent>
         </Card>
       </main>
+
+      <ChatWidget />
     </div>
   );
 };
