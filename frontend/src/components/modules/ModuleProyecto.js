@@ -94,8 +94,8 @@ export const ModuleProyecto = () => {
           </div>
           
           <div className="text-center">
-            <h1 className="text-2xl font-bold text-gradient">Módulo Proyecto</h1>
-            <p className="text-sm text-cyan-400">Proyecto Final</p>
+            <h1 className="text-2xl font-bold text-gradient">{t('projectModule')}</h1>
+            <p className="text-sm text-cyan-400">{t('finalProject')}</p>
           </div>
           
           <div className="flex items-center space-x-4">
