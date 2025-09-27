@@ -26,7 +26,7 @@ export const ModuleEscucha = () => {
   useEffect(() => {
     fetchContent();
     fetchProgress();
-  }, []);
+  }, [language]);
 
   const fetchContent = async () => {
     try {
