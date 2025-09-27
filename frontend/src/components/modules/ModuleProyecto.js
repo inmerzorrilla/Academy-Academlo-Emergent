@@ -194,9 +194,9 @@ export const ModuleProyecto = () => {
                     {t('requirements')}:
                   </h4>
                   <ul className="space-y-1 text-sm">
-                    <li>✓ Debe ser creado en la plataforma Emergent</li>
-                    <li>✓ Debe aplicar conceptos aprendidos en el curso</li>
-                    <li>✓ Debe ser funcional y demostrable</li>
+                    <li>✓ {t('requirement1')}</li>
+                    <li>✓ {t('requirement2')}</li>
+                    <li>✓ {t('requirement3')}</li>
                   </ul>
                 </div>
               </div>
