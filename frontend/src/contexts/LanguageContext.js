@@ -556,6 +556,14 @@ const translations = {
     completedAllModulesReadyForCertificate: 'Has completado todos los módulos de ACADEMY. ¡Ya estás listo para obtener tu certificado!',
     viewCertificateInDashboard: 'Ver Certificado en Dashboard',
     
+    // Additional Project Module
+    backToDashboard: 'Volver al Dashboard',
+    projectModule: 'Módulo Proyecto',
+    finalProject: 'Proyecto Final',
+    projectModuleProgress: 'Progreso del Módulo Proyecto',
+    projectCompletedAndSubmitted: 'Proyecto completado y enviado',
+    pendingProjectCompletion: 'Pendiente de completar el proyecto',
+    
     // Project Module
     createYourProject: 'Crea tu Proyecto con Emergent',
     yourMission: 'Tu misión',
