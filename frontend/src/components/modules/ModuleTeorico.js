@@ -91,8 +91,8 @@ export const ModuleTeorico = () => {
           </div>
           
           <div className="text-center">
-            <h1 className="text-2xl font-bold text-gradient">Módulo Teórico</h1>
-            <p className="text-sm text-cyan-400">Conceptos Fundamentales</p>
+            <h1 className="text-2xl font-bold text-gradient">{t('theoreticalModule')}</h1>
+            <p className="text-sm text-cyan-400">{t('fundamentalConcepts')}</p>
           </div>
           
           <div className="flex items-center space-x-4">
