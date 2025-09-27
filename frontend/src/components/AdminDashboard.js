@@ -54,7 +54,7 @@ export const AdminDashboard = () => {
       setStats({ totalUsers, completedCourses, averageProgress: Math.round(averageProgress) });
     } catch (error) {
       console.error('Error fetching users:', error);
-      toast.error('Error al cargar usuarios');
+      toast.error(t('errorLoadingUsers'));
     } finally {
       setLoading(false);
     }
