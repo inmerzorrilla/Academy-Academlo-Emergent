@@ -163,16 +163,26 @@ export const AuthPage = () => {
                 <label className="text-sm font-medium text-gray-300">
                   {t('password')}
                 </label>
-                <Input
-                  type="password"
-                  name="password"
-                  value={formData.password}
-                  onChange={handleInputChange}
-                  placeholder="••••••••"
-                  required
-                  className="bg-black/20 border-cyan-500/30 focus:border-cyan-500 text-white"
-                  data-testid="password-input"
-                />
+                <div className="relative">
+                  <Input
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    value={formData.password}
+                    onChange={handleInputChange}
+                    placeholder="••••••••"
+                    required
+                    className="bg-black/20 border-cyan-500/30 focus:border-cyan-500 text-white pr-10"
+                    data-testid="password-input"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-cyan-400"
+                    data-testid="toggle-password"
+                  >
+                    <i className={`fas ${showPassword ? 'fa-eye-slash' : 'fa-eye'}`}></i>
+                  </button>
+                </div>
               </div>
               
               <Button 
