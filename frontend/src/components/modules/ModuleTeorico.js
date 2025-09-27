@@ -15,6 +15,8 @@ const API = `${BACKEND_URL}/api`;
 
 export const ModuleTeorico = () => {
   const { user } = useAuth();
+  const { t, language, toggleLanguage } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
   const [questions, setQuestions] = useState([]);
   const [progress, setProgress] = useState({ teorico_completed: [], teorico_progress: 0 });
   const [loading, setLoading] = useState(true);
