@@ -64,6 +64,9 @@ class UserProgress(BaseModel):
     teorico_completed: List[int] = []  # completed question numbers
     escucha_completed: List[int] = []  # completed video numbers
     prompt_completed: bool = False
+    prompt_tips_completed: bool = False
+    prompt_examples_completed: List[int] = []  # completed example numbers
+    prompt_practice_completed: bool = False
     proyecto_url: Optional[str] = None
     certificate_generated: bool = False
     updated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
