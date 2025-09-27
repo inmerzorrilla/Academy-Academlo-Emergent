@@ -15,6 +15,8 @@ const API = `${BACKEND_URL}/api`;
 
 export const ModuleEscucha = () => {
   const { user } = useAuth();
+  const { t, language, toggleLanguage } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
   const [videos, setVideos] = useState([]);
   const [progress, setProgress] = useState({ escucha_completed: [], escucha_progress: 0 });
   const [loading, setLoading] = useState(true);
