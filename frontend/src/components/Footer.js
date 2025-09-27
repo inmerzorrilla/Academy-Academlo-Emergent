@@ -119,15 +119,15 @@ export const Footer = () => {
           <div className="flex items-center space-x-6 text-sm text-gray-400">
             <span className="flex items-center">
               <i className="fas fa-code mr-2 text-cyan-400"></i>
-              {t('language') === 'es' ? 'Hecho con' : 'Made with'} ❤️
+              {t('madeWith')} ❤️
             </span>
             <span className="flex items-center">
               <i className="fas fa-shield-alt mr-2 text-green-400"></i>
-              {t('language') === 'es' ? 'Seguro' : 'Secure'}
+              {t('secure')}
             </span>
             <span className="flex items-center">
               <i className="fas fa-mobile-alt mr-2 text-purple-400"></i>
-              {t('language') === 'es' ? 'Responsivo' : 'Responsive'}
+              {t('responsive')}
             </span>
           </div>
         </div>
