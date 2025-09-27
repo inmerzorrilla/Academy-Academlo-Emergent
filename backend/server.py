@@ -370,7 +370,7 @@ async def get_escucha_content():
     return videos
 
 @api_router.get("/content/prompt")
-async def get_prompt_content():
+async def get_prompt_content(lang: str = "es"):
     examples = [
         {
             "id": 1,
