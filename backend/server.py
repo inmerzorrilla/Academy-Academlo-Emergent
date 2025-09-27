@@ -191,9 +191,8 @@ async def update_progress(update: ProgressUpdate, current_user: User = Depends(g
     elif update.module == "escucha" and update.item_id:
         if update.item_id not in progress["escucha_completed"]:
             progress["escucha_completed"].append(update.item_id)
-            # Video 1 = 33%, Video 2 = 33%, Video 3 = 34% = 100%
-            video_percentages = {1: 33, 2: 33, 3: 34}
-            progress["escucha_progress"] = sum(video_percentages[vid_id] for vid_id in progress["escucha_completed"] if vid_id in video_percentages)
+            # 5 videos = 20% each = 100%
+            progress["escucha_progress"] = min(100, len(progress["escucha_completed"]) * 20)
     
     elif update.module == "prompt":
         if update.prompt_section == "tips":
