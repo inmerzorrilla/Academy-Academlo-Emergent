@@ -268,8 +268,9 @@ async def delete_user(user_id: str, current_user: User = Depends(get_current_use
 
 # Content Routes
 @api_router.get("/content/teorico")
-async def get_teorico_content():
-    questions = [
+async def get_teorico_content(lang: str = "es"):
+    # Questions in Spanish and English
+    questions_es = [
         {
             "id": 1,
             "question": "¿Qué es un Deep Agent?",
