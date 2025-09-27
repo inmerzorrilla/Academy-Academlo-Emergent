@@ -165,7 +165,7 @@ export const LandingPage = () => {
               data-testid="academlo-link"
             >
               <i className="fas fa-external-link-alt mr-3"></i>
-              Visitar Academlo
+              {t('visitAcademlo')}
             </a>
           </div>
         </div>
