@@ -88,7 +88,55 @@ const translations = {
     // Academlo Ad
     completeProgrAcademlo: 'Want to be a complete programmer?',
     studyAcademlo: 'Study at Academlo and complement your education with ACADEMY',
-    visitAcademlo: 'Visit Academlo'
+    visitAcademlo: 'Visit Academlo',
+    
+    // Prompt Module
+    promptBasicTips: '3 Basic Elements of an Effective Prompt',
+    clearContext: '1. Clear Context',
+    clearContextDesc: 'Define the role and specific context to get more precise responses.',
+    specificInstructions: '2. Specific Instructions', 
+    specificInstructionsDesc: 'Be specific about what you want it to do and how you want the result.',
+    examplesFormat: '3. Examples or Format',
+    examplesFormatDesc: 'Provide examples of expected result or specify desired format.',
+    markTipsRead: 'Mark Tips as Read',
+    tipsCompleted: 'Tips Completed!',
+    awesomePromptExamples: 'Awesome Prompt Examples',
+    practiceArea: 'Practice Area',
+    practiceAreaDesc: 'Write your own prompt or use the microphone to dictate it',
+    writePromptHere: 'Write your custom prompt here...',
+    useMicrophone: 'Use Microphone',
+    stopRecording: 'Stop Recording',
+    recording: 'Recording...',
+    characters: 'characters',
+    testPromptEmergent: 'Test your prompt in Emergent!',
+    copyPromptDesc: 'Copy your prompt and paste it in Emergent to help you create something awesome.',
+    copyPrompt: 'Copy Prompt',
+    openEmergent: 'Open Emergent',
+    completePractice: 'Complete Practice (+20%)',
+    practiceCompleted: 'Practice Completed!',
+    markAsRead: 'Mark as Read (+20%)',
+    exampleCompleted: 'Example Completed!',
+    
+    // Prompt Examples (English)
+    codeGenerationPrompt: 'Prompt for Code Generation',
+    codeGenerationPromptText: 'Act as an expert Python developer. Create a function that receives a list of numbers and returns the average, median and mode. Include error handling and complete documentation.',
+    codeGenerationDesc: 'This prompt is ideal for generating functional and well-documented code',
+    
+    dataAnalysisPrompt: 'Prompt for Data Analysis',
+    dataAnalysisPromptText: 'You are an expert data scientist. Analyze the following sales dataset and provide key insights, important trends and strategic recommendations. Include suggested visualizations and relevant metrics.',
+    dataAnalysisDesc: 'Perfect for getting deep business data analysis',
+    
+    softwareArchPrompt: 'Prompt for Software Architecture',
+    softwareArchPromptText: 'As a senior software architect, design a scalable architecture for an e-commerce application that handles 100k concurrent users. Include design patterns, recommended technologies, component diagram and security considerations.',
+    softwareArchDesc: 'Ideal for getting robust and professional architectural designs',
+    
+    webDevPrompt: 'Prompt for Complete Web Development',
+    webDevPromptText: 'Act as a full-stack web development expert. Create a complete web application using React and Node.js that includes: JWT authentication system, responsive dashboard, user CRUD, MongoDB database integration, documented REST API, and cloud deployment. Provide complete code, file structure and installation guide.',
+    webDevDesc: 'Perfect for generating complete and modern web applications',
+    
+    // Chat responses
+    chatResponse1: 'ACADEMY is a futuristic educational platform designed to train future programmers. We offer courses on Deep Agents, AI, programming and project development with emerging technology.',
+    chatWhatsapp: 'For any questions, here is our direct WhatsApp number: +528136037100'
   },
   es: {
     // Landing Page
