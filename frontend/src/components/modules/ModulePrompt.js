@@ -410,36 +410,33 @@ export const ModulePrompt = () => {
                   )}
                 </div>
                 
-                <div className="text-sm text-gray-400">
-                  {userPrompt.length} caracteres
+                <div className="flex justify-between items-center">
+                  <div className="text-sm text-gray-400">
+                    {userPrompt.length} caracteres
+                  </div>
+                  
+                  {!progress.prompt_practice_completed && userPrompt.trim() && (
+                    <Button 
+                      onClick={() => markSectionComplete('practice')}
+                      className="btn-futuristic text-sm"
+                      data-testid="complete-practice"
+                    >
+                      <i className="fas fa-check mr-2"></i>
+                      Completar Práctica (+20%)
+                    </Button>
+                  )}
+                  
+                  {progress.prompt_practice_completed && (
+                    <div className="flex items-center text-green-400 text-sm">
+                      <i className="fas fa-check-circle mr-2"></i>
+                      ¡Práctica Completada!
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
           </CardContent>
         </Card>
-
-        {/* Complete Module */}
-        {!progress.prompt_completed && (
-          <Card className="glass-card mb-8">
-            <CardContent className="p-8 text-center">
-              <h3 className="text-2xl font-bold mb-4 text-gradient">
-                ¿Listo para completar el módulo?
-              </h3>
-              <p className="text-gray-300 mb-6">
-                Asegúrate de haber leído todos los ejemplos y practicado escribiendo tu propio prompt
-              </p>
-              <Button 
-                onClick={completeModule}
-                className="btn-futuristic"
-                disabled={readExamples.length !== examples.length || !userPrompt.trim()}
-                data-testid="complete-module-btn"
-              >
-                <i className="fas fa-check mr-2"></i>
-                Completar Módulo
-              </Button>
-            </CardContent>
-          </Card>
-        )}
 
         {/* Academlo Advertisement */}
         <Card className="glass-card mt-12">
