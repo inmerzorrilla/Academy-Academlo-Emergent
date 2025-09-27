@@ -475,12 +475,14 @@ async def generate_certificate(current_user: User = Depends(get_current_user)):
     if total_progress < 100:
         raise HTTPException(status_code=400, detail="Course not completed")
     
-    # Generate PDF certificate (simplified version)
+    # Generate professional PDF certificate with logos
     from reportlab.pdfgen import canvas
-    from reportlab.lib.pagesizes import letter, A4
+    from reportlab.lib.pagesizes import A4
     from reportlab.lib.units import inch
+    from reportlab.lib.colors import HexColor
     from datetime import datetime
     import io
+    import os
     
     buffer = io.BytesIO()
     
@@ -488,10 +490,7 @@ async def generate_certificate(current_user: User = Depends(get_current_user)):
     p = canvas.Canvas(buffer, pagesize=A4)
     width, height = A4
     
-    # Professional Certificate Design with proper centering
-    from reportlab.lib.colors import HexColor
-    
-    # Background gradient effect (simple rectangles with transparency)
+    # Background gradient effect (dark futuristic theme)
     p.setFillColorRGB(0.02, 0.05, 0.1)  # Dark blue background
     p.rect(0, 0, width, height, fill=1)
     
@@ -500,13 +499,20 @@ async def generate_certificate(current_user: User = Depends(get_current_user)):
     p.setLineWidth(4)
     p.rect(30, 30, width-60, height-60, fill=0)
     
-    # Inner decorative elements
+    # Inner decorative elements (right side circles)
     p.setStrokeColor(HexColor('#0080ff'))
     p.setLineWidth(1)
     for i in range(5):
         p.circle(width - 100, height - 100 - i*20, 50 + i*10, fill=0)
     
-    # Header Section
+    # Header Section with proper Academy logo
+    try:
+        if os.path.exists('/app/academy_logo.png'):
+            p.drawImage('/app/academy_logo.png', 60, height-120, width=80, height=80, mask='auto')
+    except:
+        pass
+    
+    # Main ACADEMY title
     p.setFillColor(HexColor('#00d4ff'))
     p.setFont("Helvetica-Bold", 48)
     academy_text = "ACADEMY"
@@ -525,11 +531,15 @@ async def generate_certificate(current_user: User = Depends(get_current_user)):
     p.setLineWidth(3)
     p.line(100, height-150, width-100, height-150)
     
-    # Main congratulations
+    # Main congratulations (FIX: Text overflow issue)
     p.setFillColor(HexColor('#00d4ff'))
-    p.setFont("Helvetica-Bold", 28)
+    p.setFont("Helvetica-Bold", 24)  # Reduced from 28 to prevent overflow
     congrats = "¡FELICIDADES PROGRAMADOR DEL FUTURO!"
-    congrats_width = p.stringWidth(congrats, "Helvetica-Bold", 28)
+    congrats_width = p.stringWidth(congrats, "Helvetica-Bold", 24)
+    # Ensure text fits within page margins
+    if congrats_width > (width - 100):
+        p.setFont("Helvetica-Bold", 20)
+        congrats_width = p.stringWidth(congrats, "Helvetica-Bold", 20)
     p.drawString((width - congrats_width)/2, height-200, congrats)
     
     # Certificate text
@@ -541,9 +551,15 @@ async def generate_certificate(current_user: User = Depends(get_current_user)):
     
     # Student name with decorative box
     p.setFillColor(HexColor('#00d4ff'))
-    p.setFont("Helvetica-Bold", 32)
-    name_width = p.stringWidth(current_user.name, "Helvetica-Bold", 32)
+    p.setFont("Helvetica-Bold", 28)  # Reduced from 32 for better fit
+    name_width = p.stringWidth(current_user.name, "Helvetica-Bold", 28)
     name_x = (width - name_width)/2
+    
+    # Ensure name fits within page
+    if name_width > (width - 100):
+        p.setFont("Helvetica-Bold", 24)
+        name_width = p.stringWidth(current_user.name, "Helvetica-Bold", 24)
+        name_x = (width - name_width)/2
     
     # Name background box
     p.setFillColorRGB(0.1, 0.2, 0.3)
@@ -561,85 +577,149 @@ async def generate_certificate(current_user: User = Depends(get_current_user)):
     
     # Course title with emphasis
     p.setFillColor(HexColor('#0080ff'))
-    p.setFont("Helvetica-Bold", 22)
+    p.setFont("Helvetica-Bold", 20)  # Reduced from 22
     course_title = "DEEP AGENTS & PROGRAMACIÓN CON IA"
-    course_width = p.stringWidth(course_title, "Helvetica-Bold", 22)
+    course_width = p.stringWidth(course_title, "Helvetica-Bold", 20)
+    if course_width > (width - 100):
+        p.setFont("Helvetica-Bold", 18)
+        course_width = p.stringWidth(course_title, "Helvetica-Bold", 18)
     p.drawString((width - course_width)/2, height-380, course_title)
     
     # Additional achievement details
     p.setFillColorRGB(0.8, 0.8, 0.8)
-    p.setFont("Helvetica", 14)
+    p.setFont("Helvetica", 12)  # Reduced from 14
     details = "Dominando tecnologías emergentes, inteligencia artificial y desarrollo futuro"
-    details_width = p.stringWidth(details, "Helvetica", 14)
-    p.drawString((width - details_width)/2, height-410, details)
+    details_width = p.stringWidth(details, "Helvetica", 12)
+    if details_width > (width - 100):
+        # Split into two lines if too long
+        line1 = "Dominando tecnologías emergentes,"
+        line2 = "inteligencia artificial y desarrollo futuro"
+        line1_width = p.stringWidth(line1, "Helvetica", 12)
+        line2_width = p.stringWidth(line2, "Helvetica", 12)
+        p.drawString((width - line1_width)/2, height-410, line1)
+        p.drawString((width - line2_width)/2, height-425, line2)
+    else:
+        p.drawString((width - details_width)/2, height-410, details)
     
-    # Date with style
+    # Date with proper Spanish format
     p.setFillColorRGB(0.7, 0.7, 0.7)
     p.setFont("Helvetica", 14)
-    date_str = f"Completado el {datetime.now().strftime('%d de %B de %Y')}"
+    # FIX: Proper Spanish date format
+    spanish_months = {
+        'January': 'enero', 'February': 'febrero', 'March': 'marzo',
+        'April': 'abril', 'May': 'mayo', 'June': 'junio',
+        'July': 'julio', 'August': 'agosto', 'September': 'septiembre',
+        'October': 'octubre', 'November': 'noviembre', 'December': 'diciembre'
+    }
+    english_month = datetime.now().strftime('%B')
+    spanish_month = spanish_months.get(english_month, english_month.lower())
+    date_str = f"Completado el {datetime.now().strftime('%d')} de {spanish_month} de {datetime.now().strftime('%Y')}"
     date_width = p.stringWidth(date_str, "Helvetica", 14)
-    p.drawString((width - date_width)/2, height-450, date_str)
+    p.drawString((width - date_width)/2, height-460, date_str)
     
-    # Logos section with professional layout
-    logo_y = 180
+    # IMPROVED LOGOS SECTION with actual logo images
+    logo_y = 200
     
-    # Logo backgrounds
-    p.setFillColorRGB(0.15, 0.25, 0.35)
-    p.roundRect(80, logo_y-15, 120, 40, 8, fill=1)
-    p.roundRect(220, logo_y-15, 120, 40, 8, fill=1)
-    p.roundRect(360, logo_y-15, 120, 40, 8, fill=1)
-    
-    # Logo texts
-    p.setFillColor(HexColor('#00d4ff'))
-    p.setFont("Helvetica-Bold", 16)
-    
-    # ACADEMY logo
-    academy_logo = "ACADEMY"
-    academy_logo_width = p.stringWidth(academy_logo, "Helvetica-Bold", 16)
-    p.drawString(140 - academy_logo_width/2, logo_y, academy_logo)
-    
-    # ACADEMLO logo  
-    academlo_logo = "ACADEMLO"
-    academlo_logo_width = p.stringWidth(academlo_logo, "Helvetica-Bold", 16)
-    p.drawString(280 - academlo_logo_width/2, logo_y, academlo_logo)
-    
-    # EMERGENT logo
-    emergent_logo = "EMERGENT"
-    emergent_logo_width = p.stringWidth(emergent_logo, "Helvetica-Bold", 16)
-    p.drawString(420 - emergent_logo_width/2, logo_y, emergent_logo)
-    
-    # Partnership text
+    # Partnership text (moved up)
     p.setFillColorRGB(0.6, 0.6, 0.6)
     p.setFont("Helvetica", 12)
     partnership = "En asociación estratégica con"
     partnership_width = p.stringWidth(partnership, "Helvetica", 12)
-    p.drawString((width - partnership_width)/2, logo_y + 30, partnership)
+    p.drawString((width - partnership_width)/2, logo_y + 40, partnership)
     
-    # Decorative elements around logos
+    # Logo positioning (improved layout)
+    logo_size = 40
+    logo_spacing = 150
+    start_x = (width - (logo_spacing * 2)) / 2
+    
+    # Academy Logo
+    try:
+        if os.path.exists('/app/academy_logo.png'):
+            p.drawImage('/app/academy_logo.png', start_x - logo_size/2, logo_y - logo_size/2, 
+                       width=logo_size, height=logo_size, mask='auto')
+        else:
+            # Fallback text
+            p.setFillColor(HexColor('#00d4ff'))
+            p.setFont("Helvetica-Bold", 14)
+            academy_logo = "ACADEMY"
+            academy_logo_width = p.stringWidth(academy_logo, "Helvetica-Bold", 14)
+            p.drawString(start_x - academy_logo_width/2, logo_y, academy_logo)
+    except:
+        # Fallback text
+        p.setFillColor(HexColor('#00d4ff'))
+        p.setFont("Helvetica-Bold", 14)
+        academy_logo = "ACADEMY"
+        academy_logo_width = p.stringWidth(academy_logo, "Helvetica-Bold", 14)
+        p.drawString(start_x - academy_logo_width/2, logo_y, academy_logo)
+    
+    # Academlo Logo
+    try:
+        if os.path.exists('/app/academlo_logo.png'):
+            p.drawImage('/app/academlo_logo.png', start_x + logo_spacing - logo_size/2, logo_y - logo_size/2,
+                       width=logo_size, height=logo_size, mask='auto')
+        else:
+            # Fallback text
+            p.setFillColor(HexColor('#FF1744'))  # Academlo red color
+            p.setFont("Helvetica-Bold", 14)
+            academlo_logo = "ACADEMLO"
+            academlo_logo_width = p.stringWidth(academlo_logo, "Helvetica-Bold", 14)
+            p.drawString(start_x + logo_spacing - academlo_logo_width/2, logo_y, academlo_logo)
+    except:
+        # Fallback text
+        p.setFillColor(HexColor('#FF1744'))
+        p.setFont("Helvetica-Bold", 14)
+        academlo_logo = "ACADEMLO"
+        academlo_logo_width = p.stringWidth(academlo_logo, "Helvetica-Bold", 14)
+        p.drawString(start_x + logo_spacing - academlo_logo_width/2, logo_y, academlo_logo)
+    
+    # Emergent Logo
+    try:
+        if os.path.exists('/app/emergent_logo.png'):
+            p.drawImage('/app/emergent_logo.png', start_x + (logo_spacing * 2) - logo_size/2, logo_y - logo_size/2,
+                       width=logo_size, height=logo_size, mask='auto')
+        else:
+            # Fallback text
+            p.setFillColor(HexColor('#00E676'))  # Emergent green color
+            p.setFont("Helvetica-Bold", 14)
+            emergent_logo = "EMERGENT"
+            emergent_logo_width = p.stringWidth(emergent_logo, "Helvetica-Bold", 14)
+            p.drawString(start_x + (logo_spacing * 2) - emergent_logo_width/2, logo_y, emergent_logo)
+    except:
+        # Fallback text
+        p.setFillColor(HexColor('#00E676'))
+        p.setFont("Helvetica-Bold", 14)
+        emergent_logo = "EMERGENT"
+        emergent_logo_width = p.stringWidth(emergent_logo, "Helvetica-Bold", 14)
+        p.drawString(start_x + (logo_spacing * 2) - emergent_logo_width/2, logo_y, emergent_logo)
+    
+    # Decorative line around logos
     p.setStrokeColor(HexColor('#00d4ff'))
     p.setLineWidth(2)
-    p.line(50, logo_y-30, width-50, logo_y-30)
+    p.line(50, logo_y-60, width-50, logo_y-60)
     
     # Certificate ID and security elements
     p.setFillColorRGB(0.5, 0.5, 0.5)
-    p.setFont("Helvetica", 10)
+    p.setFont("Helvetica", 11)  # Slightly larger for better readability
     cert_id = f"ID de Certificado: {current_user.id[:8].upper()}"
-    cert_width = p.stringWidth(cert_id, "Helvetica", 10)
-    p.drawString((width - cert_width)/2, 120, cert_id)
+    cert_width = p.stringWidth(cert_id, "Helvetica", 11)
+    p.drawString((width - cert_width)/2, 130, cert_id)
     
     # Footer with impact
     p.setFillColor(HexColor('#0080ff'))
-    p.setFont("Helvetica-Bold", 12)
+    p.setFont("Helvetica-Bold", 11)  # Slightly reduced to fit better
     footer_main = "QUANTUM INTELLIGENCE • DIGITAL AUTONOMY • AUGMENTED REALITY"
-    footer_width = p.stringWidth(footer_main, "Helvetica-Bold", 12)
-    p.drawString((width - footer_width)/2, 90, footer_main)
+    footer_width = p.stringWidth(footer_main, "Helvetica-Bold", 11)
+    if footer_width > (width - 100):
+        p.setFont("Helvetica-Bold", 10)
+        footer_width = p.stringWidth(footer_main, "Helvetica-Bold", 10)
+    p.drawString((width - footer_width)/2, 100, footer_main)
     
-    # Final verification text
+    # Final verification text (improved readability)
     p.setFillColorRGB(0.4, 0.4, 0.4)
-    p.setFont("Helvetica", 9)
+    p.setFont("Helvetica", 10)  # Increased from 9 for better readability
     verification = "Certificado verificable en academy.emergent.sh"
-    verification_width = p.stringWidth(verification, "Helvetica", 9)
-    p.drawString((width - verification_width)/2, 70, verification)
+    verification_width = p.stringWidth(verification, "Helvetica", 10)
+    p.drawString((width - verification_width)/2, 80, verification)
     
     # Decorative corner elements
     p.setFillColor(HexColor('#00d4ff'))
