@@ -149,9 +149,9 @@ export const ModuleTeorico = () => {
               <Card key={question.id} className={`glass-card ${isCompleted ? 'border-green-500/50' : ''}`}>
                 <CardHeader>
                   <div className="flex justify-between items-start">
-                    <CardTitle className="text-lg flex items-center">
+                    <CardTitle className="text-lg flex items-center text-primary">
                       <span className="text-cyan-400 mr-3">#{question.id}</span>
-                      {question.question}
+                      <span className="text-primary">{question.question}</span>
                       {isCompleted && (
                         <i className="fas fa-check-circle text-green-500 ml-3"></i>
                       )}
