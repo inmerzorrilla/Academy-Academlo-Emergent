@@ -237,7 +237,7 @@ export const ModuleProyecto = () => {
                   ✅
                 </div>
                 <h3 className="text-2xl font-bold text-green-400">
-                  ¡Proyecto Enviado Exitosamente!
+                  {t('projectSubmittedSuccessfullyTitle')}
                 </h3>
                 <p className="text-gray-300">
                   Tu proyecto ha sido registrado correctamente:
