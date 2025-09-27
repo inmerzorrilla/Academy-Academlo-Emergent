@@ -197,7 +197,7 @@ export const ModuleEscucha = () => {
                       data-testid={`open-video-${video.id}`}
                     >
                       <i className="fab fa-youtube mr-2"></i>
-                      Ver en YouTube
+                      {t('watchOnYoutube')}
                     </a>
                     
                     {!isCompleted ? (
