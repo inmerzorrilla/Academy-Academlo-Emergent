@@ -38,7 +38,7 @@ export const Dashboard = () => {
       setProgress(response.data);
     } catch (error) {
       console.error('Error fetching progress:', error);
-      toast.error('Error al cargar el progreso');
+      toast.error(t('errorLoadingProgress'));
     } finally {
       setLoading(false);
     }
