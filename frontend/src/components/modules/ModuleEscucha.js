@@ -169,7 +169,7 @@ export const ModuleEscucha = () => {
                       )}
                     </div>
                   </CardTitle>
-                  <p className="text-gray-400">{video.description}</p>
+                  <p className="text-primary">{video.description}</p>
                 </CardHeader>
                 
                 <CardContent className="space-y-6">
