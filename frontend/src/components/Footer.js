@@ -132,10 +132,7 @@ export const Footer = () => {
               </a>
             </div>
             <p className="text-xs text-gray-500 mt-3">
-              {t('language') === 'es' 
-                ? '¡Tu apoyo ayuda a mantener ACADEMY gratis!' 
-                : 'Your support helps keep ACADEMY free!'
-              }
+              {t('supportMessage')}
             </p>
           </div>
         </div>
