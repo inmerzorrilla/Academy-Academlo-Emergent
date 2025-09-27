@@ -226,7 +226,7 @@ export const ModuleProyecto = () => {
           <CardHeader>
             <CardTitle className="text-xl text-gradient flex items-center">
               <i className="fas fa-upload mr-2"></i>
-              Enviar tu Proyecto
+              {t('submitYourProject')}
             </CardTitle>
           </CardHeader>
           
