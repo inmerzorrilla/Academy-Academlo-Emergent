@@ -44,7 +44,7 @@ export const ModuleProyecto = () => {
 
   const submitProject = async () => {
     if (!projectUrl.trim()) {
-      toast.error('Por favor ingresa la URL de tu proyecto');
+      toast.error(t('pleaseEnterProjectUrl'));
       return;
     }
 
