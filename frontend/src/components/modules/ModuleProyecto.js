@@ -16,6 +16,8 @@ const API = `${BACKEND_URL}/api`;
 
 export const ModuleProyecto = () => {
   const { user } = useAuth();
+  const { t, language, toggleLanguage } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
   const [progress, setProgress] = useState({ proyecto_progress: 0, proyecto_url: '' });
   const [loading, setLoading] = useState(true);
   const [projectUrl, setProjectUrl] = useState('');
