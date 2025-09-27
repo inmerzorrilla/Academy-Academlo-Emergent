@@ -215,7 +215,55 @@ const translations = {
     // Academlo Ad
     completeProgrAcademlo: '¿Quieres ser un programador completo?',
     studyAcademlo: 'Estudia en Academlo y complementa tu educación con ACADEMY',
-    visitAcademlo: 'Visitar Academlo'
+    visitAcademlo: 'Visitar Academlo',
+    
+    // Prompt Module
+    promptBasicTips: '3 Elementos Básicos de un Prompt Efectivo',
+    clearContext: '1. Contexto Claro',
+    clearContextDesc: 'Define el rol y el contexto específico para obtener respuestas más precisas.',
+    specificInstructions: '2. Instrucciones Específicas',
+    specificInstructionsDesc: 'Sé específico sobre qué quieres que haga y cómo quieres el resultado.',
+    examplesFormat: '3. Ejemplos o Formato',
+    examplesFormatDesc: 'Proporciona ejemplos del resultado esperado o especifica el formato deseado.',
+    markTipsRead: 'Marcar Consejos como Leídos',
+    tipsCompleted: '¡Consejos Completados!',
+    awesomePromptExamples: 'Ejemplos de Prompts Geniales',
+    practiceArea: 'Área de Práctica',
+    practiceAreaDesc: 'Escribe tu propio prompt o usa el micrófono para dictarlo',
+    writePromptHere: 'Escribe aquí tu prompt personalizado...',
+    useMicrophone: 'Usar Micrófono',
+    stopRecording: 'Detener Grabación',
+    recording: 'Grabando...',
+    characters: 'caracteres',
+    testPromptEmergent: '¡Prueba tu prompt en Emergent!',
+    copyPromptDesc: 'Copia tu prompt y pégalo en Emergent para que te ayude a crear algo genial.',
+    copyPrompt: 'Copiar Prompt',
+    openEmergent: 'Abrir Emergent',
+    completePractice: 'Completar Práctica (+20%)',
+    practiceCompleted: '¡Práctica Completada!',
+    markAsRead: 'Marcar como Leído (+20%)',
+    exampleCompleted: '¡Ejemplo Completado!',
+    
+    // Prompt Examples (Spanish)
+    codeGenerationPrompt: 'Prompt para Generación de Código',
+    codeGenerationPromptText: 'Actúa como un experto desarrollador Python. Crea una función que reciba una lista de números y devuelva el promedio, la mediana y la moda. Incluye manejo de errores y documentación completa.',
+    codeGenerationDesc: 'Este prompt es ideal para generar código funcional y bien documentado',
+    
+    dataAnalysisPrompt: 'Prompt para Análisis de Datos',
+    dataAnalysisPromptText: 'Eres un científico de datos experto. Analiza el siguiente dataset de ventas y proporciona insights clave, tendencias importantes y recomendaciones estratégicas. Incluye visualizaciones sugeridas y métricas relevantes.',
+    dataAnalysisDesc: 'Perfecto para obtener análisis profundos de datos empresariales',
+    
+    softwareArchPrompt: 'Prompt para Arquitectura de Software',
+    softwareArchPromptText: 'Como arquitecto de software senior, diseña una arquitectura escalable para una aplicación de e-commerce que maneje 100k usuarios concurrentes. Incluye patrones de diseño, tecnologías recomendadas, diagrama de componentes y consideraciones de seguridad.',
+    softwareArchDesc: 'Ideal para obtener diseños arquitectónicos robustos y profesionales',
+    
+    webDevPrompt: 'Prompt para Desarrollo Web Completo',
+    webDevPromptText: 'Actúa como un experto en desarrollo web full-stack. Crea una aplicación web completa usando React y Node.js que incluya: sistema de autenticación JWT, dashboard responsivo, CRUD de usuarios, integración con base de datos MongoDB, API REST documentada, y deployment en la nube. Proporciona el código completo, estructura de archivos y guía de instalación.',
+    webDevDesc: 'Perfecto para generar aplicaciones web completas y modernas',
+    
+    // Chat responses
+    chatResponse1: 'ACADEMY es una plataforma educativa futurista diseñada para formar a los programadores del futuro. Ofrecemos cursos sobre Deep Agents, IA, programación y desarrollo de proyectos con tecnología emergente.',
+    chatWhatsapp: 'Para cualquier duda, te dejo nuestro número de WhatsApp directo: +528136037100'
   }
 };
 
