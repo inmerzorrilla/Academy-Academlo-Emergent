@@ -355,7 +355,10 @@ export const ModulePrompt = () => {
                 ref={textareaRef}
                 value={userPrompt}
                 onChange={(e) => setUserPrompt(e.target.value)}
-                placeholder="Escribe aquí tu prompt personalizado...\n\nPor ejemplo: 'Actúa como un experto en desarrollo web. Ayudame a crear una aplicación de e-commerce completa usando React y Node.js. Incluye autenticación, carrito de compras y pasarela de pagos...'"
+                placeholder={language === 'es' 
+                  ? "Escribe aquí tu prompt personalizado...\n\nPor ejemplo: 'Actúa como un experto en desarrollo web. Ayudame a crear una aplicación de e-commerce completa usando React y Node.js. Incluye autenticación, carrito de compras y pasarela de pagos...'"
+                  : "Write your custom prompt here...\n\nFor example: 'Act as a web development expert. Help me create a complete e-commerce application using React and Node.js. Include authentication, shopping cart and payment gateway...'"
+                }
                 className="min-h-[150px] bg-gray-900 border-gray-600 text-white resize-none"
                 data-testid="prompt-textarea"
               />
