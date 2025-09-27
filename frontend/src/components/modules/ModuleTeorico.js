@@ -234,6 +234,7 @@ export const ModuleTeorico = () => {
         </Card>
       </main>
 
+      <Footer />
       <ModuleFooter />
       <ChatWidget />
     </div>
