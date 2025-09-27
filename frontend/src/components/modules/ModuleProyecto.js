@@ -305,7 +305,7 @@ export const ModuleProyecto = () => {
                 🎆🎉🚀
               </div>
               <h3 className="text-3xl font-bold mb-4 text-gradient">
-                ¡Felicidades, Programador del Futuro!
+                {t('congratsFutureProgrammer')}
               </h3>
               <p className="text-xl mb-6 text-gray-300">
                 Has completado todos los módulos de ACADEMY. ¡Ya estás listo para obtener tu certificado!
