@@ -314,7 +314,9 @@ export const Dashboard = () => {
               </a>
             </div>
             
-            <SocialLinks />
+            <div className="social-links-container">
+              <SocialLinks />
+            </div>
           </div>
         </div>
       </footer>
