@@ -219,7 +219,6 @@
 
 ## test_plan:
   current_focus:
-    - "Footer improvements with PayPal donation section"
     - "Complete ModuleProyecto translation implementation"
     - "Fix authentication session persistence issue"
     - "ModuleEscucha complete translations"
