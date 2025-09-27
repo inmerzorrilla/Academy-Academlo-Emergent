@@ -163,7 +163,7 @@ export const ModuleEscucha = () => {
                   <CardTitle className="text-xl flex items-center justify-between">
                     <div className="flex items-center">
                       <span className="text-cyan-400 mr-3">#{video.id}</span>
-                      {video.title}
+                      <span className="text-primary font-semibold">{video.title}</span>
                       {isCompleted && (
                         <i className="fas fa-check-circle text-green-500 ml-3"></i>
                       )}
