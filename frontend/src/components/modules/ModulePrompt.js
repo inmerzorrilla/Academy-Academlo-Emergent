@@ -176,44 +176,11 @@ export const ModulePrompt = () => {
       <div className="particles"></div>
       
       {/* Header */}
-      <header className="relative z-10 p-6 border-b border-gray-800">
-        <div className="max-w-4xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-4">
-            <Link to="/dashboard" className="btn-ghost text-sm">
-              <i className="fas fa-arrow-left mr-2"></i>
-              Volver al Dashboard
-            </Link>
-          </div>
-          
-          <div className="text-center">
-            <h1 className="text-2xl font-bold text-gradient">Módulo Prompt</h1>
-            <p className="text-sm text-cyan-400">Practica con IA</p>
-          </div>
-          
-          <div className="flex items-center space-x-4">
-            <button 
-              onClick={toggleLanguage}
-              className="btn-ghost text-sm"
-              data-testid="language-toggle"
-            >
-              <i className="fas fa-globe mr-2"></i>
-              {language === 'es' ? 'EN' : 'ES'}
-            </button>
-            
-            <button 
-              onClick={toggleTheme}
-              className="btn-ghost text-sm"
-              data-testid="theme-toggle"
-            >
-              <i className={`fas ${theme === 'dark' ? 'fa-sun' : 'fa-moon'} mr-2`}></i>
-            </button>
-            
-            <Badge className="bg-purple-500">
-              {progress.prompt_progress}% Completado
-            </Badge>
-          </div>
-        </div>
-      </header>
+      <ModuleHeader 
+        moduleName={t('promptModule')}
+        moduleSubtitle={t('practiceWithAI')}
+        progress={progress.prompt_progress}
+      />
 
       {/* Content */}
       <main className="relative z-10 max-w-4xl mx-auto px-6 py-8">
