@@ -574,6 +574,10 @@ const translations = {
     promptModule: 'Módulo Prompt',
     practiceWithAI: 'Practica con IA',
     
+    // PayPal Donation
+    useful: '¿Útil?',
+    buyMeACoffee: 'Invítame un Café',
+    
     // Project Module
     createYourProject: 'Crea tu Proyecto con Emergent',
     yourMission: 'Tu misión',
