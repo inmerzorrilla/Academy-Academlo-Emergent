@@ -105,7 +105,7 @@ export const LandingPage = () => {
       <section className="relative z-10 py-20">
         <div className="max-w-7xl mx-auto px-6">
           <h3 className="text-4xl font-bold text-center mb-16 text-gradient">
-            Módulos de Aprendizaje
+            {t('learningModules')}
           </h3>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
