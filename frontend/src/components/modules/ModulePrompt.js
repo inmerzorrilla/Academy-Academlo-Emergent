@@ -16,10 +16,17 @@ const API = `${BACKEND_URL}/api`;
 
 export const ModulePrompt = () => {
   const { user } = useAuth();
+  const { t, language, toggleLanguage } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
   const [examples, setExamples] = useState([]);
-  const [progress, setProgress] = useState({ prompt_completed: false, prompt_progress: 0 });
+  const [progress, setProgress] = useState({ 
+    prompt_completed: false, 
+    prompt_progress: 0,
+    prompt_tips_completed: false,
+    prompt_examples_completed: [],
+    prompt_practice_completed: false
+  });
   const [loading, setLoading] = useState(true);
-  const [readExamples, setReadExamples] = useState([]);
   const [userPrompt, setUserPrompt] = useState('');
   const [isRecording, setIsRecording] = useState(false);
   const [mediaRecorder, setMediaRecorder] = useState(null);
