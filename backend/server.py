@@ -334,7 +334,7 @@ async def get_teorico_content():
     return questions
 
 @api_router.get("/content/escucha")
-async def get_escucha_content():
+async def get_escucha_content(lang: str = "es"):
     videos = [
         {
             "id": 1,
