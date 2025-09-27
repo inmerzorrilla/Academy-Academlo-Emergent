@@ -30,6 +30,10 @@ html, body {
   --text-light-primary: #1a202c;
   --text-light-secondary: #4a5568;
   
+  /* Progress and interactive elements */
+  --progress-bg: rgba(255, 255, 255, 0.1);
+  --progress-track: rgba(0, 212, 255, 0.2);
+  
   /* Glass morphism */
   --glass-bg: rgba(255, 255, 255, 0.1);
   --glass-border: rgba(255, 255, 255, 0.2);
