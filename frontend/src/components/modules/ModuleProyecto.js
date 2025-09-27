@@ -240,7 +240,7 @@ export const ModuleProyecto = () => {
                   {t('projectSubmittedSuccessfullyTitle')}
                 </h3>
                 <p className="text-gray-300">
-                  Tu proyecto ha sido registrado correctamente:
+                  {t('projectHasBeenRegistered')}:
                 </p>
                 <div className="bg-gray-800/50 p-4 rounded-lg">
                   <a 
