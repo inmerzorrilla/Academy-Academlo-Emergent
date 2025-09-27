@@ -174,8 +174,8 @@ export const LandingPage = () => {
       {/* Footer */}
       <footer className="relative z-10 py-12 border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-            <div className="flex items-center space-x-8">
+          <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0 lg:space-x-8">
+            <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-8">
               <a 
                 href="https://synapsys-technology.abacusai.app/" 
                 target="_blank" 
@@ -199,39 +199,39 @@ export const LandingPage = () => {
               </a>
             </div>
             
+            {/* PayPal Donation Section - Middle */}
+            <div className="text-center">
+              <h4 className="text-lg font-semibold text-cyan-400 mb-3">
+                {t('useful')} {t('buyMeACoffee')} ☕
+              </h4>
+              <div className="flex justify-center mb-2">
+                <a 
+                  href="https://paypal.me/pastorinmerzorrilla" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  <svg 
+                    className="w-5 h-5 mr-2" 
+                    viewBox="0 0 24 24" 
+                    fill="currentColor"
+                  >
+                    <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm1.262-8.24h2.798c1.31 0 2.417-.718 2.89-1.866.473-1.148.265-2.553-.543-3.665-.808-1.112-2.240-1.789-3.738-1.789H7.392l1.946 7.32z"/>
+                  </svg>
+                  <span className="font-medium text-sm">
+                    PayPal
+                  </span>
+                </a>
+              </div>
+              <p className="text-xs text-gray-500">
+                {t('supportMessage')}
+              </p>
+            </div>
+            
             <SocialLinks />
           </div>
           
-          {/* PayPal Donation Section */}
           <div className="mt-8 pt-8 border-t border-gray-800 text-center">
-            <h4 className="text-lg font-semibold text-cyan-400 mb-4">
-              {t('useful')} {t('buyMeACoffee')} ☕
-            </h4>
-            <div className="flex justify-center mb-6">
-              <a 
-                href="https://paypal.me/pastorinmerzorrilla" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-              >
-                <svg 
-                  className="w-6 h-6 mr-2" 
-                  viewBox="0 0 24 24" 
-                  fill="currentColor"
-                >
-                  <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm1.262-8.24h2.798c1.31 0 2.417-.718 2.89-1.866.473-1.148.265-2.553-.543-3.665-.808-1.112-2.240-1.789-3.738-1.789H7.392l1.946 7.32z"/>
-                </svg>
-                <span className="font-semibold">
-                  PayPal - pastorinmerzorrilla@gmail.com
-                </span>
-              </a>
-            </div>
-            <p className="text-xs text-gray-500 mb-6">
-              {t('supportMessage')}
-            </p>
-          </div>
-          
-          <div className="mt-6 pt-6 border-t border-gray-800 text-center">
             <p className="text-gray-400">
               © 2025 ACADEMY - {t('poweredBy')}
             </p>
