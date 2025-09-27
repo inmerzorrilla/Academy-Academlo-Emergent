@@ -78,7 +78,7 @@ export const ModulePrompt = () => {
       }
     } catch (error) {
       console.error('Error updating progress:', error);
-      toast.error('Error al actualizar el progreso');
+      toast.error(t('errorUpdatingProgress'));
     }
   };
 
