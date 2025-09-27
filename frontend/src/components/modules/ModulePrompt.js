@@ -101,7 +101,7 @@ export const ModulePrompt = () => {
         
         recognition.onstart = () => {
           setIsRecording(true);
-          toast.success('Grabación iniciada. Habla tu prompt...');
+          toast.success(t('recordingStarted'));
         };
         
         recognition.onresult = (event) => {
