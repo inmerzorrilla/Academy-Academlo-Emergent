@@ -40,11 +40,11 @@ export const ModulePrompt = () => {
 
   const fetchContent = async () => {
     try {
-      const response = await axios.get(`${API}/content/prompt`);
+      const response = await axios.get(`${API}/content/prompt?lang=${language}`);
       setExamples(response.data);
     } catch (error) {
       console.error('Error fetching content:', error);
-      toast.error('Error al cargar el contenido');
+      toast.error(language === 'es' ? 'Error al cargar el contenido' : 'Error loading content');
     }
   };
 
