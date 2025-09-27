@@ -553,8 +553,8 @@ async def chat(message: dict):
         response = "Al completar los 4 módulos (100% de progreso), obtienes un certificado PDF profesional con los logos de Academy, Academlo y Emergent que te acredita como 'Programador del Futuro'."
     elif "progreso" in user_message:
         response = "Tu progreso se divide en 4 módulos de 25% cada uno: Teórico, Escucha, Prompt y Proyecto. Puedes ver tu avance en tiempo real en tu dashboard personal."
-    elif "ayuda" in user_message or "support" in user_message:
-        response = "Estoy aquí para ayudarte 24/7 con cualquier duda sobre ACADEMY. También puedes contactar ayuda urgente al WhatsApp +528136037100 o visitar nuestras redes sociales."
+    elif "ayuda" in user_message or "support" in user_message or "whatsapp" in user_message:
+        response = "Para cualquier duda, te dejo nuestro número de WhatsApp directo: +528136037100. Estoy aquí para ayudarte 24/7 con preguntas sobre ACADEMY."
     elif "emergent" in user_message:
         response = "Emergent es nuestra plataforma partner donde podrás crear proyectos reales de IA. En el módulo final, usarás Emergent para desarrollar tu proyecto y completar tu certificación."
     else:
