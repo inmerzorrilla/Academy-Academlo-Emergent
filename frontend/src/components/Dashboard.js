@@ -210,11 +210,11 @@ export const Dashboard = () => {
                   data-testid="download-certificate-btn"
                 >
                   <i className="fas fa-download mr-2"></i>
-                  Descargar Certificado
+                  {t('downloadCertificate')}
                 </Button>
               ) : (
                 <p className="text-cyan-400">
-                  ¡Sigue avanzando para obtener tu certificado como Programador del Futuro!
+                  {t('continueProgress')}
                 </p>
               )}
             </CardContent>
