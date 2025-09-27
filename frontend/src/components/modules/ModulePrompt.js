@@ -120,7 +120,7 @@ export const ModulePrompt = () => {
         
         recognition.onend = () => {
           setIsRecording(false);
-          toast.success('Grabación finalizada y transcrita');
+          toast.success(t('recordingFinishedTranscribed'));
         };
         
         recognition.start();
