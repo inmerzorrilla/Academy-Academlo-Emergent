@@ -287,7 +287,7 @@ export const ModuleProyecto = () => {
                     ) : (
                       <>
                         <i className="fas fa-check mr-2"></i>
-                        Enviar Proyecto
+                        {t('submitProject')}
                       </>
                     )}
                   </Button>
