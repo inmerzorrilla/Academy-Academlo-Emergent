@@ -558,7 +558,7 @@ async def chat(message: dict):
     elif "emergent" in user_message:
         response = "Emergent es nuestra plataforma partner donde podrás crear proyectos reales de IA. En el módulo final, usarás Emergent para desarrollar tu proyecto y completar tu certificación."
     else:
-        response = "¡Hola! Soy el asistente de ACADEMY 🚀 Estoy aquí para resolver todas tus dudas sobre nuestros cursos de programación e IA. ¿En qué puedo ayudarte hoy?"
+        response = "¡Hola! Soy el asistente de ACADEMY 🚀 Estoy aquí para resolver todas tus dudas sobre nuestros cursos de programación e IA. Para cualquier duda, te dejo nuestro número de WhatsApp directo: +528136037100. ¿En qué puedo ayudarte hoy?"
     
     # Save chat message
     chat_msg = ChatMessage(message=user_message, response=response)
