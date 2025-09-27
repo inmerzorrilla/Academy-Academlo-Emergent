@@ -34,7 +34,7 @@ export const ModuleEscucha = () => {
       setVideos(response.data);
     } catch (error) {
       console.error('Error fetching content:', error);
-      toast.error(language === 'es' ? 'Error al cargar el contenido' : 'Error loading content');
+      toast.error(t('errorLoadingContent'));
     }
   };
 
