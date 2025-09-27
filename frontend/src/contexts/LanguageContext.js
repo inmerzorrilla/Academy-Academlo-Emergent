@@ -136,7 +136,69 @@ const translations = {
     
     // Chat responses
     chatResponse1: 'ACADEMY is a futuristic educational platform designed to train future programmers. We offer courses on Deep Agents, AI, programming and project development with emerging technology.',
-    chatWhatsapp: 'For any questions, here is our direct WhatsApp number: +528136037100'
+    chatWhatsapp: 'For any questions, here is our direct WhatsApp number: +528136037100',
+    
+    // Module Headers
+    theoreticalModule: 'Theoretical Module',
+    listenModule: 'Listen Module', 
+    promptModule: 'Prompt Module',
+    projectModule: 'Project Module',
+    
+    // Module Progress Labels
+    questionsCompleted: 'questions completed',
+    videosCompleted: 'videos completed',
+    practiceCompleted: 'practice completed',
+    
+    // Module Completion
+    theoreticalCompleted: 'Theoretical Module Completed!',
+    listenCompleted: 'Listen Module Completed!',
+    promptCompleted: 'Prompt Module Completed!',
+    projectCompleted: 'Project Module Completed!',
+    
+    // Videos
+    videoTitle1: 'Introduction to AI',
+    videoTitle2: 'AI Development',
+    videoTitle3: 'The Future of Programming',
+    videoTitle4: 'Why is it important to study at Academlo?',
+    videoTitle5: 'Emergent Tutorial',
+    
+    videoDesc1: 'Short video about the basic concepts of artificial intelligence',
+    videoDesc2: 'Learn how AI is transforming software development',
+    videoDesc3: 'Discover where programming is heading in the AI era',
+    videoDesc4: 'Learn about the advantages of studying at Academlo and how it can transform your career',
+    videoDesc5: 'Learn to use Emergent to create incredible projects with AI',
+    
+    // Buttons and Actions
+    markAsWatched: 'Mark as Watched',
+    videoCompleted: 'Video Completed!',
+    watchOnYoutube: 'Watch on YouTube',
+    
+    // Project Module
+    createYourProject: 'Create your Project with Emergent',
+    yourMission: 'Your mission',
+    projectIdeas: 'Project ideas:',
+    requirements: 'Requirements:',
+    submitYourProject: 'Submit your Project',
+    projectSubmitted: 'Project Submitted Successfully!',
+    projectUrl: 'URL of your project in Emergent:',
+    submitProject: 'Submit Project',
+    
+    // Instructions
+    useEmergentPlatform: 'Use the Emergent platform to create a project that demonstrates everything you have learned at ACADEMY.',
+    intelligentChatbot: 'An intelligent chatbot with AI',
+    webAppAdvanced: 'A web application with advanced functionalities', 
+    intelligentAutomation: 'An intelligent automation system',
+    toolSolvesProblems: 'A tool that solves a real problem',
+    createdInEmergent: 'Must be created on the Emergent platform',
+    applyLearned: 'Must apply concepts learned in the course',
+    functionalDemo: 'Must be functional and demonstrable',
+    goToEmergent: 'Go to Emergent to create your project',
+    onceCreated: 'Once you have created your project, return here to submit the URL',
+    
+    // Final Congratulations
+    congratsFutureProgrammer: 'Congratulations, Future Programmer!',
+    completedAllModules: 'You have completed all ACADEMY modules. You are ready to get your certificate!',
+    viewCertificateInDashboard: 'View Certificate in Dashboard'
   },
   es: {
     // Landing Page
