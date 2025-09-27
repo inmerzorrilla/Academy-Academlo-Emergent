@@ -483,6 +483,8 @@ export const ModulePrompt = () => {
           </CardContent>
         </Card>
       </main>
+
+      <ChatWidget />
     </div>
   );
 };
