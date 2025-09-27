@@ -49,10 +49,27 @@ export const Dashboard = () => {
                      progress.prompt_progress + progress.proyecto_progress) / 4);
   };
 
-  const downloadCertificate = () => {
+  const downloadCertificate = async () => {
     if (getTotalProgress() === 100) {
-      // This would typically generate and download a PDF certificate
-      toast.success('¡Certificado descargado! 🎉');
+      try {
+        const response = await axios.get(`${API}/user/certificate`, {
+          responseType: 'blob'
+        });
+        
+        // Create download link
+        const url = window.URL.createObjectURL(new Blob([response.data]));
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', 'academy_certificate.pdf');
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        
+        toast.success('¡Certificado descargado exitosamente! 🎉');
+      } catch (error) {
+        console.error('Error downloading certificate:', error);
+        toast.error('Error al descargar el certificado');
+      }
     } else {
       toast.error('Completa todos los módulos para obtener tu certificado');
     }
