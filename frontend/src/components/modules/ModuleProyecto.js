@@ -130,7 +130,7 @@ export const ModuleProyecto = () => {
           <CardHeader>
             <CardTitle className="text-xl text-gradient flex items-center">
               <i className="fas fa-project-diagram mr-2"></i>
-              Progreso del Módulo Proyecto
+              {t('projectModuleProgress')}
             </CardTitle>
           </CardHeader>
           <CardContent>
