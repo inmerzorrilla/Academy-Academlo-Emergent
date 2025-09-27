@@ -127,7 +127,7 @@ export const ModuleEscucha = () => {
             </button>
             
             <Badge className="bg-green-500">
-              {progress.escucha_progress}% Completado
+              {progress.escucha_progress}% {t('completed')}
             </Badge>
           </div>
         </div>
