@@ -31,7 +31,7 @@ export const Footer = () => {
           {/* Quick Actions */}
           <div className="md:col-span-1">
             <h4 className="text-lg font-semibold text-cyan-400 mb-4">
-              {t('language') === 'es' ? 'Acciones Rápidas' : 'Quick Actions'}
+              {t('quickActions')}
             </h4>
             <div className="space-y-3">
               <a 
