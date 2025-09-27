@@ -191,7 +191,7 @@ export const ModuleProyecto = () => {
                 <div className="bg-purple-900/30 p-4 rounded-lg border border-purple-500/30">
                   <h4 className="font-semibold text-purple-400 mb-2 flex items-center">
                     <i className="fas fa-star mr-2"></i>
-                    Requisitos:
+                    {t('requirements')}:
                   </h4>
                   <ul className="space-y-1 text-sm">
                     <li>✓ Debe ser creado en la plataforma Emergent</li>
