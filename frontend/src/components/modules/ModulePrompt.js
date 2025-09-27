@@ -58,29 +58,31 @@ export const ModulePrompt = () => {
     }
   };
 
-  const markExampleRead = (exampleId) => {
-    if (!readExamples.includes(exampleId)) {
-      setReadExamples([...readExamples, exampleId]);
-      toast.success(`Ejemplo ${exampleId} leído`);
+  const markSectionComplete = async (section, itemId = null) => {
+    try {
+      const response = await axios.post(`${API}/user/progress`, {
+        module: 'prompt',
+        prompt_section: section,
+        item_id: itemId
+      });
+      
+      setProgress(response.data);
+      
+      if (section === 'tips') {
+        toast.success('¡Consejos completados! +20%');
+      } else if (section === 'examples') {
+        toast.success(`¡Ejemplo ${itemId} completado! +20%`);
+      } else if (section === 'practice') {
+        toast.success('¡Práctica completada! +20%');
+      }
+    } catch (error) {
+      console.error('Error updating progress:', error);
+      toast.error('Error al actualizar el progreso');
     }
   };
 
-  const completeModule = async () => {
-    if (readExamples.length === examples.length && userPrompt.trim()) {
-      try {
-        const response = await axios.post(`${API}/user/progress`, {
-          module: 'prompt'
-        });
-        
-        setProgress(response.data);
-        toast.success('¡Módulo Prompt completado al 100%! 🎉');
-      } catch (error) {
-        console.error('Error updating progress:', error);
-        toast.error('Error al actualizar el progreso');
-      }
-    } else {
-      toast.error('Lee todos los ejemplos y practica escribiendo un prompt para completar el módulo');
-    }
+  const isExampleCompleted = (exampleId) => {
+    return progress.prompt_examples_completed?.includes(exampleId) || false;
   };
 
   const startRecording = async () => {
