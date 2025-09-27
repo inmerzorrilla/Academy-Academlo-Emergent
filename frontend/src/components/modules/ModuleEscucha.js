@@ -30,11 +30,11 @@ export const ModuleEscucha = () => {
 
   const fetchContent = async () => {
     try {
-      const response = await axios.get(`${API}/content/escucha`);
+      const response = await axios.get(`${API}/content/escucha?lang=${language}`);
       setVideos(response.data);
     } catch (error) {
       console.error('Error fetching content:', error);
-      toast.error('Error al cargar el contenido');
+      toast.error(language === 'es' ? 'Error al cargar el contenido' : 'Error loading content');
     }
   };
 
