@@ -414,36 +414,61 @@ async def generate_certificate(current_user: User = Depends(get_current_user)):
     p = canvas.Canvas(buffer, pagesize=A4)
     width, height = A4
     
-    # Certificate design
+    # Certificate design with professional layout
+    # Header
     p.setFillColorRGB(0, 0.8, 1)  # Cyan color
-    p.setFont("Helvetica-Bold", 36)
-    p.drawCentredText(width/2, height-100, "ACADEMY CERTIFICATE")
+    p.setFont("Helvetica-Bold", 42)
+    p.drawCentredText(width/2, height-80, "ACADEMY")
     
-    p.setFillColorRGB(0, 0, 0)
-    p.setFont("Helvetica", 24)
-    p.drawCentredText(width/2, height-200, "¡Felicidades Programador del Futuro!")
+    p.setFillColorRGB(0.2, 0.2, 0.2)
+    p.setFont("Helvetica", 16)
+    p.drawCentredText(width/2, height-110, "CERTIFICADO DE COMPLETACIÓN")
     
-    p.setFont("Helvetica", 18)
-    p.drawCentredText(width/2, height-280, f"Certificamos que {current_user.name}")
-    p.drawCentredText(width/2, height-320, "ha completado exitosamente el curso de")
+    # Main content
+    p.setFillColorRGB(0, 0.8, 1)
+    p.setFont("Helvetica-Bold", 32)
+    p.drawCentredText(width/2, height-180, "¡Felicidades Programador del Futuro!")
+    
+    p.setFillColorRGB(0.1, 0.1, 0.1)
+    p.setFont("Helvetica", 20)
+    p.drawCentredText(width/2, height-240, "Certificamos que")
     
     p.setFillColorRGB(0, 0.8, 1)
-    p.setFont("Helvetica-Bold", 20)
+    p.setFont("Helvetica-Bold", 28)
+    p.drawCentredText(width/2, height-280, current_user.name)
+    
+    p.setFillColorRGB(0.1, 0.1, 0.1)
+    p.setFont("Helvetica", 18)
+    p.drawCentredText(width/2, height-320, "ha completado exitosamente el curso")
+    
+    p.setFillColorRGB(0, 0.8, 1)
+    p.setFont("Helvetica-Bold", 24)
     p.drawCentredText(width/2, height-360, "Deep Agents & Programación con IA")
     
-    p.setFillColorRGB(0, 0, 0)
-    p.setFont("Helvetica", 14)
-    p.drawCentredText(width/2, height-420, f"Fecha de completación: {datetime.now().strftime('%d de %B, %Y')}")
+    p.setFillColorRGB(0.1, 0.1, 0.1)
+    p.setFont("Helvetica", 16)
+    p.drawCentredText(width/2, height-420, f"Completado el {datetime.now().strftime('%d de %B de %Y')}")
     
-    # Logos section
-    p.setFont("Helvetica-Bold", 12)
-    p.drawString(50, 100, "ACADEMY")
-    p.drawString(200, 100, "ACADEMLO")
-    p.drawString(350, 100, "EMERGENT")
+    # Logos section with better positioning
+    p.setFillColorRGB(0, 0.8, 1)
+    p.setFont("Helvetica-Bold", 14)
+    
+    # Three columns for logos
+    logo_y = 150
+    p.drawCentredText(width/6, logo_y, "ACADEMY")
+    p.drawCentredText(width/2, logo_y, "ACADEMLO")  
+    p.drawCentredText(5*width/6, logo_y, "EMERGENT")
+    
+    # Decorative lines
+    p.setStrokeColorRGB(0, 0.8, 1)
+    p.setLineWidth(2)
+    p.line(50, logo_y-20, width-50, logo_y-20)
     
     # Footer
-    p.setFont("Helvetica", 10)
-    p.drawCentredText(width/2, 50, "Quantum Intelligence • Digital Autonomy • Augmented Reality")
+    p.setFillColorRGB(0.3, 0.3, 0.3)
+    p.setFont("Helvetica", 12)
+    p.drawCentredText(width/2, 80, "Quantum Intelligence • Digital Autonomy • Augmented Reality")
+    p.drawCentredText(width/2, 60, f"ID de Certificado: {current_user.id[:8].upper()}")
     
     p.save()
     
