@@ -36,7 +36,7 @@ export const ModulePrompt = () => {
   useEffect(() => {
     fetchContent();
     fetchProgress();
-  }, []);
+  }, [language]);
 
   const fetchContent = async () => {
     try {
