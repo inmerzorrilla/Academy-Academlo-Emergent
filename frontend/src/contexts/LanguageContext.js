@@ -417,6 +417,21 @@ const translations = {
     learningModules: 'Módulos de Aprendizaje',
     poweredBy: 'Powered by Emergent + Academlo',
     
+    // Footer
+    footerDescription: 'Plataforma educativa futurista para formar programadores del futuro con IA y Deep Agents.',
+    quickActions: 'Acciones Rápidas',
+    ourPartners: 'Nuestros Socios',
+    joinDeveloperCommunity: 'Únete a nuestra comunidad de desarrolladores',
+    madeWith: 'Hecho con',
+    secure: 'Seguro',
+    responsive: 'Responsivo',
+    
+    // Dashboard Error Messages
+    errorLoadingProgress: 'Error al cargar el progreso',
+    certificateDownloadedSuccess: '¡Certificado descargado exitosamente! 🎉',
+    errorDownloadingCertificate: 'Error al descargar el certificado',
+    completeAllModulesForCertificate: 'Completa todos los módulos para obtener tu certificado',
+    
     // Project Module
     createYourProject: 'Crea tu Proyecto con Emergent',
     yourMission: 'Tu misión',
