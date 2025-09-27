@@ -135,7 +135,7 @@ export const ModuleTeorico = () => {
               <Progress value={progress.teorico_progress} className="h-3" />
             </div>
             <p className="text-gray-400">
-              {progress.teorico_completed.length} de {questions.length} preguntas completadas
+              {progress.teorico_completed.length} {language === 'es' ? 'de' : 'of'} {questions.length} {t('questionsCompleted')}
             </p>
           </CardContent>
         </Card>
