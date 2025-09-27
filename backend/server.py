@@ -354,6 +354,12 @@ async def get_prompt_content():
             "title": "Prompt para Arquitectura de Software",
             "prompt": "Como arquitecto de software senior, diseña una arquitectura escalable para una aplicación de e-commerce que maneje 100k usuarios concurrentes. Incluye patrones de diseño, tecnologías recomendadas, diagrama de componentes y consideraciones de seguridad.",
             "description": "Ideal para obtener diseños arquitectónicos robustos y profesionales"
+        },
+        {
+            "id": 4,
+            "title": "Prompt para Desarrollo Web Completo",
+            "prompt": "Actúa como un experto en desarrollo web full-stack. Crea una aplicación web completa usando React y Node.js que incluya: sistema de autenticación JWT, dashboard responsivo, CRUD de usuarios, integración con base de datos MongoDB, API REST documentada, y deployment en la nube. Proporciona el código completo, estructura de archivos y guía de instalación.",
+            "description": "Perfecto para generar aplicaciones web completas y modernas"
         }
     ]
     return examples
