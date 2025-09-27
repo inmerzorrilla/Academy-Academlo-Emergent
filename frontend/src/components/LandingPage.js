@@ -113,7 +113,7 @@ export const LandingPage = () => {
               {
                 icon: 'fa-brain',
                 title: t('teorico'),
-                description: 'Aprende conceptos fundamentales sobre Deep Agents y programación con IA',
+                description: t('teoricoDesc'),
                 color: 'from-blue-500 to-cyan-500'
               },
               {
