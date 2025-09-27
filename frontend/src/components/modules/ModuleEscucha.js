@@ -207,7 +207,7 @@ export const ModuleEscucha = () => {
                         data-testid={`complete-video-${video.id}`}
                       >
                         <i className="fas fa-check mr-2"></i>
-                        Marcar como Visto
+                        {t('markAsWatched')}
                       </Button>
                     ) : (
                       <div className="flex items-center text-green-400">
