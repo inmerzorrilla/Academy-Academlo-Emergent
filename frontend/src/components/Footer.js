@@ -24,10 +24,7 @@ export const Footer = () => {
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              {t('language') === 'es' 
-                ? 'Plataforma educativa futurista para formar programadores del futuro con IA y Deep Agents.'
-                : 'Futuristic educational platform to train future programmers with AI and Deep Agents.'
-              }
+              {t('footerDescription')}
             </p>
           </div>
 
