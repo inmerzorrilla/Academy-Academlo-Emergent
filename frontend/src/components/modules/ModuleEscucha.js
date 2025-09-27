@@ -140,7 +140,7 @@ export const ModuleEscucha = () => {
           <CardHeader>
             <CardTitle className="text-xl text-gradient flex items-center">
               <i className="fas fa-headphones mr-2"></i>
-              Progreso del Módulo Escucha
+              {t('listeningModuleProgress')}
             </CardTitle>
           </CardHeader>
           <CardContent>
