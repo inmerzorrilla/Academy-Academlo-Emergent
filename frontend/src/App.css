@@ -301,6 +301,14 @@ body {
   background-clip: text;
 }
 
+.text-primary {
+  color: var(--text-primary) !important;
+}
+
+.text-secondary {
+  color: var(--text-secondary) !important;
+}
+
 .glitch {
   position: relative;
   display: inline-block;
