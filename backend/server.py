@@ -520,11 +520,17 @@ async def generate_certificate(current_user: User = Depends(get_current_user)):
     
     buffer.seek(0)
     
-    from fastapi.responses import StreamingResponse
-    return StreamingResponse(
-        io.BytesIO(buffer.getvalue()),
+    from fastapi.responses import Response
+    
+    # Return PDF as bytes
+    pdf_bytes = buffer.getvalue()
+    
+    return Response(
+        content=pdf_bytes,
         media_type="application/pdf",
-        headers={"Content-Disposition": "attachment; filename=academy_certificate.pdf"}
+        headers={
+            "Content-Disposition": f"attachment; filename=certificado_{current_user.name.replace(' ', '_')}_academy.pdf"
+        }
     )
 
 # Chat Route (Simple chatbot without external API)
