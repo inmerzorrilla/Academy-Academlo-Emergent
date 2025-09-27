@@ -325,7 +325,69 @@ const translations = {
     
     // Chat responses
     chatResponse1: 'ACADEMY es una plataforma educativa futurista diseñada para formar a los programadores del futuro. Ofrecemos cursos sobre Deep Agents, IA, programación y desarrollo de proyectos con tecnología emergente.',
-    chatWhatsapp: 'Para cualquier duda, te dejo nuestro número de WhatsApp directo: +528136037100'
+    chatWhatsapp: 'Para cualquier duda, te dejo nuestro número de WhatsApp directo: +528136037100',
+    
+    // Module Headers
+    theoreticalModule: 'Módulo Teórico',
+    listenModule: 'Módulo Escucha',
+    promptModule: 'Módulo Prompt', 
+    projectModule: 'Módulo Proyecto',
+    
+    // Module Progress Labels
+    questionsCompleted: 'preguntas completadas',
+    videosCompleted: 'videos completados',
+    practiceCompleted: 'práctica completada',
+    
+    // Module Completion
+    theoreticalCompleted: '¡Módulo Teórico Completado!',
+    listenCompleted: '¡Módulo Escucha Completado!',
+    promptCompleted: '¡Módulo Prompt Completado!',
+    projectCompleted: '¡Módulo Proyecto Completado!',
+    
+    // Videos
+    videoTitle1: 'Introducción a la IA',
+    videoTitle2: 'Desarrollo con IA',
+    videoTitle3: 'El futuro de la programación',
+    videoTitle4: '¿Por qué es importante estudiar en Academlo?',
+    videoTitle5: 'Tutorial de Emergent',
+    
+    videoDesc1: 'Video corto sobre los conceptos básicos de inteligencia artificial',
+    videoDesc2: 'Aprende cómo la IA está transformando el desarrollo de software',
+    videoDesc3: 'Descubre hacia dónde se dirige la programación en la era de la IA',
+    videoDesc4: 'Conoce las ventajas de estudiar en Academlo y cómo puede transformar tu carrera',
+    videoDesc5: 'Aprende a usar Emergent para crear proyectos increíbles con IA',
+    
+    // Buttons and Actions
+    markAsWatched: 'Marcar como Visto',
+    videoCompleted: '¡Video Completado!',
+    watchOnYoutube: 'Ver en YouTube',
+    
+    // Project Module
+    createYourProject: 'Crea tu Proyecto con Emergent',
+    yourMission: 'Tu misión',
+    projectIdeas: 'Ideas de proyectos:',
+    requirements: 'Requisitos:',
+    submitYourProject: 'Enviar tu Proyecto',
+    projectSubmitted: '¡Proyecto Enviado Exitosamente!',
+    projectUrl: 'URL de tu proyecto en Emergent:',
+    submitProject: 'Enviar Proyecto',
+    
+    // Instructions
+    useEmergentPlatform: 'Utiliza la plataforma Emergent para crear un proyecto que demuestre todo lo que has aprendido en ACADEMY.',
+    intelligentChatbot: 'Un chatbot inteligente con IA',
+    webAppAdvanced: 'Una aplicación web con funcionalidades avanzadas',
+    intelligentAutomation: 'Un sistema de automatización inteligente',
+    toolSolvesProblems: 'Una herramienta que resuelva un problema real',
+    createdInEmergent: 'Debe ser creado en la plataforma Emergent',
+    applyLearned: 'Debe aplicar conceptos aprendidos en el curso',
+    functionalDemo: 'Debe ser funcional y demostrable',
+    goToEmergent: 'Ir a Emergent para crear tu proyecto',
+    onceCreated: 'Una vez que hayas creado tu proyecto, regresa aquí para enviar la URL',
+    
+    // Final Congratulations
+    congratsFutureProgrammer: '¡Felicidades, Programador del Futuro!',
+    completedAllModules: 'Has completado todos los módulos de ACADEMY. ¡Ya estás listo para obtener tu certificado!',
+    viewCertificateInDashboard: 'Ver Certificado en Dashboard'
   }
 };
 
