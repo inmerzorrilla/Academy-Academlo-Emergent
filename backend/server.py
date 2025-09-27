@@ -195,8 +195,27 @@ async def update_progress(update: ProgressUpdate, current_user: User = Depends(g
             progress["escucha_progress"] = sum(video_percentages[vid_id] for vid_id in progress["escucha_completed"] if vid_id in video_percentages)
     
     elif update.module == "prompt":
-        progress["prompt_completed"] = True
-        progress["prompt_progress"] = 100
+        if update.prompt_section == "tips":
+            progress["prompt_tips_completed"] = True
+        elif update.prompt_section == "examples" and update.item_id:
+            if update.item_id not in progress.get("prompt_examples_completed", []):
+                if "prompt_examples_completed" not in progress:
+                    progress["prompt_examples_completed"] = []
+                progress["prompt_examples_completed"].append(update.item_id)
+        elif update.prompt_section == "practice":
+            progress["prompt_practice_completed"] = True
+        
+        # Calculate progress: 20% tips + 20% each example (4 examples) + 20% practice = 100%
+        prompt_progress = 0
+        if progress.get("prompt_tips_completed", False):
+            prompt_progress += 20
+        prompt_progress += len(progress.get("prompt_examples_completed", [])) * 20  # 20% per example
+        if progress.get("prompt_practice_completed", False):
+            prompt_progress += 20
+        
+        progress["prompt_progress"] = min(100, prompt_progress)
+        if progress["prompt_progress"] == 100:
+            progress["prompt_completed"] = True
     
     elif update.module == "proyecto" and update.proyecto_url:
         progress["proyecto_url"] = update.proyecto_url
