@@ -143,7 +143,7 @@ export const ModulePrompt = () => {
       }
     } catch (error) {
       console.error('Error accessing microphone:', error);
-      toast.error('Error al acceder al micrófono');
+      toast.error(t('microphoneAccessError'));
     }
   };
 
