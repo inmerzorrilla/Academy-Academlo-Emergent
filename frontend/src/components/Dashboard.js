@@ -127,21 +127,21 @@ export const Dashboard = () => {
       <div className="particles"></div>
       
       {/* Header */}
-      <header className="relative z-10 p-6 border-b border-gray-800">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-4">
+      <header className="relative z-10 p-4 sm:p-6 border-b border-gray-800">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+          <div className="flex items-center space-x-3 sm:space-x-4">
             <img 
               src="https://customer-assets.emergentagent.com/job_a9e7c5a2-be4f-4a1e-8ab4-c5b1c9d69107/artifacts/tfw28vr3_Logo.png" 
               alt="Academy Logo" 
-              className="h-12 w-12 rounded-lg"
+              className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg"
             />
             <div>
-              <h1 className="text-2xl font-bold text-gradient">ACADEMY</h1>
-              <p className="text-sm text-cyan-400">Bienvenido, {user?.name}</p>
+              <h1 className="text-xl sm:text-2xl font-bold text-gradient">ACADEMY</h1>
+              <p className="text-xs sm:text-sm text-cyan-400">{t('welcomeCommander')}, {user?.name}</p>
             </div>
           </div>
           
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4 flex-wrap justify-center">
             <button 
               onClick={toggleLanguage}
               className="btn-ghost text-sm"
