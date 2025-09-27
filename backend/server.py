@@ -454,69 +454,165 @@ async def generate_certificate(current_user: User = Depends(get_current_user)):
     p = canvas.Canvas(buffer, pagesize=A4)
     width, height = A4
     
-    # Certificate design with professional layout
-    # Header
-    p.setFillColorRGB(0, 0.8, 1)  # Cyan color
-    p.setFont("Helvetica-Bold", 42)
-    p.drawString(width/2 - 100, height-80, "ACADEMY")
+    # Professional Certificate Design with proper centering
+    from reportlab.lib.colors import HexColor
     
-    p.setFillColorRGB(0.2, 0.2, 0.2)
-    p.setFont("Helvetica", 16)
-    p.drawString(width/2 - 120, height-110, "CERTIFICADO DE COMPLETACIÓN")
+    # Background gradient effect (simple rectangles with transparency)
+    p.setFillColorRGB(0.02, 0.05, 0.1)  # Dark blue background
+    p.rect(0, 0, width, height, fill=1)
     
-    # Main content
-    p.setFillColorRGB(0, 0.8, 1)
-    p.setFont("Helvetica-Bold", 32)
-    p.drawString(width/2 - 250, height-180, "¡Felicidades Programador del Futuro!")
+    # Decorative border
+    p.setStrokeColor(HexColor('#00d4ff'))
+    p.setLineWidth(4)
+    p.rect(30, 30, width-60, height-60, fill=0)
     
-    p.setFillColorRGB(0.1, 0.1, 0.1)
-    p.setFont("Helvetica", 20)
-    p.drawString(width/2 - 80, height-240, "Certificamos que")
+    # Inner decorative elements
+    p.setStrokeColor(HexColor('#0080ff'))
+    p.setLineWidth(1)
+    for i in range(5):
+        p.circle(width - 100, height - 100 - i*20, 50 + i*10, fill=0)
     
-    p.setFillColorRGB(0, 0.8, 1)
+    # Header Section
+    p.setFillColor(HexColor('#00d4ff'))
+    p.setFont("Helvetica-Bold", 48)
+    academy_text = "ACADEMY"
+    academy_width = p.stringWidth(academy_text, "Helvetica-Bold", 48)
+    p.drawString((width - academy_width)/2, height-100, academy_text)
+    
+    # Subtitle
+    p.setFillColorRGB(0.8, 0.8, 0.8)
+    p.setFont("Helvetica", 14)
+    subtitle = "CERTIFICADO DE COMPLETACIÓN PROFESIONAL"
+    subtitle_width = p.stringWidth(subtitle, "Helvetica", 14)
+    p.drawString((width - subtitle_width)/2, height-130, subtitle)
+    
+    # Decorative line under header
+    p.setStrokeColor(HexColor('#00d4ff'))
+    p.setLineWidth(3)
+    p.line(100, height-150, width-100, height-150)
+    
+    # Main congratulations
+    p.setFillColor(HexColor('#00d4ff'))
     p.setFont("Helvetica-Bold", 28)
-    name_width = p.stringWidth(current_user.name, "Helvetica-Bold", 28)
-    p.drawString(width/2 - name_width/2, height-280, current_user.name)
+    congrats = "¡FELICIDADES PROGRAMADOR DEL FUTURO!"
+    congrats_width = p.stringWidth(congrats, "Helvetica-Bold", 28)
+    p.drawString((width - congrats_width)/2, height-200, congrats)
     
-    p.setFillColorRGB(0.1, 0.1, 0.1)
+    # Certificate text
+    p.setFillColorRGB(0.9, 0.9, 0.9)
     p.setFont("Helvetica", 18)
-    p.drawString(width/2 - 160, height-320, "ha completado exitosamente el curso")
+    cert_text = "Por medio del presente certificamos que"
+    cert_width = p.stringWidth(cert_text, "Helvetica", 18)
+    p.drawString((width - cert_width)/2, height-250, cert_text)
     
-    p.setFillColorRGB(0, 0.8, 1)
-    p.setFont("Helvetica-Bold", 24)
-    p.drawString(width/2 - 180, height-360, "Deep Agents & Programación con IA")
+    # Student name with decorative box
+    p.setFillColor(HexColor('#00d4ff'))
+    p.setFont("Helvetica-Bold", 32)
+    name_width = p.stringWidth(current_user.name, "Helvetica-Bold", 32)
+    name_x = (width - name_width)/2
     
-    p.setFillColorRGB(0.1, 0.1, 0.1)
+    # Name background box
+    p.setFillColorRGB(0.1, 0.2, 0.3)
+    p.roundRect(name_x - 20, height-300, name_width + 40, 45, 5, fill=1)
+    
+    p.setFillColor(HexColor('#00d4ff'))
+    p.drawString(name_x, height-290, current_user.name)
+    
+    # Achievement description
+    p.setFillColorRGB(0.9, 0.9, 0.9)
     p.setFont("Helvetica", 16)
+    achievement1 = "ha completado exitosamente el programa de certificación"
+    achievement1_width = p.stringWidth(achievement1, "Helvetica", 16)
+    p.drawString((width - achievement1_width)/2, height-340, achievement1)
+    
+    # Course title with emphasis
+    p.setFillColor(HexColor('#0080ff'))
+    p.setFont("Helvetica-Bold", 22)
+    course_title = "DEEP AGENTS & PROGRAMACIÓN CON IA"
+    course_width = p.stringWidth(course_title, "Helvetica-Bold", 22)
+    p.drawString((width - course_width)/2, height-380, course_title)
+    
+    # Additional achievement details
+    p.setFillColorRGB(0.8, 0.8, 0.8)
+    p.setFont("Helvetica", 14)
+    details = "Dominando tecnologías emergentes, inteligencia artificial y desarrollo futuro"
+    details_width = p.stringWidth(details, "Helvetica", 14)
+    p.drawString((width - details_width)/2, height-410, details)
+    
+    # Date with style
+    p.setFillColorRGB(0.7, 0.7, 0.7)
+    p.setFont("Helvetica", 14)
     date_str = f"Completado el {datetime.now().strftime('%d de %B de %Y')}"
-    date_width = p.stringWidth(date_str, "Helvetica", 16)
-    p.drawString(width/2 - date_width/2, height-420, date_str)
+    date_width = p.stringWidth(date_str, "Helvetica", 14)
+    p.drawString((width - date_width)/2, height-450, date_str)
     
-    # Logos section with better positioning
-    p.setFillColorRGB(0, 0.8, 1)
-    p.setFont("Helvetica-Bold", 14)
+    # Logos section with professional layout
+    logo_y = 180
     
-    # Three columns for logos
-    logo_y = 150
-    p.drawString(width/6 - 30, logo_y, "ACADEMY")
-    p.drawString(width/2 - 35, logo_y, "ACADEMLO")  
-    p.drawString(5*width/6 - 35, logo_y, "EMERGENT")
+    # Logo backgrounds
+    p.setFillColorRGB(0.15, 0.25, 0.35)
+    p.roundRect(80, logo_y-15, 120, 40, 8, fill=1)
+    p.roundRect(220, logo_y-15, 120, 40, 8, fill=1)
+    p.roundRect(360, logo_y-15, 120, 40, 8, fill=1)
     
-    # Decorative lines
-    p.setStrokeColorRGB(0, 0.8, 1)
-    p.setLineWidth(2)
-    p.line(50, logo_y-20, width-50, logo_y-20)
+    # Logo texts
+    p.setFillColor(HexColor('#00d4ff'))
+    p.setFont("Helvetica-Bold", 16)
     
-    # Footer
-    p.setFillColorRGB(0.3, 0.3, 0.3)
+    # ACADEMY logo
+    academy_logo = "ACADEMY"
+    academy_logo_width = p.stringWidth(academy_logo, "Helvetica-Bold", 16)
+    p.drawString(140 - academy_logo_width/2, logo_y, academy_logo)
+    
+    # ACADEMLO logo  
+    academlo_logo = "ACADEMLO"
+    academlo_logo_width = p.stringWidth(academlo_logo, "Helvetica-Bold", 16)
+    p.drawString(280 - academlo_logo_width/2, logo_y, academlo_logo)
+    
+    # EMERGENT logo
+    emergent_logo = "EMERGENT"
+    emergent_logo_width = p.stringWidth(emergent_logo, "Helvetica-Bold", 16)
+    p.drawString(420 - emergent_logo_width/2, logo_y, emergent_logo)
+    
+    # Partnership text
+    p.setFillColorRGB(0.6, 0.6, 0.6)
     p.setFont("Helvetica", 12)
-    footer_text = "Quantum Intelligence • Digital Autonomy • Augmented Reality"
-    footer_width = p.stringWidth(footer_text, "Helvetica", 12)
-    p.drawString(width/2 - footer_width/2, 80, footer_text)
+    partnership = "En asociación estratégica con"
+    partnership_width = p.stringWidth(partnership, "Helvetica", 12)
+    p.drawString((width - partnership_width)/2, logo_y + 30, partnership)
     
+    # Decorative elements around logos
+    p.setStrokeColor(HexColor('#00d4ff'))
+    p.setLineWidth(2)
+    p.line(50, logo_y-30, width-50, logo_y-30)
+    
+    # Certificate ID and security elements
+    p.setFillColorRGB(0.5, 0.5, 0.5)
+    p.setFont("Helvetica", 10)
     cert_id = f"ID de Certificado: {current_user.id[:8].upper()}"
-    cert_width = p.stringWidth(cert_id, "Helvetica", 12)
-    p.drawString(width/2 - cert_width/2, 60, cert_id)
+    cert_width = p.stringWidth(cert_id, "Helvetica", 10)
+    p.drawString((width - cert_width)/2, 120, cert_id)
+    
+    # Footer with impact
+    p.setFillColor(HexColor('#0080ff'))
+    p.setFont("Helvetica-Bold", 12)
+    footer_main = "QUANTUM INTELLIGENCE • DIGITAL AUTONOMY • AUGMENTED REALITY"
+    footer_width = p.stringWidth(footer_main, "Helvetica-Bold", 12)
+    p.drawString((width - footer_width)/2, 90, footer_main)
+    
+    # Final verification text
+    p.setFillColorRGB(0.4, 0.4, 0.4)
+    p.setFont("Helvetica", 9)
+    verification = "Certificado verificable en academy.emergent.sh"
+    verification_width = p.stringWidth(verification, "Helvetica", 9)
+    p.drawString((width - verification_width)/2, 70, verification)
+    
+    # Decorative corner elements
+    p.setFillColor(HexColor('#00d4ff'))
+    p.circle(80, 80, 15, fill=1)
+    p.circle(width-80, 80, 15, fill=1)
+    p.circle(80, height-80, 15, fill=1)
+    p.circle(width-80, height-80, 15, fill=1)
     
     p.save()
     
