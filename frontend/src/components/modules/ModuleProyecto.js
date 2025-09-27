@@ -65,7 +65,7 @@ export const ModuleProyecto = () => {
       toast.success(t('projectSubmittedSuccessfully'));
     } catch (error) {
       console.error('Error updating progress:', error);
-      toast.error('Error al enviar el proyecto');
+      toast.error(t('errorSubmittingProject'));
     } finally {
       setSubmitting(false);
     }
