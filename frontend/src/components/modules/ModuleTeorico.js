@@ -61,7 +61,7 @@ export const ModuleTeorico = () => {
       toast.success(t('questionCompletedProgress', { questionId, progress: response.data.teorico_progress }));
     } catch (error) {
       console.error('Error updating progress:', error);
-      toast.error('Error al actualizar el progreso');
+      toast.error(t('errorUpdatingProgress'));
     }
   };
 
