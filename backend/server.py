@@ -72,6 +72,7 @@ class ProgressUpdate(BaseModel):
     module: str  # 'teorico', 'escucha', 'prompt', 'proyecto'
     item_id: Optional[int] = None  # for specific questions/videos
     proyecto_url: Optional[str] = None
+    prompt_section: Optional[str] = None  # 'tips', 'examples', 'practice'
 
 class ChatMessage(BaseModel):
     message: str
