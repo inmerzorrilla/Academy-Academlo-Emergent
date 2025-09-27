@@ -296,6 +296,27 @@ export const ModuleProyecto = () => {
           </CardContent>
         </Card>
 
+        {/* Module Complete */}
+        {progress.proyecto_progress === 100 && (
+          <Card className="glass-card mt-8 border-green-500/50">
+            <CardContent className="p-8 text-center">
+              <div className="text-6xl mb-4">
+                🎆🎉🚀
+              </div>
+              <h3 className="text-3xl font-bold mb-4 text-gradient">
+                ¡Felicidades, Programador del Futuro!
+              </h3>
+              <p className="text-xl mb-6 text-gray-300">
+                Has completado todos los módulos de ACADEMY. ¡Ya estás listo para obtener tu certificado!
+              </p>
+              <Link to="/dashboard" className="btn-futuristic text-lg px-8 py-4">
+                <i className="fas fa-trophy mr-2"></i>
+                Ver Certificado en Dashboard
+              </Link>
+            </CardContent>
+          </Card>
+        )}
+
         {/* Academlo Advertisement */}
         <Card className="glass-card mt-12">
           <CardContent className="p-8 text-center">
@@ -317,27 +338,6 @@ export const ModuleProyecto = () => {
             </a>
           </CardContent>
         </Card>
-
-        {/* Module Complete */}
-        {progress.proyecto_progress === 100 && (
-          <Card className="glass-card mt-8 border-green-500/50">
-            <CardContent className="p-8 text-center">
-              <div className="text-6xl mb-4">
-                🎆🎉🚀
-              </div>
-              <h3 className="text-3xl font-bold mb-4 text-gradient">
-                ¡Felicidades, Programador del Futuro!
-              </h3>
-              <p className="text-xl mb-6 text-gray-300">
-                Has completado todos los módulos de ACADEMY. ¡Ya estás listo para obtener tu certificado!
-              </p>
-              <Link to="/dashboard" className="btn-futuristic text-lg px-8 py-4">
-                <i className="fas fa-trophy mr-2"></i>
-                Ver Certificado en Dashboard
-              </Link>
-            </CardContent>
-          </Card>
-        )}
       </main>
     </div>
   );
