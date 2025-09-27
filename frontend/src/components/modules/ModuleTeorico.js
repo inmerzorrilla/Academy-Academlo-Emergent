@@ -28,6 +28,10 @@ export const ModuleTeorico = () => {
     fetchContent();
     fetchProgress();
   }, []);
+  
+  useEffect(() => {
+    fetchContent(); // Re-fetch content when language changes
+  }, [language]);
 
   const fetchContent = async () => {
     try {
