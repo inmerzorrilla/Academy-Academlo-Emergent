@@ -15,23 +15,32 @@ export const ModuleHeader = ({
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <header className="relative z-10 p-4 sm:p-6 border-b border-gray-800">
+    <header className="relative z-10 p-3 sm:p-6 border-b border-gray-800 module-header-mobile">
       <div className="max-w-7xl mx-auto">
-        {/* Top Navigation */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-3 sm:space-y-0 mb-4">
-          <div className="flex items-center">
-            <Link to="/dashboard" className="btn-ghost text-sm">
-              <i className="fas fa-arrow-left mr-2"></i>
-              {t('backToDashboard')}
+        {/* Module Title - Moved to top for mobile */}
+        <div className="text-center mb-3 sm:mb-4">
+          <h1 className="text-lg sm:text-2xl font-bold text-gradient text-wrap-mobile">{moduleName}</h1>
+          <p className="text-xs sm:text-sm text-cyan-400">{moduleSubtitle}</p>
+        </div>
+        
+        {/* Navigation and Controls */}
+        <div className="flex flex-col space-y-3 sm:space-y-0 sm:flex-row sm:justify-between sm:items-center">
+          {/* Back button */}
+          <div className="flex items-center justify-center sm:justify-start">
+            <Link to="/dashboard" className="btn-ghost text-xs sm:text-sm">
+              <i className="fas fa-arrow-left mr-1 sm:mr-2"></i>
+              <span className="hidden sm:inline">{t('backToDashboard')}</span>
+              <span className="sm:hidden">{t('back')}</span>
             </Link>
           </div>
           
-          <div className="flex items-center space-x-2 flex-wrap">
+          {/* Control buttons */}
+          <div className="module-header-buttons">
             {showLanguageButtons && (
               <>
                 <button 
                   onClick={toggleLanguage}
-                  className={`px-3 py-1 text-xs rounded transition-all ${
+                  className={`px-2 py-1 text-xs rounded transition-all ${
                     language === 'es' 
                       ? 'bg-cyan-500 text-white' 
                       : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
@@ -42,7 +51,7 @@ export const ModuleHeader = ({
                 </button>
                 <button 
                   onClick={toggleLanguage}
-                  className={`px-3 py-1 text-xs rounded transition-all ${
+                  className={`px-2 py-1 text-xs rounded transition-all ${
                     language === 'en' 
                       ? 'bg-cyan-500 text-white' 
                       : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
@@ -57,23 +66,17 @@ export const ModuleHeader = ({
             {showThemeButton && (
               <button 
                 onClick={toggleTheme}
-                className="btn-ghost text-sm"
+                className="btn-ghost text-xs px-2 py-1"
                 data-testid="theme-toggle"
               >
-                <i className={`fas ${theme === 'dark' ? 'fa-sun' : 'fa-moon'} mr-2`}></i>
+                <i className={`fas ${theme === 'dark' ? 'fa-sun' : 'fa-moon'}`}></i>
               </button>
             )}
             
-            <Badge className="bg-orange-500 text-xs">
-              {progress}% {t('completed')}
+            <Badge className="bg-orange-500 text-xs badge px-2 py-1">
+              {progress}%
             </Badge>
           </div>
-        </div>
-        
-        {/* Module Title */}
-        <div className="text-center">
-          <h1 className="text-xl sm:text-2xl font-bold text-gradient">{moduleName}</h1>
-          <p className="text-xs sm:text-sm text-cyan-400">{moduleSubtitle}</p>
         </div>
       </div>
     </header>
