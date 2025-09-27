@@ -74,7 +74,7 @@ export const ModulePrompt = () => {
       } else if (section === 'examples') {
         toast.success(t('exampleCompletedProgress', { itemId }));
       } else if (section === 'practice') {
-        toast.success('¡Práctica completada! +20%');
+        toast.success(t('practiceCompletedProgress'));
       }
     } catch (error) {
       console.error('Error updating progress:', error);
