@@ -29,6 +29,34 @@ export const AuthProvider = ({ children }) => {
     } else {
       setLoading(false);
     }
+
+    // Remove Emergent badge periodically
+    const removeEmergentBadge = () => {
+      const selectors = [
+        'div[style*="Made with Emergent"]',
+        '[data-emergent-badge]',
+        '.emergent-badge',
+        '#emergent-badge',
+        'div[style*="position: fixed"][style*="bottom"][style*="right"]:not(.chat-widget)',
+        'div[style*="z-index: 9999"]'
+      ];
+      
+      selectors.forEach(selector => {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(el => {
+          if (el && !el.classList.contains('chat-widget') && !el.dataset.testid?.includes('chat')) {
+            el.style.display = 'none';
+            el.remove();
+          }
+        });
+      });
+    };
+
+    // Run immediately and then every 2 seconds
+    removeEmergentBadge();
+    const interval = setInterval(removeEmergentBadge, 2000);
+
+    return () => clearInterval(interval);
   }, [token]);
 
   const verifyToken = async () => {
