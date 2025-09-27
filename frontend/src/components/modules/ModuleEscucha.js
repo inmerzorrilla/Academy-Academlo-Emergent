@@ -107,6 +107,23 @@ export const ModuleEscucha = () => {
           </div>
           
           <div className="flex items-center space-x-4">
+            <button 
+              onClick={toggleLanguage}
+              className="btn-ghost text-sm"
+              data-testid="language-toggle"
+            >
+              <i className="fas fa-globe mr-2"></i>
+              {language === 'es' ? 'EN' : 'ES'}
+            </button>
+            
+            <button 
+              onClick={toggleTheme}
+              className="btn-ghost text-sm"
+              data-testid="theme-toggle"
+            >
+              <i className={`fas ${theme === 'dark' ? 'fa-sun' : 'fa-moon'} mr-2`}></i>
+            </button>
+            
             <Badge className="bg-green-500">
               {progress.escucha_progress}% Completado
             </Badge>
