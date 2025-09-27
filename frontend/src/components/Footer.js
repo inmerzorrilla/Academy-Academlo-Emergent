@@ -61,7 +61,7 @@ export const Footer = () => {
           {/* Partners */}
           <div className="md:col-span-1">
             <h4 className="text-lg font-semibold text-cyan-400 mb-4">
-              {t('language') === 'es' ? 'Nuestros Socios' : 'Our Partners'}
+              {t('ourPartners')}
             </h4>
             <div className="space-y-3">
               <a 
