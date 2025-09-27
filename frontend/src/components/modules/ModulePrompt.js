@@ -139,7 +139,7 @@ export const ModulePrompt = () => {
         recorder.start();
         setMediaRecorder(recorder);
         setIsRecording(true);
-        toast.success('Grabación iniciada...');
+        toast.success(t('recordingStartedBasic'));
       }
     } catch (error) {
       console.error('Error accessing microphone:', error);
