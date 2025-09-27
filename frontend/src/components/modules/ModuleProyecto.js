@@ -268,7 +268,7 @@ export const ModuleProyecto = () => {
                     data-testid="project-url-input"
                   />
                   <p className="text-xs text-gray-400 mt-2">
-                    Debe ser una URL válida de un proyecto creado en Emergent
+                    {t('validEmergentUrlRequired')}
                   </p>
                 </div>
                 
