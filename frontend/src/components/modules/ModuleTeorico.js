@@ -35,7 +35,7 @@ export const ModuleTeorico = () => {
       setQuestions(response.data);
     } catch (error) {
       console.error('Error fetching content:', error);
-      toast.error('Error al cargar el contenido');
+      toast.error(t('errorLoadingContent'));
     }
   };
 
