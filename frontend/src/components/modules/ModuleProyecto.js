@@ -313,7 +313,6 @@ export const ModuleProyecto = () => {
 
       <Footer />
       <ChatWidget />
-      <ModuleFooter />
     </div>
   );
 };
