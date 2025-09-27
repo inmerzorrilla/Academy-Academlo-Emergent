@@ -117,7 +117,7 @@ export const ModuleProyecto = () => {
             </button>
             
             <Badge className="bg-orange-500">
-              {progress.proyecto_progress}% Completado
+              {progress.proyecto_progress}% {t('completed')}
             </Badge>
           </div>
         </div>
