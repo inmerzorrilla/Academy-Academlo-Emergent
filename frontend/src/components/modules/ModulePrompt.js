@@ -404,13 +404,13 @@ export const ModulePrompt = () => {
                     data-testid="voice-record-btn"
                   >
                     <i className={`fas ${isRecording ? 'fa-stop' : 'fa-microphone'} mr-2`}></i>
-                    {isRecording ? 'Detener Grabación' : 'Usar Micrófono'}
+                    {isRecording ? t('stopRecording') : t('useMicrophone')}
                   </Button>
                   
                   {isRecording && (
                     <div className="flex items-center text-red-400">
                       <div className="w-3 h-3 bg-red-400 rounded-full animate-pulse mr-2"></div>
-                      Grabando...
+                      {t('recording')}
                     </div>
                   )}
                 </div>
