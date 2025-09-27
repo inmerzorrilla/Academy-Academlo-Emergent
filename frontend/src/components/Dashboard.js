@@ -286,40 +286,7 @@ export const Dashboard = () => {
         </Card>
       </main>
 
-      {/* Footer */}
-      <footer className="relative z-10 py-8 border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="flex items-center space-x-6">
-              <a 
-                href="https://synapsys-technology.abacusai.app/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn-ghost text-sm"
-                data-testid="synapsys-link"
-              >
-                <i className="fas fa-bolt mr-2"></i>
-                {t('urgentProject')} - Synapsys
-              </a>
-              
-              <a 
-                href="https://wa.me/528136037100" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn-ghost text-sm text-green-400 border-green-400 hover:bg-green-400"
-                data-testid="whatsapp-link"
-              >
-                <i className="fab fa-whatsapp mr-2"></i>
-                {t('urgentHelp')}
-              </a>
-            </div>
-            
-            <div className="social-links-container">
-              <SocialLinks />
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       <ChatWidget />
     </div>
