@@ -69,6 +69,10 @@ const translations = {
     back: 'Back',
     promptModule: 'Prompt Module',
     practiceWithAI: 'Practice with AI',
+    
+    // PayPal Donation
+    useful: 'Useful?',
+    buyMeACoffee: 'Buy me a Coffee',
     close: 'Close',
     continue: 'Continue',
     
