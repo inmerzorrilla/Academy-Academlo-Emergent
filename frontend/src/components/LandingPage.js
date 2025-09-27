@@ -27,7 +27,7 @@ export const LandingPage = () => {
               <h1 className="text-2xl font-bold text-gradient glitch" data-text="ACADEMY">
                 ACADEMY
               </h1>
-              <p className="text-sm text-cyan-400">Powered by Emergent + Academlo</p>
+              <p className="text-sm text-cyan-400">{t('poweredBy')}</p>
             </div>
           </div>
           
