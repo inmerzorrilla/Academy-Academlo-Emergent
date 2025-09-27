@@ -57,10 +57,10 @@ export const ModuleEscucha = () => {
       });
       
       setProgress(response.data);
-      toast.success(`¡Video ${videoId} completado! Progreso: ${response.data.escucha_progress}%`);
+      toast.success(t('videoCompletedProgress', { videoId, progress: response.data.escucha_progress }));
     } catch (error) {
       console.error('Error updating progress:', error);
-      toast.error('Error al actualizar el progreso');
+      toast.error(t('errorUpdatingProgress'));
     }
   };
 
