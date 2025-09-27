@@ -267,6 +267,7 @@ export const ModuleEscucha = () => {
       </main>
 
       <ChatWidget />
+      <ModuleFooter />
     </div>
   );
 };
