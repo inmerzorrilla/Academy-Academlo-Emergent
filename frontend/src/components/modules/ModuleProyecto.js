@@ -308,7 +308,7 @@ export const ModuleProyecto = () => {
                 {t('congratsFutureProgrammer')}
               </h3>
               <p className="text-xl mb-6 text-gray-300">
-                Has completado todos los módulos de ACADEMY. ¡Ya estás listo para obtener tu certificado!
+                {t('completedAllModulesReadyForCertificate')}
               </p>
               <Link to="/dashboard" className="btn-futuristic text-lg px-8 py-4">
                 <i className="fas fa-trophy mr-2"></i>
