@@ -171,19 +171,19 @@ export const ModuleProyecto = () => {
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start">
                       <span className="text-cyan-400 mr-2">•</span>
-                      Un chatbot inteligente con IA
+                      {t('projectIdea1')}
                     </li>
                     <li className="flex items-start">
                       <span className="text-cyan-400 mr-2">•</span>
-                      Una aplicación web con funcionalidades avanzadas
+                      {t('projectIdea2')}
                     </li>
                     <li className="flex items-start">
                       <span className="text-cyan-400 mr-2">•</span>
-                      Un sistema de automatización inteligente
+                      {t('projectIdea3')}
                     </li>
                     <li className="flex items-start">
                       <span className="text-cyan-400 mr-2">•</span>
-                      Una herramienta que resuelva un problema real
+                      {t('projectIdea4')}
                     </li>
                   </ul>
                 </div>
