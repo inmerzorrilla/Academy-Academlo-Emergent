@@ -376,16 +376,34 @@ body {
   z-index: 999;
 }
 
-/* Remove Emergent Badge */
+/* Remove Emergent Badge - Multiple strategies */
 #emergent-badge,
 [data-emergent-badge],
 .emergent-badge,
-div[style*="position: fixed"][style*="bottom"][style*="right"]:not(.chat-widget):not(.social-links-container) {
+[data-testid*="emergent"],
+[class*="emergent"],
+[id*="emergent"],
+div[style*="Made with Emergent"],
+div:contains("Made with Emergent") {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+/* Hide fixed positioned bottom-right elements except our components */
+body > div[style*="position: fixed"][style*="bottom: 20px"][style*="right: 20px"]:not(.chat-widget):not(.social-links-container) {
   display: none !important;
 }
 
-/* Hide any fixed positioned elements that look like Emergent badge */
-body > div:last-child:not(.App):not(#root) {
+/* Additional protection */
+*[data-qa*="emergent"],
+*[data-testid*="badge"],
+div[style*="z-index: 9999"] + div[style*="position: fixed"] {
   display: none !important;
 }
 
