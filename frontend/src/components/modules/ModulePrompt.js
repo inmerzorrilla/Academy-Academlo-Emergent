@@ -239,7 +239,7 @@ export const ModulePrompt = () => {
           <CardHeader>
             <CardTitle className="text-xl text-gradient flex items-center">
               <i className="fas fa-lightbulb mr-2"></i>
-              3 Elementos Básicos de un Prompt Efectivo
+              {t('promptBasicTips')}
               {progress.prompt_tips_completed && (
                 <i className="fas fa-check-circle text-green-500 ml-3"></i>
               )}
@@ -248,16 +248,16 @@ export const ModulePrompt = () => {
           <CardContent className="space-y-4">
             <div className="grid md:grid-cols-3 gap-4">
               <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 p-4 rounded-lg border border-blue-500/20">
-                <h4 className="font-semibold text-blue-400 mb-2">1. Contexto Claro</h4>
-                <p className="text-sm text-gray-300">Define el rol y el contexto específico para obtener respuestas más precisas.</p>
+                <h4 className="font-semibold text-blue-400 mb-2">{t('clearContext')}</h4>
+                <p className="text-sm text-primary">{t('clearContextDesc')}</p>
               </div>
               <div className="bg-gradient-to-r from-green-500/10 to-teal-500/10 p-4 rounded-lg border border-green-500/20">
-                <h4 className="font-semibold text-green-400 mb-2">2. Instrucciones Específicas</h4>
-                <p className="text-sm text-gray-300">Sé específico sobre qué quieres que haga y cómo quieres el resultado.</p>
+                <h4 className="font-semibold text-green-400 mb-2">{t('specificInstructions')}</h4>
+                <p className="text-sm text-primary">{t('specificInstructionsDesc')}</p>
               </div>
               <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 p-4 rounded-lg border border-purple-500/20">
-                <h4 className="font-semibold text-purple-400 mb-2">3. Ejemplos o Formato</h4>
-                <p className="text-sm text-gray-300">Proporciona ejemplos del resultado esperado o especifica el formato deseado.</p>
+                <h4 className="font-semibold text-purple-400 mb-2">{t('examplesFormat')}</h4>
+                <p className="text-sm text-primary">{t('examplesFormatDesc')}</p>
               </div>
             </div>
             
@@ -269,12 +269,12 @@ export const ModulePrompt = () => {
                   data-testid="complete-tips"
                 >
                   <i className="fas fa-check mr-2"></i>
-                  Marcar Consejos como Leídos
+                  {t('markTipsRead')}
                 </Button>
               ) : (
                 <div className="flex items-center justify-center text-green-400">
                   <i className="fas fa-check-circle mr-2"></i>
-                  ¡Consejos Completados!
+                  {t('tipsCompleted')}
                 </div>
               )}
             </div>
