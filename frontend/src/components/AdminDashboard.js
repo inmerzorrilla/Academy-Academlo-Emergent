@@ -68,7 +68,7 @@ export const AdminDashboard = () => {
         fetchUsers(); // Refresh the list
       } catch (error) {
         console.error('Error deleting user:', error);
-        toast.error('Error al eliminar usuario');
+        toast.error(t('errorDeletingUser'));
       }
     }
   };
