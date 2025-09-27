@@ -94,10 +94,7 @@ export const Footer = () => {
             <div className="flex flex-col space-y-3">
               <SocialLinks />
               <p className="text-xs text-gray-500 mt-3">
-                {t('language') === 'es' 
-                  ? 'Únete a nuestra comunidad de desarrolladores'
-                  : 'Join our developer community'
-                }
+                {t('joinDeveloperCommunity')}
               </p>
             </div>
           </div>
