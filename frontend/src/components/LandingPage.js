@@ -131,7 +131,7 @@ export const LandingPage = () => {
               {
                 icon: 'fa-project-diagram',
                 title: t('proyecto'),
-                description: 'Crea proyectos reales usando la plataforma Emergent',
+                description: t('proyectoDesc'),
                 color: 'from-orange-500 to-red-500'
               }
             ].map((module, index) => (
