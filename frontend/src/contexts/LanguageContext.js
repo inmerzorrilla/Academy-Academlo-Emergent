@@ -398,6 +398,10 @@ const translations = {
     wantToBeCompleteProgrammer: '¿Quieres ser un programador completo?',
     studyAtAcademlo: 'Estudia en Academlo y complementa tu educación con ACADEMY',
     
+    // Landing Page
+    learningModules: 'Módulos de Aprendizaje',
+    poweredBy: 'Powered by Emergent + Academlo',
+    
     // Project Module
     createYourProject: 'Crea tu Proyecto con Emergent',
     yourMission: 'Tu misión',
