@@ -64,7 +64,7 @@ export const AdminDashboard = () => {
     if (window.confirm('¿Estás seguro de que quieres eliminar este usuario?')) {
       try {
         await axios.delete(`${API}/admin/users/${userId}`);
-        toast.success('Usuario eliminado exitosamente');
+        toast.success(t('userDeletedSuccessfully'));
         fetchUsers(); // Refresh the list
       } catch (error) {
         console.error('Error deleting user:', error);
