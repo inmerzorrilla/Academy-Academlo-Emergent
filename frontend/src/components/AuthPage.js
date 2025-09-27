@@ -50,7 +50,7 @@ export const AuthPage = () => {
         toast.error(result.message);
       }
     } catch (error) {
-      toast.error('Error occurred. Please try again.');
+      toast.error(t('errorOccurred'));
     } finally {
       setLoading(false);
     }
