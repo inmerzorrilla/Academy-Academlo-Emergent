@@ -181,11 +181,11 @@ export const Dashboard = () => {
       <main className="relative z-10 max-w-7xl mx-auto px-6 py-8">
         {/* Welcome Section */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-gradient glitch" data-text="Comandante de la IA">
-            Bienvenido, Comandante de la IA
+          <h2 className="text-4xl font-bold mb-4 text-gradient glitch" data-text={t('welcomeCommander')}>
+            {t('welcomeCommander')}
           </h2>
           <p className="text-xl text-gray-300 mb-8">
-            Bienvenido por Academlo - Emergent
+            {t('academloEmergentWelcome')}
           </p>
           
           {/* Overall Progress */}
