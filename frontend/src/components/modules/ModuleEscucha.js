@@ -212,7 +212,7 @@ export const ModuleEscucha = () => {
                     ) : (
                       <div className="flex items-center text-green-400">
                         <i className="fas fa-check-circle mr-2"></i>
-                        ¡Video Completado!
+                        {t('videoCompleted')}
                       </div>
                     )}
                   </div>
