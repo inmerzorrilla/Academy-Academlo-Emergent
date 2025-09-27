@@ -356,6 +356,81 @@ async def get_prompt_content():
     ]
     return examples
 
+# Certificate Generation
+@api_router.get("/user/certificate")
+async def generate_certificate(current_user: User = Depends(get_current_user)):
+    progress = await db.user_progress.find_one({"user_id": current_user.id})
+    if not progress:
+        raise HTTPException(status_code=404, detail="Progress not found")
+    
+    progress_obj = UserProgress(**progress)
+    total_progress = (progress_obj.teorico_progress + progress_obj.escucha_progress + 
+                     progress_obj.prompt_progress + progress_obj.proyecto_progress) / 4
+    
+    if total_progress < 100:
+        raise HTTPException(status_code=400, detail="Course not completed")
+    
+    # Generate PDF certificate (simplified version)
+    from reportlab.pdfgen import canvas
+    from reportlab.lib.pagesizes import letter, A4
+    from reportlab.lib.units import inch
+    from datetime import datetime
+    import io
+    
+    buffer = io.BytesIO()
+    
+    # Create the PDF
+    p = canvas.Canvas(buffer, pagesize=A4)
+    width, height = A4
+    
+    # Certificate design
+    p.setFillColorRGB(0, 0.8, 1)  # Cyan color
+    p.setFont("Helvetica-Bold", 36)
+    p.drawCentredText(width/2, height-100, "ACADEMY CERTIFICATE")
+    
+    p.setFillColorRGB(0, 0, 0)
+    p.setFont("Helvetica", 24)
+    p.drawCentredText(width/2, height-200, "¡Felicidades Programador del Futuro!")
+    
+    p.setFont("Helvetica", 18)
+    p.drawCentredText(width/2, height-280, f"Certificamos que {current_user.name}")
+    p.drawCentredText(width/2, height-320, "ha completado exitosamente el curso de")
+    
+    p.setFillColorRGB(0, 0.8, 1)
+    p.setFont("Helvetica-Bold", 20)
+    p.drawCentredText(width/2, height-360, "Deep Agents & Programación con IA")
+    
+    p.setFillColorRGB(0, 0, 0)
+    p.setFont("Helvetica", 14)
+    p.drawCentredText(width/2, height-420, f"Fecha de completación: {datetime.now().strftime('%d de %B, %Y')}")
+    
+    # Logos section
+    p.setFont("Helvetica-Bold", 12)
+    p.drawString(50, 100, "ACADEMY")
+    p.drawString(200, 100, "ACADEMLO")
+    p.drawString(350, 100, "EMERGENT")
+    
+    # Footer
+    p.setFont("Helvetica", 10)
+    p.drawCentredText(width/2, 50, "Quantum Intelligence • Digital Autonomy • Augmented Reality")
+    
+    p.save()
+    
+    # Update certificate generated flag
+    await db.user_progress.update_one(
+        {"user_id": current_user.id},
+        {"$set": {"certificate_generated": True}}
+    )
+    
+    buffer.seek(0)
+    
+    from fastapi.responses import StreamingResponse
+    return StreamingResponse(
+        io.BytesIO(buffer.getvalue()),
+        media_type="application/pdf",
+        headers={"Content-Disposition": "attachment; filename=academy_certificate.pdf"}
+    )
+
 # Chat Route (Simple chatbot without external API)
 @api_router.post("/chat")
 async def chat(message: dict):
