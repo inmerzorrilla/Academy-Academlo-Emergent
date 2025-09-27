@@ -360,6 +360,19 @@ body {
   z-index: 1000;
 }
 
+/* Social Links Positioning */
+.social-links-container {
+  position: fixed;
+  bottom: 20px;
+  right: 100px;
+  z-index: 999;
+}
+
+/* Remove Emergent Badge */
+#emergent-badge {
+  display: none !important;
+}
+
 .chat-button {
   width: 60px;
   height: 60px;
