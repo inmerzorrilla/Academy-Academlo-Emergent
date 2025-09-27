@@ -178,13 +178,13 @@ export const Dashboard = () => {
       </header>
 
       {/* Main Content */}
-      <main className="relative z-10 max-w-7xl mx-auto px-6 py-8">
+      <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Welcome Section */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-gradient glitch" data-text={t('welcomeCommander')}>
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-4xl font-bold mb-4 text-gradient glitch" data-text={t('welcomeCommander')}>
             {t('welcomeCommander')}
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 px-4">
             {t('academloEmergentWelcome')}
           </p>
           
