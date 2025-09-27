@@ -192,7 +192,7 @@ export const Dashboard = () => {
           <Card className="glass-card max-w-2xl mx-auto">
             <CardHeader>
               <CardTitle className="text-2xl text-gradient">
-                Progreso General: {getTotalProgress()}%
+                {t('overallProgress')}: {getTotalProgress()}%
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -200,7 +200,7 @@ export const Dashboard = () => {
                 <Progress value={getTotalProgress()} className="h-4" />
               </div>
               <p className="text-gray-400 mb-4">
-                25% Teórico - 25% Escucha - 25% Prompt - 25% Proyecto
+                {t('progressDescription')}
               </p>
               
               {getTotalProgress() === 100 ? (
