@@ -637,38 +637,100 @@ async def generate_certificate(current_user: User = Depends(get_current_user)):
         }
     )
 
-# Chat Route (Simple chatbot without external API)
+# Enhanced Chat Route - Advanced AI-focused chatbot
 @api_router.post("/chat")
 async def chat(message: dict):
     user_message = message.get("message", "").lower()
     
-    # Simple rule-based responses about ACADEMY
-    if "que es" in user_message or "qué es" in user_message:
+    # Detect language (simple detection)
+    is_english = any(word in user_message for word in ["what", "how", "why", "where", "when", "which", "who", "can", "do", "does", "is", "are", "will", "would", "should"])
+    
+    # Advanced AI and ACADEMY knowledge base
+    if "que es" in user_message or "qué es" in user_message or "what is" in user_message or "what's" in user_message:
         if "academy" in user_message:
-            response = "ACADEMY es una plataforma educativa futurista diseñada para formar a los programadores del futuro. Ofrecemos cursos sobre Deep Agents, IA, programación y desarrollo de proyectos con tecnología emergente."
-        elif "deep agent" in user_message:
-            response = "Un Deep Agent es un sistema de IA avanzado que combina redes neuronales profundas con agentes inteligentes para resolver problemas complejos de manera autónoma."
-        elif "modulo" in user_message or "módulo" in user_message:
-            response = "Nuestros módulos incluyen: 1) Teórico (conceptos fundamentales), 2) Escucha (videos educativos), 3) Prompt (práctica con IA), y 4) Proyecto (desarrollo práctico con Emergent)."
+            response = "ACADEMY es la plataforma educativa más avanzada para formar programadores del futuro. Combinamos Deep Agents, IA generativa y tecnologías emergentes. ¡Tu futuro en la programación inteligente comienza aquí!" if not is_english else "ACADEMY is the most advanced educational platform to train future programmers. We combine Deep Agents, generative AI and emerging technologies. Your future in intelligent programming starts here!"
+        elif "deep agent" in user_message or "agent" in user_message:
+            response = "Un Deep Agent es un sistema de IA revolucionario que combina redes neuronales profundas con agentes autónomos. En ACADEMY te enseñamos a crear estos sistemas que son el futuro de la programación inteligente." if not is_english else "A Deep Agent is a revolutionary AI system that combines deep neural networks with autonomous agents. At ACADEMY we teach you to create these systems that are the future of intelligent programming."
+        elif "chatbot" in user_message or "bot" in user_message:
+            response = "Un chatbot es un programa de IA que simula conversaciones humanas usando procesamiento de lenguaje natural. En ACADEMY aprendes a crear chatbots avanzados con Deep Agents para el futuro de la interacción digital." if not is_english else "A chatbot is an AI program that simulates human conversations using natural language processing. At ACADEMY you learn to create advanced chatbots with Deep Agents for the future of digital interaction."
+        elif "machine learning" in user_message or "ml" in user_message or "aprendizaje" in user_message:
+            response = "Machine Learning es el corazón de la IA moderna. Permite a las máquinas aprender sin programación explícita. En ACADEMY te enseñamos ML avanzado aplicado a Deep Agents y desarrollo futuro." if not is_english else "Machine Learning is the heart of modern AI. It allows machines to learn without explicit programming. At ACADEMY we teach you advanced ML applied to Deep Agents and future development."
+        elif "inteligencia artificial" in user_message or "artificial intelligence" in user_message or "ai" in user_message:
+            response = "La Inteligencia Artificial es la tecnología que está transformando el mundo. En ACADEMY no solo aprendes IA, sino que te conviertes en un arquitecto del futuro digital con Deep Agents y programación inteligente." if not is_english else "Artificial Intelligence is the technology that is transforming the world. At ACADEMY you don't just learn AI, you become an architect of the digital future with Deep Agents and intelligent programming."
+        elif "neural" in user_message or "neuronal" in user_message:
+            response = "Las redes neuronales son la base de la IA moderna, inspiradas en el cerebro humano. En ACADEMY aprendes a implementar redes neuronales avanzadas para crear Deep Agents revolucionarios." if not is_english else "Neural networks are the foundation of modern AI, inspired by the human brain. At ACADEMY you learn to implement advanced neural networks to create revolutionary Deep Agents."
+        elif "prompt" in user_message:
+            response = "Un prompt es una instrucción para IA que determina la calidad de la respuesta. En ACADEMY te enseñamos prompt engineering avanzado para maximizar el potencial de los Deep Agents." if not is_english else "A prompt is an instruction for AI that determines the quality of the response. At ACADEMY we teach you advanced prompt engineering to maximize the potential of Deep Agents."
         else:
-            response = "¿Sobre qué tema específico de ACADEMY te gustaría saber más? Puedo ayudarte con información sobre nuestros módulos, certificaciones o el proceso de aprendizaje."
-    elif "como" in user_message or "cómo" in user_message:
-        if "funciona" in user_message:
-            response = "ACADEMY funciona mediante un sistema de progreso por módulos. Completas cada módulo (25% cada uno) hasta alcanzar el 100% y obtener tu certificado como Programador del Futuro."
-        elif "empezar" in user_message or "comenzar" in user_message:
-            response = "Para empezar, regístrate en la plataforma, completa tu perfil y comienza con el módulo Teórico. Cada módulo te acerca más a convertirte en un experto en desarrollo con IA."
-        else:
-            response = "Puedo ayudarte con información sobre cómo usar ACADEMY, cómo completar los módulos, o cómo obtener tu certificación."
-    elif "certificado" in user_message:
-        response = "Al completar los 4 módulos (100% de progreso), obtienes un certificado PDF profesional con los logos de Academy, Academlo y Emergent que te acredita como 'Programador del Futuro'."
-    elif "progreso" in user_message:
-        response = "Tu progreso se divide en 4 módulos de 25% cada uno: Teórico, Escucha, Prompt y Proyecto. Puedes ver tu avance en tiempo real en tu dashboard personal."
-    elif "ayuda" in user_message or "support" in user_message or "whatsapp" in user_message:
-        response = "Para cualquier duda, te dejo nuestro número de WhatsApp directo: +528136037100. Estoy aquí para ayudarte 24/7 con preguntas sobre ACADEMY."
+            response = "¿Qué tema específico de IA y programación futuro te interesa? En ACADEMY cubrimos desde Deep Agents hasta desarrollo con IA. ¡Pregúntame sobre cualquier concepto!" if not is_english else "What specific topic of AI and future programming interests you? At ACADEMY we cover everything from Deep Agents to AI development. Ask me about any concept!"
+    
+    elif "como" in user_message or "cómo" in user_message or "how" in user_message:
+        if "funciona" in user_message or "works" in user_message:
+            if "academy" in user_message:
+                response = "ACADEMY funciona con un sistema revolucionario de 4 módulos: Teórico (fundamentos IA), Escucha (videos expertos), Prompt (ingeniería avanzada) y Proyecto (Deep Agents reales). ¡25% por módulo hacia tu futuro!" if not is_english else "ACADEMY works with a revolutionary 4-module system: Theoretical (AI fundamentals), Listen (expert videos), Prompt (advanced engineering) and Project (real Deep Agents). 25% per module towards your future!"
+            elif "ia" in user_message or "ai" in user_message:
+                response = "La IA funciona procesando datos, reconociendo patrones y tomando decisiones. En ACADEMY te enseñamos cómo crear sistemas de IA que evolucionan y aprenden. ¡El futuro de la programación!" if not is_english else "AI works by processing data, recognizing patterns and making decisions. At ACADEMY we teach you how to create AI systems that evolve and learn. The future of programming!"
+        elif "empezar" in user_message or "comenzar" in user_message or "start" in user_message:
+            response = "¡Empezar en ACADEMY es fácil! 1) Regístrate, 2) Comienza con el módulo Teórico, 3) Avanza por los 4 módulos, 4) Obtén tu certificado como Programador del Futuro. ¡Tu viaje hacia la IA comienza ahora!" if not is_english else "Starting at ACADEMY is easy! 1) Register, 2) Start with the Theoretical module, 3) Advance through the 4 modules, 4) Get your certificate as Future Programmer. Your AI journey starts now!"
+        elif "crear" in user_message or "create" in user_message:
+            response = "En ACADEMY aprendes a crear Deep Agents, chatbots inteligentes, sistemas de IA y proyectos revolucionarios. Usamos Emergent como plataforma de desarrollo para proyectos reales." if not is_english else "At ACADEMY you learn to create Deep Agents, intelligent chatbots, AI systems and revolutionary projects. We use Emergent as a development platform for real projects."
+    
+    elif "por que" in user_message or "por qué" in user_message or "why" in user_message:
+        if "academy" in user_message:
+            response = "ACADEMY es diferente porque combinamos teoría avanzada, práctica real y tecnología emergente. No solo aprendes programación, te conviertes en un arquitecto del futuro digital con Deep Agents." if not is_english else "ACADEMY is different because we combine advanced theory, real practice and emerging technology. You don't just learn programming, you become an architect of the digital future with Deep Agents."
+        elif "importante" in user_message or "important" in user_message:
+            response = "La IA es importante porque está redefiniendo todo: trabajo, comunicación, creatividad. En ACADEMY te preparamos para liderar esta revolución tecnológica como Programador del Futuro." if not is_english else "AI is important because it's redefining everything: work, communication, creativity. At ACADEMY we prepare you to lead this technological revolution as a Future Programmer."
+    
+    elif "donde" in user_message or "dónde" in user_message or "where" in user_message:
+        response = "ACADEMY está disponible online 24/7. Accede desde cualquier lugar del mundo. También tenemos integración con Emergent y partnerships con Academlo para una experiencia completa." if not is_english else "ACADEMY is available online 24/7. Access from anywhere in the world. We also have integration with Emergent and partnerships with Academlo for a complete experience."
+    
+    elif "cuando" in user_message or "cuándo" in user_message or "when" in user_message:
+        response = "¡El momento perfecto para aprender IA es AHORA! La revolución de los Deep Agents ya comenzó. En ACADEMY puedes empezar inmediatamente y completar a tu ritmo." if not is_english else "The perfect time to learn AI is NOW! The Deep Agents revolution has already begun. At ACADEMY you can start immediately and complete at your own pace."
+    
+    elif "modulo" in user_message or "módulo" in user_message or "module" in user_message:
+        response = "Los 4 módulos de ACADEMY: 1) TEÓRICO: Fundamentos de Deep Agents y IA, 2) ESCUCHA: Videos de expertos y casos reales, 3) PROMPT: Ingeniería avanzada de prompts, 4) PROYECTO: Desarrollo real con Emergent. ¡25% cada uno!" if not is_english else "ACADEMY's 4 modules: 1) THEORETICAL: Deep Agents and AI fundamentals, 2) LISTEN: Expert videos and real cases, 3) PROMPT: Advanced prompt engineering, 4) PROJECT: Real development with Emergent. 25% each!"
+    
+    elif "certificado" in user_message or "certificate" in user_message:
+        response = "El certificado de ACADEMY te acredita como 'PROGRAMADOR DEL FUTURO' 🚀. Incluye logos de Academy, Academlo y Emergent. Es tu pasaporte al mundo de la IA y Deep Agents profesional." if not is_english else "ACADEMY's certificate accredits you as 'FUTURE PROGRAMMER' 🚀. Includes logos from Academy, Academlo and Emergent. It's your passport to the world of professional AI and Deep Agents."
+    
     elif "emergent" in user_message:
-        response = "Emergent es nuestra plataforma partner donde podrás crear proyectos reales de IA. En el módulo final, usarás Emergent para desarrollar tu proyecto y completar tu certificación."
+        response = "Emergent es nuestra plataforma partner para crear proyectos reales de IA. En el módulo 4 de ACADEMY, usarás Emergent para desarrollar tu Deep Agent final. ¡Teoría + Práctica = Futuro!" if not is_english else "Emergent is our partner platform for creating real AI projects. In module 4 of ACADEMY, you'll use Emergent to develop your final Deep Agent. Theory + Practice = Future!"
+    
+    elif "academlo" in user_message:
+        response = "Academlo es nuestro partner educativo que complementa tu formación. Mientras ACADEMY te especializa en Deep Agents e IA, Academlo ofrece formación completa en desarrollo. ¡La combinación perfecta!" if not is_english else "Academlo is our educational partner that complements your training. While ACADEMY specializes you in Deep Agents and AI, Academlo offers complete development training. The perfect combination!"
+    
+    elif "futuro" in user_message or "future" in user_message:
+        response = "El futuro de la programación son los Deep Agents y la IA generativa. En ACADEMY te preparamos para ese futuro HOY. No seas espectador, ¡conviértete en protagonista de la revolución tecnológica!" if not is_english else "The future of programming is Deep Agents and generative AI. At ACADEMY we prepare you for that future TODAY. Don't be a spectator, become the protagonist of the technological revolution!"
+    
+    elif "ayuda" in user_message or "support" in user_message or "whatsapp" in user_message or "help" in user_message:
+        response = "Para cualquier duda, te dejo nuestro número de WhatsApp directo: +528136037100 📱. También puedo resolver tus preguntas sobre IA, Deep Agents, programación y todo lo relacionado con ACADEMY 24/7." if not is_english else "For any questions, here's our direct WhatsApp number: +528136037100 📱. I can also answer your questions about AI, Deep Agents, programming and everything related to ACADEMY 24/7."
+    
+    elif "precio" in user_message or "cost" in user_message or "price" in user_message:
+        response = "¡La inversión en tu futuro como Programador de IA es invaluable! En ACADEMY ofrecemos acceso a conocimiento de vanguardia en Deep Agents. Contacta al +528136037100 para info detallada." if not is_english else "The investment in your future as an AI Programmer is invaluable! At ACADEMY we offer access to cutting-edge knowledge in Deep Agents. Contact +528136037100 for detailed info."
+    
+    # Error tolerance - handle misspellings and variations
+    elif any(word in user_message for word in ["acedemy", "academi", "akademy", "academie"]):
+        response = "¿Te refieres a ACADEMY? 😊 Somos la plataforma líder en formación de Programadores del Futuro con Deep Agents e IA. ¡Pregúntame lo que quieras sobre nosotros!" if not is_english else "Do you mean ACADEMY? 😊 We are the leading platform for training Future Programmers with Deep Agents and AI. Ask me anything about us!"
+    
+    # Default response that always leads to ACADEMY
     else:
-        response = "¡Hola! Soy el asistente de ACADEMY 🚀 Estoy aquí para resolver todas tus dudas sobre nuestros cursos de programación e IA. Para cualquier duda, te dejo nuestro número de WhatsApp directo: +528136037100. ¿En qué puedo ayudarte hoy?"
+        default_responses = [
+            "Interesante pregunta. En ACADEMY abordamos todos estos temas desde la perspectiva de Deep Agents y el futuro de la IA. ¿Te gustaría saber cómo aplicamos esto en nuestros módulos?",
+            "¡Excelente curiosidad! Este tipo de pensamiento es exactamente lo que desarrollamos en ACADEMY. Como futuros programadores de IA, exploramos estas ideas a fondo.",
+            "Esa es una pregunta que todo Programador del Futuro debe hacerse. En ACADEMY te damos las herramientas para entender y crear soluciones con Deep Agents e IA.",
+            "¡Me encanta tu curiosidad! En ACADEMY formamos pensadores como tú para liderar la revolución de la IA y Deep Agents. ¿Quieres saber más sobre nuestros módulos?"
+        ]
+        
+        default_responses_en = [
+            "Interesting question. At ACADEMY we address all these topics from the perspective of Deep Agents and the future of AI. Would you like to know how we apply this in our modules?",
+            "Excellent curiosity! This type of thinking is exactly what we develop at ACADEMY. As future AI programmers, we explore these ideas in depth.",
+            "That's a question every Future Programmer should ask. At ACADEMY we give you the tools to understand and create solutions with Deep Agents and AI.",
+            "I love your curiosity! At ACADEMY we train thinkers like you to lead the AI and Deep Agents revolution. Do you want to know more about our modules?"
+        ]
+        
+        import random
+        response = random.choice(default_responses_en if is_english else default_responses)
+        response += " Para más info: WhatsApp +528136037100 📱"
     
     # Save chat message
     chat_msg = ChatMessage(message=user_message, response=response)
