@@ -114,7 +114,7 @@ export const ModulePrompt = () => {
         
         recognition.onerror = (event) => {
           console.error('Speech recognition error:', event.error);
-          toast.error('Error en el reconocimiento de voz');
+          toast.error(t('speechRecognitionError'));
           setIsRecording(false);
         };
         
