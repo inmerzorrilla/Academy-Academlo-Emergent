@@ -96,4 +96,7 @@ test_result.md
 .env.local
 .env.development.local
 .env.test.local
-.env.production.local 
+.env.production.local -e 
+# Environment files
+*.env
+*.env.*
