@@ -148,7 +148,7 @@ export const ModuleProyecto = () => {
           <CardHeader>
             <CardTitle className="text-2xl text-gradient flex items-center">
               <i className="fas fa-rocket mr-2"></i>
-              Crea tu Proyecto con Emergent
+              {t('createProjectEmergent')}
             </CardTitle>
           </CardHeader>
           
