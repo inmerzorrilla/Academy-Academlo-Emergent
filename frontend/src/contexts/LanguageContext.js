@@ -189,6 +189,10 @@ const translations = {
     wantToBeCompleteProgrammer: 'Want to be a complete programmer?',
     studyAtAcademlo: 'Study at Academlo and complement your education with ACADEMY',
     
+    // Landing Page
+    learningModules: 'Learning Modules',
+    poweredBy: 'Powered by Emergent + Academlo',
+    
     // Project Module
     createYourProject: 'Create your Project with Emergent',
     yourMission: 'Your mission',
