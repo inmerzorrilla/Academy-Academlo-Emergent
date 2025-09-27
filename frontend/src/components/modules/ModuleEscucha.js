@@ -9,6 +9,8 @@ import { Progress } from '../ui/progress';
 import { Badge } from '../ui/badge';
 import { ChatWidget } from '../ChatWidget';
 import { ModuleFooter } from '../ModuleFooter';
+import { ModuleHeader } from '../ModuleHeader';
+import { Footer } from '../Footer';
 import axios from 'axios';
 import { toast } from 'sonner';
 
