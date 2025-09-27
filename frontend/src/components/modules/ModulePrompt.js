@@ -438,6 +438,27 @@ export const ModulePrompt = () => {
           </CardContent>
         </Card>
 
+        {/* Module Complete */}
+        {progress.prompt_completed && (
+          <Card className="glass-card mt-8 border-green-500/50">
+            <CardContent className="p-8 text-center">
+              <div className="text-6xl text-green-400 mb-4">
+                🎉
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-gradient">
+                ¡Módulo Prompt Completado!
+              </h3>
+              <p className="text-xl mb-6 text-gray-300">
+                Has dominado el arte de crear prompts efectivos. ¡Continúa con el último módulo!
+              </p>
+              <Link to="/dashboard" className="btn-futuristic">
+                <i className="fas fa-arrow-right mr-2"></i>
+                Continuar al Dashboard
+              </Link>
+            </CardContent>
+          </Card>
+        )}
+
         {/* Academlo Advertisement */}
         <Card className="glass-card mt-12">
           <CardContent className="p-8 text-center">
@@ -459,27 +480,6 @@ export const ModulePrompt = () => {
             </a>
           </CardContent>
         </Card>
-
-        {/* Module Complete */}
-        {progress.prompt_completed && (
-          <Card className="glass-card mt-8 border-green-500/50">
-            <CardContent className="p-8 text-center">
-              <div className="text-6xl text-green-400 mb-4">
-                🎉
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-gradient">
-                ¡Módulo Prompt Completado!
-              </h3>
-              <p className="text-xl mb-6 text-gray-300">
-                Has dominado el arte de crear prompts efectivos. ¡Continúa con el último módulo!
-              </p>
-              <Link to="/dashboard" className="btn-futuristic">
-                <i className="fas fa-arrow-right mr-2"></i>
-                Continuar al Dashboard
-              </Link>
-            </CardContent>
-          </Card>
-        )}
       </main>
     </div>
   );
