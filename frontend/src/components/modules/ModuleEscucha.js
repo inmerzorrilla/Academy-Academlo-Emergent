@@ -148,7 +148,7 @@ export const ModuleEscucha = () => {
               <Progress value={progress.escucha_progress} className="h-3" />
             </div>
             <p className="text-gray-400">
-              {progress.escucha_completed.length} de {videos.length} videos completados
+              {progress.escucha_completed.length} {t('of')} {videos.length} {t('videosCompleted')}
             </p>
           </CardContent>
         </Card>
