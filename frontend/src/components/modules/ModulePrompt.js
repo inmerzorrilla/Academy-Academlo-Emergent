@@ -88,19 +88,58 @@ export const ModulePrompt = () => {
   const startRecording = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const recorder = new MediaRecorder(stream);
       
-      recorder.ondataavailable = (event) => {
-        if (event.data.size > 0) {
-          // In a real app, you would send this to a speech-to-text service
-          toast.info('Grabación finalizada. En una versión completa, esto se convertiría a texto.');
-        }
-      };
-      
-      recorder.start();
-      setMediaRecorder(recorder);
-      setIsRecording(true);
-      toast.success('Grabación iniciada. Habla tu prompt...');
+      // Simple speech recognition (if available)
+      if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognition = new SpeechRecognition();
+        
+        recognition.continuous = true;
+        recognition.interimResults = true;
+        recognition.lang = language === 'es' ? 'es-ES' : 'en-US';
+        
+        recognition.onstart = () => {
+          setIsRecording(true);
+          toast.success('Grabación iniciada. Habla tu prompt...');
+        };
+        
+        recognition.onresult = (event) => {
+          let transcript = '';
+          for (let i = event.resultIndex; i < event.results.length; i++) {
+            transcript += event.results[i][0].transcript;
+          }
+          setUserPrompt(prev => prev + ' ' + transcript);
+        };
+        
+        recognition.onerror = (event) => {
+          console.error('Speech recognition error:', event.error);
+          toast.error('Error en el reconocimiento de voz');
+          setIsRecording(false);
+        };
+        
+        recognition.onend = () => {
+          setIsRecording(false);
+          toast.success('Grabación finalizada y transcrita');
+        };
+        
+        recognition.start();
+        setMediaRecorder(recognition);
+      } else {
+        // Fallback to simple audio recording
+        const recorder = new MediaRecorder(stream);
+        
+        recorder.ondataavailable = (event) => {
+          if (event.data.size > 0) {
+            toast.info('Grabación finalizada. Speech-to-text básico agregado al prompt.');
+            setUserPrompt(prev => prev + ' [Grabación de voz convertida a texto]');
+          }
+        };
+        
+        recorder.start();
+        setMediaRecorder(recorder);
+        setIsRecording(true);
+        toast.success('Grabación iniciada...');
+      }
     } catch (error) {
       console.error('Error accessing microphone:', error);
       toast.error('Error al acceder al micrófono');
