@@ -378,6 +378,22 @@ const translations = {
     videoCompleted: '¡Video Completado!',
     watchOnYoutube: 'Ver en YouTube',
     
+    // Module Specific
+    listeningModule: 'Módulo Escucha',
+    listeningModuleProgress: 'Progreso del Módulo Escucha',
+    listeningModuleCompleted: '¡Módulo Escucha Completado!',
+    allVideosWatched: 'Has visto todos los videos educativos. ¡Continúa con el siguiente módulo!',
+    of: 'de',
+    
+    // Error Messages  
+    errorLoadingContent: 'Error al cargar el contenido',
+    errorUpdatingProgress: 'Error al actualizar el progreso',
+    videoCompletedProgress: '¡Video {{videoId}} completado! Progreso: {{progress}}%',
+    
+    // Academlo Ad
+    wantToBeCompleteProgrammer: '¿Quieres ser un programador completo?',
+    studyAtAcademlo: 'Estudia en Academlo y complementa tu educación con ACADEMY',
+    
     // Project Module
     createYourProject: 'Crea tu Proyecto con Emergent',
     yourMission: 'Tu misión',
