@@ -377,7 +377,15 @@ body {
 }
 
 /* Remove Emergent Badge */
-#emergent-badge {
+#emergent-badge,
+[data-emergent-badge],
+.emergent-badge,
+div[style*="position: fixed"][style*="bottom"][style*="right"]:not(.chat-widget):not(.social-links-container) {
+  display: none !important;
+}
+
+/* Hide any fixed positioned elements that look like Emergent badge */
+body > div:last-child:not(.App):not(#root) {
   display: none !important;
 }
 
