@@ -461,6 +461,35 @@ const translations = {
     errorDownloadingCertificate: 'Error al descargar el certificado',
     completeAllModulesForCertificate: 'Completa todos los módulos para obtener tu certificado',
     
+    // Auth Messages
+    errorOccurred: 'Ocurrió un error. Por favor intenta de nuevo.',
+    
+    // Module Messages
+    pleaseEnterProjectUrl: 'Por favor ingresa la URL de tu proyecto',
+    urlMustBeFromEmergent: 'La URL debe ser de un proyecto creado en Emergent',
+    projectSubmittedSuccessfully: '¡Proyecto enviado exitosamente! Módulo completado al 100% 🎉',
+    errorSubmittingProject: 'Error al enviar el proyecto',
+    
+    // Prompt Module Messages
+    tipsCompletedProgress: '¡Consejos completados! +20%',
+    exampleCompletedProgress: '¡Ejemplo {{itemId}} completado! +20%',
+    practiceCompletedProgress: '¡Práctica completada! +20%',
+    recordingStarted: 'Grabación iniciada. Habla tu prompt...',
+    speechRecognitionError: 'Error en el reconocimiento de voz',
+    recordingFinishedTranscribed: 'Grabación finalizada y transcrita',
+    recordingFinishedBasicSpeechToText: 'Grabación finalizada. Speech-to-text básico agregado al prompt.',
+    recordingStartedBasic: 'Grabación iniciada...',
+    microphoneAccessError: 'Error al acceder al micrófono',
+    promptCopiedToClipboard: 'Prompt copiado al portapapeles',
+    
+    // Teorico Module Messages
+    questionCompletedProgress: '¡Pregunta {{questionId}} completada! Progreso: {{progress}}%',
+    
+    // Admin Messages
+    errorLoadingUsers: 'Error al cargar usuarios',
+    userDeletedSuccessfully: 'Usuario eliminado exitosamente',
+    errorDeletingUser: 'Error al eliminar usuario',
+    
     // Project Module
     createYourProject: 'Crea tu Proyecto con Emergent',
     yourMission: 'Tu misión',
