@@ -371,32 +371,60 @@ async def get_escucha_content():
 
 @api_router.get("/content/prompt")
 async def get_prompt_content(lang: str = "es"):
-    examples = [
-        {
-            "id": 1,
-            "title": "Prompt para Generación de Código",
-            "prompt": "Actúa como un experto desarrollador Python. Crea una función que reciba una lista de números y devuelva el promedio, la mediana y la moda. Incluye manejo de errores y documentación completa.",
-            "description": "Este prompt es ideal para generar código funcional y bien documentado"
-        },
-        {
-            "id": 2,
-            "title": "Prompt para Análisis de Datos",
-            "prompt": "Eres un científico de datos experto. Analiza el siguiente dataset de ventas y proporciona insights clave, tendencias importantes y recomendaciones estratégicas. Incluye visualizaciones sugeridas y métricas relevantes.",
-            "description": "Perfecto para obtener análisis profundos de datos empresariales"
-        },
-        {
-            "id": 3,
-            "title": "Prompt para Arquitectura de Software",
-            "prompt": "Como arquitecto de software senior, diseña una arquitectura escalable para una aplicación de e-commerce que maneje 100k usuarios concurrentes. Incluye patrones de diseño, tecnologías recomendadas, diagrama de componentes y consideraciones de seguridad.",
-            "description": "Ideal para obtener diseños arquitectónicos robustos y profesionales"
-        },
-        {
-            "id": 4,
-            "title": "Prompt para Desarrollo Web Completo",
-            "prompt": "Actúa como un experto en desarrollo web full-stack. Crea una aplicación web completa usando React y Node.js que incluya: sistema de autenticación JWT, dashboard responsivo, CRUD de usuarios, integración con base de datos MongoDB, API REST documentada, y deployment en la nube. Proporciona el código completo, estructura de archivos y guía de instalación.",
-            "description": "Perfecto para generar aplicaciones web completas y modernas"
-        }
-    ]
+    if lang == "en":
+        examples = [
+            {
+                "id": 1,
+                "title": "Prompt for Code Generation",
+                "prompt": "Act as an expert Python developer. Create a function that receives a list of numbers and returns the average, median and mode. Include error handling and complete documentation.",
+                "description": "This prompt is ideal for generating functional and well-documented code"
+            },
+            {
+                "id": 2,
+                "title": "Prompt for Data Analysis",
+                "prompt": "You are an expert data scientist. Analyze the following sales dataset and provide key insights, important trends and strategic recommendations. Include suggested visualizations and relevant metrics.",
+                "description": "Perfect for getting deep business data analysis"
+            },
+            {
+                "id": 3,
+                "title": "Prompt for Software Architecture",
+                "prompt": "As a senior software architect, design a scalable architecture for an e-commerce application that handles 100k concurrent users. Include design patterns, recommended technologies, component diagram and security considerations.",
+                "description": "Ideal for getting robust and professional architectural designs"
+            },
+            {
+                "id": 4,
+                "title": "Prompt for Complete Web Development",
+                "prompt": "Act as a full-stack web development expert. Create a complete web application using React and Node.js that includes: JWT authentication system, responsive dashboard, user CRUD, MongoDB database integration, documented REST API, and cloud deployment. Provide complete code, file structure and installation guide.",
+                "description": "Perfect for generating complete and modern web applications"
+            }
+        ]
+    else:
+        examples = [
+            {
+                "id": 1,
+                "title": "Prompt para Generación de Código",
+                "prompt": "Actúa como un experto desarrollador Python. Crea una función que reciba una lista de números y devuelva el promedio, la mediana y la moda. Incluye manejo de errores y documentación completa.",
+                "description": "Este prompt es ideal para generar código funcional y bien documentado"
+            },
+            {
+                "id": 2,
+                "title": "Prompt para Análisis de Datos",
+                "prompt": "Eres un científico de datos experto. Analiza el siguiente dataset de ventas y proporciona insights clave, tendencias importantes y recomendaciones estratégicas. Incluye visualizaciones sugeridas y métricas relevantes.",
+                "description": "Perfecto para obtener análisis profundos de datos empresariales"
+            },
+            {
+                "id": 3,
+                "title": "Prompt para Arquitectura de Software",
+                "prompt": "Como arquitecto de software senior, diseña una arquitectura escalable para una aplicación de e-commerce que maneje 100k usuarios concurrentes. Incluye patrones de diseño, tecnologías recomendadas, diagrama de componentes y consideraciones de seguridad.",
+                "description": "Ideal para obtener diseños arquitectónicos robustos y profesionales"
+            },
+            {
+                "id": 4,
+                "title": "Prompt para Desarrollo Web Completo",
+                "prompt": "Actúa como un experto en desarrollo web full-stack. Crea una aplicación web completa usando React y Node.js que incluya: sistema de autenticación JWT, dashboard responsivo, CRUD de usuarios, integración con base de datos MongoDB, API REST documentada, y deployment en la nube. Proporciona el código completo, estructura de archivos y guía de instalación.",
+                "description": "Perfecto para generar aplicaciones web completas y modernas"
+            }
+        ]
     return examples
 
 # Certificate Generation
