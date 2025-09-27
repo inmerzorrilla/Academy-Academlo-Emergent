@@ -193,6 +193,21 @@ const translations = {
     learningModules: 'Learning Modules',
     poweredBy: 'Powered by Emergent + Academlo',
     
+    // Footer
+    footerDescription: 'Futuristic educational platform to train future programmers with AI and Deep Agents.',
+    quickActions: 'Quick Actions',
+    ourPartners: 'Our Partners',
+    joinDeveloperCommunity: 'Join our developer community',
+    madeWith: 'Made with',
+    secure: 'Secure',
+    responsive: 'Responsive',
+    
+    // Dashboard Error Messages
+    errorLoadingProgress: 'Error loading progress',
+    certificateDownloadedSuccess: 'Certificate downloaded successfully! 🎉',
+    errorDownloadingCertificate: 'Error downloading certificate',
+    completeAllModulesForCertificate: 'Complete all modules to get your certificate',
+    
     // Project Module
     createYourProject: 'Create your Project with Emergent',
     yourMission: 'Your mission',
