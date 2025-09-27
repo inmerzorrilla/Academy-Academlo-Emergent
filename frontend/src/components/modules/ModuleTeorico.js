@@ -224,14 +224,14 @@ export const ModuleTeorico = () => {
                 🎉
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gradient">
-                ¡Módulo Teórico Completado!
+                {t('theoreticalCompleted')}
               </h3>
               <p className="text-xl mb-6 text-gray-300">
-                Has dominado los conceptos fundamentales. ¡Continúa con el siguiente módulo!
+                {t('continueNextModule')}
               </p>
               <Link to="/dashboard" className="btn-futuristic">
                 <i className="fas fa-arrow-right mr-2"></i>
-                Continuar al Dashboard
+                {t('continueToDashboard')}
               </Link>
             </CardContent>
           </Card>
