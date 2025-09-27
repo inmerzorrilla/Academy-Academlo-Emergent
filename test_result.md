@@ -184,6 +184,18 @@
           agent: "main"
           comment: "Added missing translation keys for ModuleEscucha including error messages, progress indicators, and module-specific content. Enhanced t() function to support variable interpolation."
 
+  - task: "Complete ModuleProyecto translation implementation"
+    implemented: false
+    working: false
+    file: "frontend/src/components/modules/ModuleProyecto.js"
+    stuck_count: 1
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        - working: false
+          agent: "testing"
+          comment: "CRITICAL ISSUES FOUND: 1) Authentication session not persisting properly - users get redirected back to auth page when accessing /module/proyecto, 2) Multiple hardcoded Spanish texts found that are not using translation functions: 'Volver al Dashboard' (line 92), 'Módulo Proyecto' (line 97), 'Proyecto Final' (line 98), '% Completado' (line 120), 'Progreso del Módulo Proyecto' (line 133), 'Proyecto completado y enviado' and 'Pendiente de completar el proyecto' (lines 141-142). 3) Browser API calls to /api/user/profile failing with ERR_ABORTED. Translation keys exist in LanguageContext but component is not fully using them."
+
 ## metadata:
   created_by: "main_agent"
   version: "1.0"
