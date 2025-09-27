@@ -267,10 +267,10 @@ export const Dashboard = () => {
         <Card className="glass-card mb-8">
           <CardContent className="p-8 text-center">
             <h3 className="text-2xl font-bold mb-4 text-gradient">
-              ¿Quieres ser un programador completo?
+              {t('completeProgrAcademlo')}
             </h3>
             <p className="text-xl mb-6 text-gray-300">
-              Estudia en Academlo y complementa tu educación con ACADEMY
+              {t('studyAcademlo')}
             </p>
             <a 
               href="https://www.academlo.com/" 
@@ -280,7 +280,7 @@ export const Dashboard = () => {
               data-testid="academlo-ad-link"
             >
               <i className="fas fa-external-link-alt mr-2"></i>
-              Visitar Academlo
+              {t('visitAcademlo')}
             </a>
           </CardContent>
         </Card>
