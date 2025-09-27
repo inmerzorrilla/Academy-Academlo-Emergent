@@ -73,6 +73,7 @@ const translations = {
     // PayPal Donation
     useful: 'Useful?',
     buyMeACoffee: 'Buy me a Coffee',
+    supportMessage: 'Your support helps keep ACADEMY free!',
     close: 'Close',
     continue: 'Continue',
     
