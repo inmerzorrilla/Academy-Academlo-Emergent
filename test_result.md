@@ -196,6 +196,18 @@
           agent: "testing"
           comment: "CRITICAL ISSUES FOUND: 1) Authentication session not persisting properly - users get redirected back to auth page when accessing /module/proyecto, 2) Multiple hardcoded Spanish texts found that are not using translation functions: 'Volver al Dashboard' (line 92), 'Módulo Proyecto' (line 97), 'Proyecto Final' (line 98), '% Completado' (line 120), 'Progreso del Módulo Proyecto' (line 133), 'Proyecto completado y enviado' and 'Pendiente de completar el proyecto' (lines 141-142). 3) Browser API calls to /api/user/profile failing with ERR_ABORTED. Translation keys exist in LanguageContext but component is not fully using them."
 
+  - task: "Footer improvements with PayPal donation section"
+    implemented: true
+    working: false
+    file: "frontend/src/components/Footer.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: false
+          agent: "testing"
+          comment: "FOOTER TESTING RESULTS: 1) ✅ NO DUPLICATION: Only single footer per page confirmed, 2) ❌ PAYPAL SECTION VISIBILITY: PayPal donation section with proper Spanish/English translations ('¿Útil? Invítame un Café ☕' / 'Useful? Buy me a Coffee ☕') exists in Footer.js component but NOT visible on landing page which uses inline footer, 3) ❌ AUTHENTICATION BARRIER: Cannot test PayPal section on authenticated pages (Dashboard, modules) due to authentication issues - no test credentials work, 4) ✅ FOOTER STRUCTURE: Code analysis shows Footer component properly imports and uses PayPal section with correct link (https://paypal.me/pastorinmerzorrilla) and email (pastorinmerzorrilla@gmail.com). ISSUE: Landing page uses inline footer instead of Footer component, preventing PayPal section visibility for non-authenticated users."
+
 ## metadata:
   created_by: "main_agent"
   version: "1.0"
