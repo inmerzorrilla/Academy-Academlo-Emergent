@@ -335,38 +335,72 @@ async def get_teorico_content():
 
 @api_router.get("/content/escucha")
 async def get_escucha_content(lang: str = "es"):
-    videos = [
-        {
-            "id": 1,
-            "title": "Introducción a la IA",
-            "url": "https://www.youtube.com/shorts/l5xA4iNjyq4",
-            "description": "Video corto sobre los conceptos básicos de inteligencia artificial"
-        },
-        {
-            "id": 2,
-            "title": "Desarrollo con IA",
-            "url": "https://www.youtube.com/watch?v=MGwTIjM-t1I",
-            "description": "Aprende cómo la IA está transformando el desarrollo de software"
-        },
-        {
-            "id": 3,
-            "title": "El futuro de la programación",
-            "url": "https://www.youtube.com/watch?v=1Wg_RJ59_NU&t=146s",
-            "description": "Descubre hacia dónde se dirige la programación en la era de la IA"
-        },
-        {
-            "id": 4,
-            "title": "¿Por qué es importante estudiar en Academlo?",
-            "url": "https://www.youtube.com/watch?v=1OYCVzsMde4",
-            "description": "Conoce las ventajas de estudiar en Academlo y cómo puede transformar tu carrera"
-        },
-        {
-            "id": 5,
-            "title": "Tutorial de Emergent",
-            "url": "https://www.youtube.com/watch?v=joOJZ9ZJEFc",
-            "description": "Aprende a usar Emergent para crear proyectos increíbles con IA"
-        }
-    ]
+    if lang == "en":
+        videos = [
+            {
+                "id": 1,
+                "title": "Introduction to AI",
+                "url": "https://www.youtube.com/shorts/l5xA4iNjyq4",
+                "description": "Short video about the basic concepts of artificial intelligence"
+            },
+            {
+                "id": 2,
+                "title": "AI Development",
+                "url": "https://www.youtube.com/watch?v=MGwTIjM-t1I",
+                "description": "Learn how AI is transforming software development"
+            },
+            {
+                "id": 3,
+                "title": "The Future of Programming",
+                "url": "https://www.youtube.com/watch?v=1Wg_RJ59_NU&t=146s",
+                "description": "Discover where programming is heading in the AI era"
+            },
+            {
+                "id": 4,
+                "title": "Why is it important to study at Academlo?",
+                "url": "https://www.youtube.com/watch?v=1OYCVzsMde4",
+                "description": "Learn about the advantages of studying at Academlo and how it can transform your career"
+            },
+            {
+                "id": 5,
+                "title": "Emergent Tutorial",
+                "url": "https://www.youtube.com/watch?v=joOJZ9ZJEFc",
+                "description": "Learn to use Emergent to create incredible projects with AI"
+            }
+        ]
+    else:
+        videos = [
+            {
+                "id": 1,
+                "title": "Introducción a la IA",
+                "url": "https://www.youtube.com/shorts/l5xA4iNjyq4",
+                "description": "Video corto sobre los conceptos básicos de inteligencia artificial"
+            },
+            {
+                "id": 2,
+                "title": "Desarrollo con IA",
+                "url": "https://www.youtube.com/watch?v=MGwTIjM-t1I",
+                "description": "Aprende cómo la IA está transformando el desarrollo de software"
+            },
+            {
+                "id": 3,
+                "title": "El futuro de la programación",
+                "url": "https://www.youtube.com/watch?v=1Wg_RJ59_NU&t=146s",
+                "description": "Descubre hacia dónde se dirige la programación en la era de la IA"
+            },
+            {
+                "id": 4,
+                "title": "¿Por qué es importante estudiar en Academlo?",
+                "url": "https://www.youtube.com/watch?v=1OYCVzsMde4",
+                "description": "Conoce las ventajas de estudiar en Academlo y cómo puede transformar tu carrera"
+            },
+            {
+                "id": 5,
+                "title": "Tutorial de Emergent",
+                "url": "https://www.youtube.com/watch?v=joOJZ9ZJEFc",
+                "description": "Aprende a usar Emergent para crear proyectos increíbles con IA"
+            }
+        ]
     return videos
 
 @api_router.get("/content/prompt")
