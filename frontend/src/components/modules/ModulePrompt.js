@@ -284,16 +284,16 @@ export const ModulePrompt = () => {
           <h2 className="text-2xl font-bold text-gradient mb-6">Ejemplos de Prompts Geniales</h2>
           
           {examples.map((example) => {
-            const isRead = readExamples.includes(example.id);
+            const isCompleted = isExampleCompleted(example.id);
             
             return (
-              <Card key={example.id} className={`glass-card ${isRead ? 'border-green-500/50' : ''}`}>
+              <Card key={example.id} className={`glass-card ${isCompleted ? 'border-green-500/50' : ''}`}>
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center justify-between">
                     <div className="flex items-center">
                       <span className="text-cyan-400 mr-3">#{example.id}</span>
-                      {example.title}
-                      {isRead && (
+                      <span className="text-primary">{example.title}</span>
+                      {isCompleted && (
                         <i className="fas fa-check-circle text-green-500 ml-3"></i>
                       )}
                     </div>
@@ -315,19 +315,19 @@ export const ModulePrompt = () => {
                   
                   {/* Read Button */}
                   <div className="flex justify-center">
-                    {!isRead ? (
+                    {!isCompleted ? (
                       <Button 
-                        onClick={() => markExampleRead(example.id)}
+                        onClick={() => markSectionComplete('examples', example.id)}
                         className="btn-futuristic"
                         data-testid={`read-example-${example.id}`}
                       >
                         <i className="fas fa-check mr-2"></i>
-                        Marcar como Leído
+                        Marcar como Leído (+20%)
                       </Button>
                     ) : (
                       <div className="flex items-center text-green-400">
                         <i className="fas fa-check-circle mr-2"></i>
-                        ¡Ejemplo Leído!
+                        ¡Ejemplo Completado!
                       </div>
                     )}
                   </div>
