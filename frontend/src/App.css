@@ -245,10 +245,11 @@ body {
 
 .progress-bar {
   height: 100%;
-  background: var(--gradient-primary);
+  background: linear-gradient(90deg, #00d4ff, #0080ff, #00d4ff);
   border-radius: 4px;
   transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
 }
 
 .progress-bar::after {
