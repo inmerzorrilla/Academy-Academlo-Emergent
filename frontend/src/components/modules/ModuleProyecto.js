@@ -335,7 +335,7 @@ export const ModuleProyecto = () => {
               data-testid="academlo-ad-link"
             >
               <i className="fas fa-external-link-alt mr-2"></i>
-              Visitar Academlo
+              {t('visitAcademlo')}
             </a>
           </CardContent>
         </Card>
