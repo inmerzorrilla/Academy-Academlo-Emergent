@@ -490,7 +490,9 @@ export const ModulePrompt = () => {
         </Card>
       </main>
 
+      <Footer />
       <ChatWidget />
+      <ModuleFooter />
     </div>
   );
 };
