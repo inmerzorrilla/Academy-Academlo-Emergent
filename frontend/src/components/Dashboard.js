@@ -162,7 +162,7 @@ export const Dashboard = () => {
             {user?.is_admin && (
               <Link to="/admin" className="btn-ghost text-sm">
                 <i className="fas fa-cog mr-2"></i>
-                Admin
+                {t('admin')}
               </Link>
             )}
             
@@ -171,7 +171,7 @@ export const Dashboard = () => {
               className="btn-ghost text-sm text-red-400 border-red-400 hover:bg-red-400"
             >
               <i className="fas fa-sign-out-alt mr-2"></i>
-              Salir
+              {t('logout')}
             </button>
           </div>
         </div>
