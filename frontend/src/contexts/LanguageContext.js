@@ -567,6 +567,8 @@ const translations = {
     projectCompletedAndSubmitted: 'Proyecto completado y enviado',
     pendingProjectCompletion: 'Pendiente de completar el proyecto',
     back: 'Volver',
+    promptModule: 'Módulo Prompt',
+    practiceWithAI: 'Practica con IA',
     
     // Project Module
     createYourProject: 'Crea tu Proyecto con Emergent',
