@@ -416,8 +416,8 @@ export const ModulePrompt = () => {
                 </div>
                 
                 <div className="flex justify-between items-center">
-                  <div className="text-sm text-gray-400">
-                    {userPrompt.length} caracteres
+                  <div className="text-sm text-primary">
+                    {userPrompt.length} {t('characters')}
                   </div>
                   
                   {!progress.prompt_practice_completed && userPrompt.trim() && (
