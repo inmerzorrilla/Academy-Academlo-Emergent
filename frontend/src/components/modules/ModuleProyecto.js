@@ -50,7 +50,7 @@ export const ModuleProyecto = () => {
 
     // Validate Emergent URL
     if (!projectUrl.includes('emergent') && !projectUrl.includes('app.emergent.sh')) {
-      toast.error('La URL debe ser de un proyecto creado en Emergent');
+      toast.error(t('urlMustBeFromEmergent'));
       return;
     }
 
