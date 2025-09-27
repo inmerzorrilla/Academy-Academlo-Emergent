@@ -34,6 +34,14 @@ const translations = {
     progress: 'Progress',
     modules: 'Modules',
     certificate: 'Certificate',
+    welcomeCommander: 'Welcome, AI Commander',
+    academloEmergentWelcome: 'Welcome by Academlo - Emergent',
+    overallProgress: 'Overall Progress',
+    progressDescription: '25% Theoretical - 25% Listen - 25% Prompt - 25% Project',
+    downloadCertificate: 'Download Certificate',
+    continueProgress: 'Keep going to get your certificate as Future Developer!',
+    admin: 'Admin',
+    logout: 'Logout',
     
     // Modules
     teorico: 'Theoretical',
@@ -41,12 +49,31 @@ const translations = {
     prompt: 'Prompt',
     proyecto: 'Project',
     
+    // Module Descriptions
+    teoricoDesc: 'Fundamental concepts about Deep Agents and AI programming',
+    escuchaDesc: 'Carefully selected educational videos',
+    promptDesc: 'Practice with advanced AI prompts',
+    proyectoDesc: 'Create real projects with Emergent',
+    
+    // Module Progress
+    backToDashboard: 'Back to Dashboard',
+    fundamentalConcepts: 'Fundamental Concepts',
+    educationalVideos: 'Educational Videos',
+    aiPractice: 'AI Practice',
+    finalProject: 'Final Project',
+    
     // Common
     complete: 'Complete',
     completed: 'Completed',
     next: 'Next',
     back: 'Back',
     close: 'Close',
+    continue: 'Continue',
+    
+    // Completion Messages
+    moduleCompleted: 'Module Completed!',
+    continueNextModule: 'You have mastered the fundamentals. Continue with the next module!',
+    continueToDashboard: 'Continue to Dashboard',
     
     // Chat
     chatPlaceholder: 'Ask anything about ACADEMY...',
@@ -55,7 +82,13 @@ const translations = {
     urgentProject: 'Urgent Project?',
     urgentHelp: 'Urgent Help?',
     socialNetworks: 'Social Networks',
-    configuration: 'Configuration'
+    followUs: 'Follow Us!',
+    configuration: 'Configuration',
+    
+    // Academlo Ad
+    completeProgrAcademlo: 'Want to be a complete programmer?',
+    studyAcademlo: 'Study at Academlo and complement your education with ACADEMY',
+    visitAcademlo: 'Visit Academlo'
   },
   es: {
     // Landing Page
