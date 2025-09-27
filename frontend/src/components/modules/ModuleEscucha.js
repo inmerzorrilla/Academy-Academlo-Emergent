@@ -230,14 +230,14 @@ export const ModuleEscucha = () => {
                 🎉
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gradient">
-                ¡Módulo Escucha Completado!
+                {t('listeningModuleCompleted')}
               </h3>
               <p className="text-xl mb-6 text-gray-300">
-                Has visto todos los videos educativos. ¡Continúa con el siguiente módulo!
+                {t('allVideosWatched')}
               </p>
               <Link to="/dashboard" className="btn-futuristic">
                 <i className="fas fa-arrow-right mr-2"></i>
-                Continuar al Dashboard
+                {t('continueToDashboard')}
               </Link>
             </CardContent>
           </Card>
