@@ -564,6 +564,7 @@ const translations = {
     projectModuleProgress: 'Progreso del Módulo Proyecto',
     projectCompletedAndSubmitted: 'Proyecto completado y enviado',
     pendingProjectCompletion: 'Pendiente de completar el proyecto',
+    back: 'Volver',
     
     // Project Module
     createYourProject: 'Crea tu Proyecto con Emergent',
