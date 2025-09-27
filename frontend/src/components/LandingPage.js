@@ -1,0 +1,219 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
+import { useTheme } from '../contexts/ThemeContext';
+import { ChatWidget } from './ChatWidget';
+import { SocialLinks } from './SocialLinks';
+
+export const LandingPage = () => {
+  const { t, language, toggleLanguage } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
+  const [showAuth, setShowAuth] = useState(false);
+
+  return (
+    <div className="min-h-screen futuristic-bg relative">
+      <div className="particles"></div>
+      
+      {/* Header */}
+      <header className="relative z-10 p-6">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <div className="flex items-center space-x-4">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_a9e7c5a2-be4f-4a1e-8ab4-c5b1c9d69107/artifacts/tfw28vr3_Logo.png" 
+              alt="Academy Logo" 
+              className="h-12 w-12 rounded-lg"
+            />
+            <div>
+              <h1 className="text-2xl font-bold text-gradient glitch" data-text="ACADEMY">
+                ACADEMY
+              </h1>
+              <p className="text-sm text-cyan-400">Powered by Emergent + Academlo</p>
+            </div>
+          </div>
+          
+          <div className="flex items-center space-x-4">
+            <button 
+              onClick={toggleLanguage}
+              className="btn-ghost text-sm"
+              data-testid="language-toggle"
+            >
+              <i className="fas fa-globe mr-2"></i>
+              {language === 'es' ? 'EN' : 'ES'}
+            </button>
+            
+            <button 
+              onClick={toggleTheme}
+              className="btn-ghost text-sm"
+              data-testid="theme-toggle"
+            >
+              <i className={`fas ${theme === 'dark' ? 'fa-sun' : 'fa-moon'} mr-2`}></i>
+              {theme === 'dark' ? 'Light' : 'Dark'}
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="relative z-10 pt-20 pb-32">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <div 
+            className="mb-8 animate-float"
+            style={{
+              backgroundImage: `url('https://images.unsplash.com/photo-1674027444485-cec3da58eef4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwyfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc1ODk5MjQwNnww&ixlib=rb-4.1.0&q=85')`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              borderRadius: '50%',
+              width: '200px',
+              height: '200px',
+              margin: '0 auto',
+              border: '4px solid var(--primary-cyan)',
+              boxShadow: '0 0 50px rgba(0, 212, 255, 0.5)'
+            }}
+          ></div>
+          
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 text-gradient leading-tight">
+            {t('welcome')}
+          </h1>
+          
+          <h2 className="text-2xl md:text-4xl font-semibold mb-8 text-cyan-300">
+            {t('subtitle')}
+          </h2>
+          
+          <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-gray-300 leading-relaxed">
+            {t('description')}
+          </p>
+          
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+            <Link 
+              to="/auth" 
+              className="btn-futuristic text-lg px-8 py-4"
+              data-testid="get-started-btn"
+            >
+              <i className="fas fa-rocket mr-3"></i>
+              {t('getStarted')}
+            </Link>
+            
+            <button className="btn-ghost text-lg px-8 py-4">
+              <i className="fas fa-play mr-3"></i>
+              {t('learnMore')}
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="relative z-10 py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <h3 className="text-4xl font-bold text-center mb-16 text-gradient">
+            Módulos de Aprendizaje
+          </h3>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: 'fa-brain',
+                title: t('teorico'),
+                description: 'Aprende conceptos fundamentales sobre Deep Agents y programación con IA',
+                color: 'from-blue-500 to-cyan-500'
+              },
+              {
+                icon: 'fa-headphones',
+                title: t('escucha'),
+                description: 'Videos educativos cuidadosamente seleccionados para tu aprendizaje',
+                color: 'from-green-500 to-teal-500'
+              },
+              {
+                icon: 'fa-terminal',
+                title: t('prompt'),
+                description: 'Practica con prompts avanzados y desarrolla habilidades de IA',
+                color: 'from-purple-500 to-pink-500'
+              },
+              {
+                icon: 'fa-project-diagram',
+                title: t('proyecto'),
+                description: 'Crea proyectos reales usando la plataforma Emergent',
+                color: 'from-orange-500 to-red-500'
+              }
+            ].map((module, index) => (
+              <div key={index} className="glass-card p-6 text-center hover:scale-105 transition-transform">
+                <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${module.color} flex items-center justify-center`}>
+                  <i className={`fas ${module.icon} text-2xl text-white`}></i>
+                </div>
+                <h4 className="text-xl font-semibold mb-3 text-gradient">{module.title}</h4>
+                <p className="text-gray-400">{module.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative z-10 py-20">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <div className="glass-card p-12">
+            <h3 className="text-4xl font-bold mb-6 text-gradient">
+              ¿Quieres ser un programador completo?
+            </h3>
+            <p className="text-xl mb-8 text-gray-300">
+              Estudia en Academlo y complementa tu educación con ACADEMY
+            </p>
+            <a 
+              href="https://www.academlo.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-futuristic text-lg px-8 py-4 inline-block"
+              data-testid="academlo-link"
+            >
+              <i className="fas fa-external-link-alt mr-3"></i>
+              Visitar Academlo
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="relative z-10 py-12 border-t border-gray-800">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+            <div className="flex items-center space-x-8">
+              <a 
+                href="https://synapsys-technology.abacusai.app/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn-ghost"
+                data-testid="synapsys-link"
+              >
+                <i className="fas fa-bolt mr-2"></i>
+                {t('urgentProject')} - Synapsys
+              </a>
+              
+              <a 
+                href="https://wa.me/528136037100" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn-ghost text-green-400 border-green-400 hover:bg-green-400"
+                data-testid="whatsapp-link"
+              >
+                <i className="fab fa-whatsapp mr-2"></i>
+                {t('urgentHelp')}
+              </a>
+            </div>
+            
+            <SocialLinks />
+          </div>
+          
+          <div className="mt-8 pt-8 border-t border-gray-800 text-center">
+            <p className="text-gray-400">
+              © 2025 ACADEMY - Powered by Emergent + Academlo
+            </p>
+            <p className="text-sm text-gray-500 mt-2">
+              Quantum Intelligence • Digital Autonomy • Augmented Reality
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      <ChatWidget />
+    </div>
+  );
+};
