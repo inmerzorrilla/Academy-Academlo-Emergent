@@ -65,7 +65,7 @@ export const Dashboard = () => {
         link.click();
         link.remove();
         
-        toast.success('¡Certificado descargado exitosamente! 🎉');
+        toast.success(t('certificateDownloadedSuccess'));
       } catch (error) {
         console.error('Error downloading certificate:', error);
         toast.error('Error al descargar el certificado');
