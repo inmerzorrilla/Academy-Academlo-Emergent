@@ -264,6 +264,8 @@ export const ModuleEscucha = () => {
           </CardContent>
         </Card>
       </main>
+
+      <ChatWidget />
     </div>
   );
 };
