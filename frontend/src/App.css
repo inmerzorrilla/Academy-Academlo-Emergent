@@ -386,6 +386,51 @@ body {
   z-index: 1000;
 }
 
+/* Mobile Responsive Improvements */
+@media (max-width: 768px) {
+  .chat-widget {
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .chat-button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  /* Ensure content doesn't overflow */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Responsive text adjustments */
+  .text-6xl {
+    font-size: 3rem !important;
+  }
+  
+  .text-8xl {
+    font-size: 4rem !important;
+  }
+  
+  /* Ensure cards stack properly on mobile */
+  .glass-card {
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+  
+  /* Mobile navigation improvements */
+  .btn-futuristic {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+  
+  .btn-ghost {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+
 /* Social Links Positioning */
 .social-links-container {
   position: fixed;
