@@ -131,7 +131,7 @@ export const ModulePrompt = () => {
         
         recorder.ondataavailable = (event) => {
           if (event.data.size > 0) {
-            toast.info('Grabación finalizada. Speech-to-text básico agregado al prompt.');
+            toast.info(t('recordingFinishedBasicSpeechToText'));
             setUserPrompt(prev => prev + ' [Grabación de voz convertida a texto]');
           }
         };
