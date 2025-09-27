@@ -155,7 +155,7 @@ export const LandingPage = () => {
               ¿Quieres ser un programador completo?
             </h3>
             <p className="text-xl mb-8 text-gray-300">
-              Estudia en Academlo y complementa tu educación con ACADEMY
+              {t('studyAcademlo')}
             </p>
             <a 
               href="https://www.academlo.com/" 
