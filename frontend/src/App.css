@@ -76,8 +76,8 @@ html, body {
   --text-secondary: #94a3b8;
   --card-bg: rgba(26, 31, 46, 0.8);
   --border-color: rgba(255, 255, 255, 0.1);
-  --progress-bg: rgba(255, 255, 255, 0.1);
-  --progress-track: rgba(0, 212, 255, 0.2);
+  --progress-bg: rgba(0, 212, 255, 0.2);
+  --progress-track: rgba(0, 212, 255, 0.8);
 }
 
 body {
