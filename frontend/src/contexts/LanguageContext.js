@@ -113,6 +113,14 @@ const translations = {
     progress: 'Progreso',
     modules: 'Módulos',
     certificate: 'Certificado',
+    welcomeCommander: 'Bienvenido, Comandante de la IA',
+    academloEmergentWelcome: 'Bienvenido por Academlo - Emergent',
+    overallProgress: 'Progreso General',
+    progressDescription: '25% Teórico - 25% Escucha - 25% Prompt - 25% Proyecto',
+    downloadCertificate: 'Descargar Certificado',
+    continueProgress: '¡Sigue avanzando para obtener tu certificado como Programador del Futuro!',
+    admin: 'Admin',
+    logout: 'Salir',
     
     // Modules
     teorico: 'Teórico',
@@ -120,12 +128,31 @@ const translations = {
     prompt: 'Prompt',
     proyecto: 'Proyecto',
     
+    // Module Descriptions
+    teoricoDesc: 'Conceptos fundamentales sobre Deep Agents y programación con IA',
+    escuchaDesc: 'Videos educativos cuidadosamente seleccionados',
+    promptDesc: 'Practica con prompts avanzados de IA',
+    proyectoDesc: 'Crea proyectos reales con Emergent',
+    
+    // Module Progress
+    backToDashboard: 'Volver al Dashboard',
+    fundamentalConcepts: 'Conceptos Fundamentales',
+    educationalVideos: 'Videos Educativos',
+    aiPractice: 'Práctica con IA',
+    finalProject: 'Proyecto Final',
+    
     // Common
     complete: 'Completar',
     completed: 'Completado',
     next: 'Siguiente',
     back: 'Regresar',
     close: 'Cerrar',
+    continue: 'Continuar',
+    
+    // Completion Messages
+    moduleCompleted: 'Módulo Completado!',
+    continueNextModule: 'Has dominado los conceptos fundamentales. ¡Continúa con el siguiente módulo!',
+    continueToDashboard: 'Continuar al Dashboard',
     
     // Chat
     chatPlaceholder: 'Pregunta cualquier cosa sobre ACADEMY...',
@@ -134,7 +161,13 @@ const translations = {
     urgentProject: '¿Proyecto urgente?',
     urgentHelp: '¿Ayuda urgente?',
     socialNetworks: 'Redes Sociales',
-    configuration: 'Configuración'
+    followUs: '¡Síguenos!',
+    configuration: 'Configuración',
+    
+    // Academlo Ad
+    completeProgrAcademlo: '¿Quieres ser un programador completo?',
+    studyAcademlo: 'Estudia en Academlo y complementa tu educación con ACADEMY',
+    visitAcademlo: 'Visitar Academlo'
   }
 };
 
