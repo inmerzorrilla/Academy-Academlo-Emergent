@@ -160,7 +160,7 @@ export const ModuleProyecto = () => {
               
               <div className="space-y-4 text-gray-300">
                 <p className="text-lg leading-relaxed">
-                  🚀 <strong>Tu misión:</strong> Utiliza la plataforma <span className="text-cyan-400 font-semibold">Emergent</span> para crear un proyecto que demuestre todo lo que has aprendido en ACADEMY.
+                  🚀 <strong>{t('yourMission')}:</strong> {t('useEmergentToCreateProject')} <span className="text-cyan-400 font-semibold">Emergent</span> {t('toDemonstrateWhatYouLearned')}.
                 </p>
                 
                 <div className="bg-gray-800/50 p-4 rounded-lg">
