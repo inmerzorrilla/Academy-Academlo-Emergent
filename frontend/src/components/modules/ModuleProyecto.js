@@ -166,7 +166,7 @@ export const ModuleProyecto = () => {
                 <div className="bg-gray-800/50 p-4 rounded-lg">
                   <h4 className="font-semibold text-green-400 mb-3 flex items-center">
                     <i className="fas fa-lightbulb mr-2"></i>
-                    Ideas de proyectos:
+                    {t('projectIdeas')}:
                   </h4>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start">
