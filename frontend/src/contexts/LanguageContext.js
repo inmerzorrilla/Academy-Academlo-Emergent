@@ -74,6 +74,7 @@ const translations = {
     useful: 'Useful?',
     buyMeACoffee: 'Buy me a Coffee',
     supportMessage: 'Your support helps keep ACADEMY free!',
+    promptModuleProgress: 'Prompt Module Progress',
     close: 'Close',
     continue: 'Continue',
     
