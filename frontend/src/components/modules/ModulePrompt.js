@@ -283,7 +283,7 @@ export const ModulePrompt = () => {
 
         {/* Examples */}
         <div className="space-y-6 mb-8">
-          <h2 className="text-2xl font-bold text-gradient mb-6">Ejemplos de Prompts Geniales</h2>
+          <h2 className="text-2xl font-bold text-gradient mb-6">{t('awesomePromptExamples')}</h2>
           
           {examples.map((example) => {
             const isCompleted = isExampleCompleted(example.id);
