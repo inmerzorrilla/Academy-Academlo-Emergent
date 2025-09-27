@@ -104,8 +104,8 @@ export const ModuleEscucha = () => {
           </div>
           
           <div className="text-center">
-            <h1 className="text-2xl font-bold text-gradient">Módulo Escucha</h1>
-            <p className="text-sm text-cyan-400">Videos Educativos</p>
+            <h1 className="text-2xl font-bold text-gradient">{t('listeningModule')}</h1>
+            <p className="text-sm text-cyan-400">{t('educationalVideos')}</p>
           </div>
           
           <div className="flex items-center space-x-4">
