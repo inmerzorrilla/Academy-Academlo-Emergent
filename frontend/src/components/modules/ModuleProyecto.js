@@ -138,7 +138,7 @@ export const ModuleProyecto = () => {
               <Progress value={progress.proyecto_progress} className="h-3" />
             </div>
             <p className="text-gray-400">
-              {progress.proyecto_progress === 100 ? 'Proyecto completado y enviado' : 'Pendiente de completar el proyecto'}
+              {progress.proyecto_progress === 100 ? t('projectCompletedAndSubmitted') : t('pendingProjectCompletion')}
             </p>
           </CardContent>
         </Card>
