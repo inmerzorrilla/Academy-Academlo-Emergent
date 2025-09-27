@@ -259,6 +259,8 @@ export const ModuleTeorico = () => {
           </CardContent>
         </Card>
       </main>
+
+      <ChatWidget />
     </div>
   );
 };
