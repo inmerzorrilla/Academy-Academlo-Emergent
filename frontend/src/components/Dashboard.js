@@ -71,7 +71,7 @@ export const Dashboard = () => {
         toast.error(t('errorDownloadingCertificate'));
       }
     } else {
-      toast.error('Completa todos los módulos para obtener tu certificado');
+      toast.error(t('completeAllModulesForCertificate'));
     }
   };
 
