@@ -268,6 +268,7 @@ export const ModuleEscucha = () => {
         </Card>
       </main>
 
+      <Footer />
       <ChatWidget />
       <ModuleFooter />
     </div>
