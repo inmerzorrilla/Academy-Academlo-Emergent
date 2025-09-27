@@ -235,7 +235,6 @@ export const ModuleTeorico = () => {
       </main>
 
       <Footer />
-      <ModuleFooter />
       <ChatWidget />
     </div>
   );
