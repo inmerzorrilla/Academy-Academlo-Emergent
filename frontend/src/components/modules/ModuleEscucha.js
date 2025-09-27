@@ -99,7 +99,7 @@ export const ModuleEscucha = () => {
           <div className="flex items-center space-x-4">
             <Link to="/dashboard" className="btn-ghost text-sm">
               <i className="fas fa-arrow-left mr-2"></i>
-              Volver al Dashboard
+              {t('backToDashboard')}
             </Link>
           </div>
           
