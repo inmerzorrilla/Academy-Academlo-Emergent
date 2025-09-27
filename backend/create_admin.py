@@ -58,6 +58,9 @@ async def create_admin_user():
         "teorico_completed": [],
         "escucha_completed": [],
         "prompt_completed": False,
+        "prompt_tips_completed": False,
+        "prompt_examples_completed": [],
+        "prompt_practice_completed": False,
         "proyecto_url": None,
         "certificate_generated": False,
         "updated_at": datetime.now(timezone.utc)
