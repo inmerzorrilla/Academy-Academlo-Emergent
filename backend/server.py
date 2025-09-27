@@ -332,7 +332,71 @@ async def get_teorico_content(lang: str = "es"):
             "code": "from selenium import webdriver\nfrom selenium.webdriver.common.by import By\nimport time\n\nclass IntelligentAutomation:\n    def __init__(self):\n        self.driver = webdriver.Chrome()\n    \n    def automate_task(self, url, actions):\n        self.driver.get(url)\n        \n        for action in actions:\n            if action['type'] == 'click':\n                element = self.driver.find_element(By.ID, action['target'])\n                element.click()\n            elif action['type'] == 'input':\n                element = self.driver.find_element(By.ID, action['target'])\n                element.send_keys(action['value'])\n            \n            time.sleep(1)  # Wait between actions"
         }
     ]
-    return questions
+    
+    questions_en = [
+        {
+            "id": 1,
+            "question": "What is a Deep Agent?",
+            "answer": "A Deep Agent is an artificial intelligence system that uses deep neural networks to process information and make decisions autonomously. It combines deep learning with intelligent agents to solve complex problems.",
+            "code": "# Basic agent example\nclass DeepAgent:\n    def __init__(self, model):\n        self.model = model\n        self.memory = []\n    \n    def perceive(self, environment):\n        return self.model.predict(environment)\n    \n    def act(self, action):\n        return self.execute(action)"
+        },
+        {
+            "id": 2,
+            "question": "How do you code an agent with Python?",
+            "answer": "It can be coded using classes that define perceptions, actions, and memory. Libraries like TensorFlow, PyTorch are used for the neural model.",
+            "code": "import tensorflow as tf\nimport numpy as np\n\nclass NeuralAgent:\n    def __init__(self):\n        self.model = tf.keras.Sequential([\n            tf.keras.layers.Dense(64, activation='relu'),\n            tf.keras.layers.Dense(32, activation='relu'),\n            tf.keras.layers.Dense(4, activation='softmax')\n        ])\n    \n    def train(self, X, y):\n        self.model.compile(optimizer='adam', loss='categorical_crossentropy')\n        self.model.fit(X, y, epochs=100)"
+        },
+        {
+            "id": 3,
+            "question": "What is a chatbot?",
+            "answer": "A chatbot is a computer program designed to simulate conversations with human users, especially through the internet. It uses natural language processing (NLP) to understand and respond to questions.",
+            "code": "import openai\n\nclass ChatBot:\n    def __init__(self, api_key):\n        openai.api_key = api_key\n    \n    def respond(self, message):\n        response = openai.ChatCompletion.create(\n            model='gpt-3.5-turbo',\n            messages=[{'role': 'user', 'content': message}]\n        )\n        return response.choices[0].message.content"
+        },
+        {
+            "id": 4,
+            "question": "What are neural networks?",
+            "answer": "Neural networks are computational models inspired by the human brain. They are composed of interconnected nodes (artificial neurons) that process information through weights and activation functions.",
+            "code": "import numpy as np\n\ndef sigmoid(x):\n    return 1 / (1 + np.exp(-x))\n\nclass NeuralNetwork:\n    def __init__(self, input_size, hidden_size, output_size):\n        self.W1 = np.random.randn(input_size, hidden_size)\n        self.W2 = np.random.randn(hidden_size, output_size)\n    \n    def forward(self, X):\n        self.z1 = np.dot(X, self.W1)\n        self.a1 = sigmoid(self.z1)\n        self.z2 = np.dot(self.a1, self.W2)\n        return sigmoid(self.z2)"
+        },
+        {
+            "id": 5,
+            "question": "What is Machine Learning?",
+            "answer": "Machine Learning is a branch of artificial intelligence that enables machines to learn and improve automatically from experience without being explicitly programmed for each specific task.",
+            "code": "from sklearn.ensemble import RandomForestClassifier\nfrom sklearn.model_selection import train_test_split\n\n# ML example\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)\n\nmodel = RandomForestClassifier(n_estimators=100)\nmodel.fit(X_train, y_train)\n\naccuracy = model.score(X_test, y_test)\nprint(f'Accuracy: {accuracy}')"
+        },
+        {
+            "id": 6,
+            "question": "What is Natural Language Processing (NLP)?",
+            "answer": "NLP is a branch of AI that helps computers understand, interpret, and manipulate human language. It combines computational linguistics with machine learning to process text and speech.",
+            "code": "import nltk\nfrom textblob import TextBlob\n\n# Sentiment analysis\ntext = 'I love programming'\nblob = TextBlob(text)\n\nsentiment = blob.sentiment.polarity\nif sentiment > 0:\n    print('Positive sentiment')\nelif sentiment < 0:\n    print('Negative sentiment')\nelse:\n    print('Neutral sentiment')"
+        },
+        {
+            "id": 7,
+            "question": "What is computer vision?",
+            "answer": "Computer vision is an AI field that trains computers to interpret and understand the visual world. It uses cameras, data, and algorithms to identify and analyze visual content.",
+            "code": "import cv2\nimport numpy as np\n\n# Edge detection\nimage = cv2.imread('image.jpg')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n\n# Apply Canny filter\nedges = cv2.Canny(gray, 50, 150)\n\ncv2.imshow('Original', image)\ncv2.imshow('Edges', edges)\ncv2.waitKey(0)\ncv2.destroyAllWindows()"
+        },
+        {
+            "id": 8,
+            "question": "What is a genetic algorithm?",
+            "answer": "Genetic algorithms are optimization techniques inspired by natural evolution. They use operators like selection, crossover, and mutation to find optimal solutions to complex problems.",
+            "code": "import random\n\nclass GeneticAlgorithm:\n    def __init__(self, population_size, mutation_rate):\n        self.population_size = population_size\n        self.mutation_rate = mutation_rate\n    \n    def create_individual(self, length):\n        return [random.randint(0, 1) for _ in range(length)]\n    \n    def fitness(self, individual):\n        # Problem-specific fitness function\n        return sum(individual)\n    \n    def mutate(self, individual):\n        for i in range(len(individual)):\n            if random.random() < self.mutation_rate:\n                individual[i] = 1 - individual[i]"
+        },
+        {
+            "id": 9,
+            "question": "What is reinforcement learning?",
+            "answer": "Reinforcement learning is a type of machine learning where an agent learns to make decisions through interactions with its environment, receiving rewards or punishments for its actions.",
+            "code": "import numpy as np\n\nclass QLearningAgent:\n    def __init__(self, states, actions, learning_rate=0.1, discount=0.9):\n        self.q_table = np.zeros((states, actions))\n        self.lr = learning_rate\n        self.gamma = discount\n    \n    def update(self, state, action, reward, next_state):\n        old_value = self.q_table[state, action]\n        next_max = np.max(self.q_table[next_state])\n        \n        new_value = old_value + self.lr * (reward + self.gamma * next_max - old_value)\n        self.q_table[state, action] = new_value"
+        },
+        {
+            "id": 10,
+            "question": "What is intelligent automation?",
+            "answer": "Intelligent automation combines AI, machine learning, and robotic process automation (RPA) to automate complex tasks that require decision-making and adaptability.",
+            "code": "from selenium import webdriver\nfrom selenium.webdriver.common.by import By\nimport time\n\nclass IntelligentAutomation:\n    def __init__(self):\n        self.driver = webdriver.Chrome()\n    \n    def automate_task(self, url, actions):\n        self.driver.get(url)\n        \n        for action in actions:\n            if action['type'] == 'click':\n                element = self.driver.find_element(By.ID, action['target'])\n                element.click()\n            elif action['type'] == 'input':\n                element = self.driver.find_element(By.ID, action['target'])\n                element.send_keys(action['value'])\n            \n            time.sleep(1)  # Wait between actions"
+        }
+    ]
+    
+    return questions_en if lang == "en" else questions_es
 
 @api_router.get("/content/escucha")
 async def get_escucha_content(lang: str = "es"):
