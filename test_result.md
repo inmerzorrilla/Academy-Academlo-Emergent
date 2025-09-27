@@ -204,10 +204,12 @@
 
 ## test_plan:
   current_focus:
-    - "Intelligent chatbot using Claude via Emergent LLM Key"
+    - "Complete ModuleProyecto translation implementation"
+    - "Fix authentication session persistence issue"
     - "ModuleEscucha complete translations"
     - "Variable interpolation in translation function"
-  stuck_tasks: []
+  stuck_tasks:
+    - "Complete ModuleProyecto translation implementation"
   test_all: false
   test_priority: "high_first"
 
