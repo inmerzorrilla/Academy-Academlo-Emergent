@@ -155,7 +155,7 @@ export const ModuleProyecto = () => {
           <CardContent className="space-y-6">
             <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 p-6 rounded-lg border border-cyan-500/20">
               <h3 className="text-xl font-semibold text-cyan-400 mb-4">
-                🎆 ¡Es hora de crear algo increíble!
+                🎆 {t('timeToCreateSomethingIncredible')}
               </h3>
               
               <div className="space-y-4 text-gray-300">
