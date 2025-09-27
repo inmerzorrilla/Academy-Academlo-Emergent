@@ -354,6 +354,18 @@ async def get_escucha_content():
             "title": "El futuro de la programación",
             "url": "https://www.youtube.com/watch?v=1Wg_RJ59_NU&t=146s",
             "description": "Descubre hacia dónde se dirige la programación en la era de la IA"
+        },
+        {
+            "id": 4,
+            "title": "¿Por qué es importante estudiar en Academlo?",
+            "url": "https://www.youtube.com/watch?v=1OYCVzsMde4",
+            "description": "Conoce las ventajas de estudiar en Academlo y cómo puede transformar tu carrera"
+        },
+        {
+            "id": 5,
+            "title": "Tutorial de Emergent",
+            "url": "https://www.youtube.com/watch?v=joOJZ9ZJEFc",
+            "description": "Aprende a usar Emergent para crear proyectos increíbles con IA"
         }
     ]
     return videos
