@@ -226,8 +226,9 @@ export const ModulePrompt = () => {
               <Progress value={progress.prompt_progress} className="h-3" />
             </div>
             <p className="text-gray-400">
-              {readExamples.length} de {examples.length} ejemplos leídos
-              {userPrompt.trim() && ' • Prompt de práctica escrito'}
+              {progress.prompt_examples_completed?.length || 0} de {examples.length} ejemplos leídos
+              {progress.prompt_tips_completed && ' • Consejos completados'}
+              {progress.prompt_practice_completed && ' • Práctica completada'}
             </p>
           </CardContent>
         </Card>
