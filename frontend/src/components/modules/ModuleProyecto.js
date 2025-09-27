@@ -282,7 +282,7 @@ export const ModuleProyecto = () => {
                     {submitting ? (
                       <div className="flex items-center">
                         <div className="spinner mr-2"></div>
-                        Enviando...
+                        {t('submitting')}...
                       </div>
                     ) : (
                       <>
