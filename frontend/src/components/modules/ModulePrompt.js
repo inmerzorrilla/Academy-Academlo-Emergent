@@ -148,8 +148,12 @@ export const ModulePrompt = () => {
 
   const stopRecording = () => {
     if (mediaRecorder) {
-      mediaRecorder.stop();
-      mediaRecorder.stream.getTracks().forEach(track => track.stop());
+      if (mediaRecorder.stop) {
+        mediaRecorder.stop();
+      }
+      if (mediaRecorder.stream) {
+        mediaRecorder.stream.getTracks().forEach(track => track.stop());
+      }
       setMediaRecorder(null);
       setIsRecording(false);
     }
