@@ -189,7 +189,7 @@ export const ModulePrompt = () => {
           <CardHeader>
             <CardTitle className="text-xl text-gradient flex items-center">
               <i className="fas fa-terminal mr-2"></i>
-              Progreso del Módulo Prompt
+              {t('promptModuleProgress')}
             </CardTitle>
           </CardHeader>
           <CardContent>
