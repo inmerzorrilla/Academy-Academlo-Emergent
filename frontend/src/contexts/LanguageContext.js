@@ -67,6 +67,8 @@ const translations = {
     completed: 'Completed',
     next: 'Next',
     back: 'Back',
+    promptModule: 'Prompt Module',
+    practiceWithAI: 'Practice with AI',
     close: 'Close',
     continue: 'Continue',
     
