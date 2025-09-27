@@ -70,7 +70,11 @@ export const Footer = () => {
                 rel="noopener noreferrer"
                 className="flex items-center text-gray-300 hover:text-cyan-400 transition-colors group"
               >
-                <i className="fas fa-graduation-cap mr-3 text-blue-400 group-hover:text-blue-300"></i>
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_academy-learn-1/artifacts/7t9gt7gq_Academlo%20-%20Logo.png" 
+                  alt="Academlo Logo" 
+                  className="w-6 h-6 mr-3 object-contain"
+                />
                 <span className="text-sm">Academlo</span>
               </a>
               <a 
@@ -79,7 +83,11 @@ export const Footer = () => {
                 rel="noopener noreferrer"
                 className="flex items-center text-gray-300 hover:text-cyan-400 transition-colors group"
               >
-                <i className="fas fa-rocket mr-3 text-purple-400 group-hover:text-purple-300"></i>
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_academy-learn-1/artifacts/qgnr9k9d_Emergent%20Logo.png" 
+                  alt="Emergent Logo" 
+                  className="w-6 h-6 mr-3 object-contain"
+                />
                 <span className="text-sm">Emergent</span>
               </a>
             </div>
