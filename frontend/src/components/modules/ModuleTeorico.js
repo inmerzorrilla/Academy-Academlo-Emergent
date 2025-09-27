@@ -35,7 +35,7 @@ export const ModuleTeorico = () => {
 
   const fetchContent = async () => {
     try {
-      const response = await axios.get(`${API}/content/teorico`);
+      const response = await axios.get(`${API}/content/teorico?lang=${language}`);
       setQuestions(response.data);
     } catch (error) {
       console.error('Error fetching content:', error);
