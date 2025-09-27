@@ -70,7 +70,7 @@ export const ModulePrompt = () => {
       setProgress(response.data);
       
       if (section === 'tips') {
-        toast.success('¡Consejos completados! +20%');
+        toast.success(t('tipsCompletedProgress'));
       } else if (section === 'examples') {
         toast.success(`¡Ejemplo ${itemId} completado! +20%`);
       } else if (section === 'practice') {
