@@ -376,7 +376,7 @@ export const ModulePrompt = () => {
                     <Button
                       onClick={() => {
                         navigator.clipboard.writeText(userPrompt);
-                        toast.success('Prompt copiado al portapapeles');
+                        toast.success(t('promptCopiedToClipboard'));
                       }}
                       className="btn-ghost text-sm"
                     >
