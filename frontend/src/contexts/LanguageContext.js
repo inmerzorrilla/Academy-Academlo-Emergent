@@ -208,6 +208,35 @@ const translations = {
     errorDownloadingCertificate: 'Error downloading certificate',
     completeAllModulesForCertificate: 'Complete all modules to get your certificate',
     
+    // Auth Messages
+    errorOccurred: 'Error occurred. Please try again.',
+    
+    // Module Messages
+    pleaseEnterProjectUrl: 'Please enter your project URL',
+    urlMustBeFromEmergent: 'URL must be from a project created on Emergent',
+    projectSubmittedSuccessfully: 'Project submitted successfully! Module completed 100% 🎉',
+    errorSubmittingProject: 'Error submitting project',
+    
+    // Prompt Module Messages
+    tipsCompletedProgress: 'Tips completed! +20%',
+    exampleCompletedProgress: 'Example {{itemId}} completed! +20%',
+    practiceCompletedProgress: 'Practice completed! +20%',
+    recordingStarted: 'Recording started. Speak your prompt...',
+    speechRecognitionError: 'Speech recognition error',
+    recordingFinishedTranscribed: 'Recording finished and transcribed',
+    recordingFinishedBasicSpeechToText: 'Recording finished. Basic speech-to-text added to prompt.',
+    recordingStartedBasic: 'Recording started...',
+    microphoneAccessError: 'Error accessing microphone',
+    promptCopiedToClipboard: 'Prompt copied to clipboard',
+    
+    // Teorico Module Messages
+    questionCompletedProgress: 'Question {{questionId}} completed! Progress: {{progress}}%',
+    
+    // Admin Messages
+    errorLoadingUsers: 'Error loading users',
+    userDeletedSuccessfully: 'User deleted successfully',
+    errorDeletingUser: 'Error deleting user',
+    
     // Project Module
     createYourProject: 'Create your Project with Emergent',
     yourMission: 'Your mission',
