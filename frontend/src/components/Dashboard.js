@@ -79,7 +79,7 @@ export const Dashboard = () => {
     {
       id: 'teorico',
       title: t('teorico'),
-      description: 'Conceptos fundamentales sobre Deep Agents y programación con IA',
+      description: t('teoricoDesc'),
       icon: 'fa-brain',
       progress: progress.teorico_progress,
       color: 'from-blue-500 to-cyan-500',
@@ -88,7 +88,7 @@ export const Dashboard = () => {
     {
       id: 'escucha',
       title: t('escucha'),
-      description: 'Videos educativos cuidadosamente seleccionados',
+      description: t('escuchaDesc'),
       icon: 'fa-headphones',
       progress: progress.escucha_progress,
       color: 'from-green-500 to-teal-500',
@@ -97,7 +97,7 @@ export const Dashboard = () => {
     {
       id: 'prompt',
       title: t('prompt'),
-      description: 'Practica con prompts avanzados de IA',
+      description: t('promptDesc'),
       icon: 'fa-terminal',
       progress: progress.prompt_progress,
       color: 'from-purple-500 to-pink-500',
@@ -106,7 +106,7 @@ export const Dashboard = () => {
     {
       id: 'proyecto',
       title: t('proyecto'),
-      description: 'Crea proyectos reales con Emergent',
+      description: t('proyectoDesc'),
       icon: 'fa-project-diagram',
       progress: progress.proyecto_progress,
       color: 'from-orange-500 to-red-500',
