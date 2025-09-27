@@ -212,7 +212,7 @@ export const ModuleProyecto = () => {
                 data-testid="emergent-link"
               >
                 <i className="fas fa-external-link-alt mr-3"></i>
-                Ir a Emergent para crear tu proyecto
+                {t('goToEmergentToCreateProject')}
               </a>
               <p className="text-gray-400 mt-3 text-sm">
                 Una vez que hayas creado tu proyecto, regresa aquí para enviar la URL
