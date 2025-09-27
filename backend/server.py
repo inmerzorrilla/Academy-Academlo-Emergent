@@ -458,36 +458,39 @@ async def generate_certificate(current_user: User = Depends(get_current_user)):
     # Header
     p.setFillColorRGB(0, 0.8, 1)  # Cyan color
     p.setFont("Helvetica-Bold", 42)
-    p.drawCentredText(width/2, height-80, "ACADEMY")
+    p.drawString(width/2 - 100, height-80, "ACADEMY")
     
     p.setFillColorRGB(0.2, 0.2, 0.2)
     p.setFont("Helvetica", 16)
-    p.drawCentredText(width/2, height-110, "CERTIFICADO DE COMPLETACIÓN")
+    p.drawString(width/2 - 120, height-110, "CERTIFICADO DE COMPLETACIÓN")
     
     # Main content
     p.setFillColorRGB(0, 0.8, 1)
     p.setFont("Helvetica-Bold", 32)
-    p.drawCentredText(width/2, height-180, "¡Felicidades Programador del Futuro!")
+    p.drawString(width/2 - 250, height-180, "¡Felicidades Programador del Futuro!")
     
     p.setFillColorRGB(0.1, 0.1, 0.1)
     p.setFont("Helvetica", 20)
-    p.drawCentredText(width/2, height-240, "Certificamos que")
+    p.drawString(width/2 - 80, height-240, "Certificamos que")
     
     p.setFillColorRGB(0, 0.8, 1)
     p.setFont("Helvetica-Bold", 28)
-    p.drawCentredText(width/2, height-280, current_user.name)
+    name_width = p.stringWidth(current_user.name, "Helvetica-Bold", 28)
+    p.drawString(width/2 - name_width/2, height-280, current_user.name)
     
     p.setFillColorRGB(0.1, 0.1, 0.1)
     p.setFont("Helvetica", 18)
-    p.drawCentredText(width/2, height-320, "ha completado exitosamente el curso")
+    p.drawString(width/2 - 160, height-320, "ha completado exitosamente el curso")
     
     p.setFillColorRGB(0, 0.8, 1)
     p.setFont("Helvetica-Bold", 24)
-    p.drawCentredText(width/2, height-360, "Deep Agents & Programación con IA")
+    p.drawString(width/2 - 180, height-360, "Deep Agents & Programación con IA")
     
     p.setFillColorRGB(0.1, 0.1, 0.1)
     p.setFont("Helvetica", 16)
-    p.drawCentredText(width/2, height-420, f"Completado el {datetime.now().strftime('%d de %B de %Y')}")
+    date_str = f"Completado el {datetime.now().strftime('%d de %B de %Y')}"
+    date_width = p.stringWidth(date_str, "Helvetica", 16)
+    p.drawString(width/2 - date_width/2, height-420, date_str)
     
     # Logos section with better positioning
     p.setFillColorRGB(0, 0.8, 1)
@@ -495,9 +498,9 @@ async def generate_certificate(current_user: User = Depends(get_current_user)):
     
     # Three columns for logos
     logo_y = 150
-    p.drawCentredText(width/6, logo_y, "ACADEMY")
-    p.drawCentredText(width/2, logo_y, "ACADEMLO")  
-    p.drawCentredText(5*width/6, logo_y, "EMERGENT")
+    p.drawString(width/6 - 30, logo_y, "ACADEMY")
+    p.drawString(width/2 - 35, logo_y, "ACADEMLO")  
+    p.drawString(5*width/6 - 35, logo_y, "EMERGENT")
     
     # Decorative lines
     p.setStrokeColorRGB(0, 0.8, 1)
@@ -507,8 +510,13 @@ async def generate_certificate(current_user: User = Depends(get_current_user)):
     # Footer
     p.setFillColorRGB(0.3, 0.3, 0.3)
     p.setFont("Helvetica", 12)
-    p.drawCentredText(width/2, 80, "Quantum Intelligence • Digital Autonomy • Augmented Reality")
-    p.drawCentredText(width/2, 60, f"ID de Certificado: {current_user.id[:8].upper()}")
+    footer_text = "Quantum Intelligence • Digital Autonomy • Augmented Reality"
+    footer_width = p.stringWidth(footer_text, "Helvetica", 12)
+    p.drawString(width/2 - footer_width/2, 80, footer_text)
+    
+    cert_id = f"ID de Certificado: {current_user.id[:8].upper()}"
+    cert_width = p.stringWidth(cert_id, "Helvetica", 12)
+    p.drawString(width/2 - cert_width/2, 60, cert_id)
     
     p.save()
     
