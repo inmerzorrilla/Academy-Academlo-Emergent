@@ -578,6 +578,7 @@ const translations = {
     // PayPal Donation
     useful: '¿Útil?',
     buyMeACoffee: 'Invítame un Café',
+    supportMessage: '¡Tu apoyo ayuda a mantener ACADEMY gratis!',
     
     // Project Module
     createYourProject: 'Crea tu Proyecto con Emergent',
