@@ -40,17 +40,25 @@ export const ChatWidget = () => {
     };
 
     setMessages(prev => [...prev, userMessage]);
+    const messageToSend = inputMessage;
     setInputMessage('');
     setIsLoading(true);
 
     try {
-      const response = await axios.post(`${API}/chat`, {
-        message: inputMessage
-      });
+      const response = await axios.post(
+        `${API}/chat`, 
+        { message: messageToSend },
+        {
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          timeout: 10000
+        }
+      );
 
       const botMessage = {
         type: 'bot',
-        message: response.data.response,
+        message: response.data.response || 'No pude generar una respuesta.',
         timestamp: new Date()
       };
 
@@ -59,7 +67,7 @@ export const ChatWidget = () => {
       console.error('Error sending message:', error);
       const errorMessage = {
         type: 'bot',
-        message: 'Lo siento, ocurrió un error. Por favor intenta de nuevo.',
+        message: 'Lo siento, ocurrió un error temporal. El servicio de chat está experimentando problemas. ¿Puedes intentar de nuevo?',
         timestamp: new Date()
       };
       setMessages(prev => [...prev, errorMessage]);
