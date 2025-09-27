@@ -312,7 +312,7 @@ export const ModuleProyecto = () => {
               </p>
               <Link to="/dashboard" className="btn-futuristic text-lg px-8 py-4">
                 <i className="fas fa-trophy mr-2"></i>
-                Ver Certificado en Dashboard
+                {t('viewCertificateInDashboard')}
               </Link>
             </CardContent>
           </Card>
