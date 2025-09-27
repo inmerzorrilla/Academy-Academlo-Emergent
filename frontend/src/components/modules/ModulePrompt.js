@@ -459,7 +459,6 @@ export const ModulePrompt = () => {
 
       <Footer />
       <ChatWidget />
-      <ModuleFooter />
     </div>
   );
 };
