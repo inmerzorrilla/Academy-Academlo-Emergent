@@ -83,20 +83,15 @@ export const LandingPage = () => {
             {t('description')}
           </p>
           
-          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+          <div className="flex justify-center">
             <Link 
               to="/auth" 
-              className="btn-futuristic text-lg px-8 py-4"
+              className="btn-futuristic text-xl px-12 py-6 text-center"
               data-testid="get-started-btn"
             >
               <i className="fas fa-rocket mr-3"></i>
               {t('getStarted')}
             </Link>
-            
-            <button className="btn-ghost text-lg px-8 py-4">
-              <i className="fas fa-play mr-3"></i>
-              {t('learnMore')}
-            </button>
           </div>
         </div>
       </section>
