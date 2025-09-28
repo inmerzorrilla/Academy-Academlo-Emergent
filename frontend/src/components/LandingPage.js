@@ -93,6 +93,22 @@ export const LandingPage = () => {
               {t('getStarted')}
             </Link>
           </div>
+          
+          {/* Download Presentation Section */}
+          <div className="text-center mt-12">
+            <h3 className="text-lg font-semibold mb-4 text-cyan-300">
+              {t('whyStudyAcademy')}
+            </h3>
+            <a 
+              href="/Academy-Presentation.pdf"
+              download="Academy-Presentation.pdf"
+              className="inline-flex items-center text-gray-300 hover:text-cyan-400 transition-colors duration-300 underline decoration-cyan-400 hover:decoration-cyan-300"
+              data-testid="download-presentation"
+            >
+              <i className="fas fa-file-pdf mr-2 text-red-400"></i>
+              {t('downloadPresentation')}
+            </a>
+          </div>
         </div>
       </section>
 
