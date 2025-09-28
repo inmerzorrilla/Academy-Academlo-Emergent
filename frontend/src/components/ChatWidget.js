@@ -87,14 +87,25 @@ export const ChatWidget = () => {
                 <i className="fas fa-robot mr-2"></i>
                 ACADEMY Assistant
               </CardTitle>
-              <Button 
-                onClick={() => setIsOpen(false)}
-                size="sm"
-                className="btn-ghost text-xs"
-                data-testid="close-chat"
-              >
-                <i className="fas fa-times"></i>
-              </Button>
+              <div className="flex items-center space-x-2">
+                <Button 
+                  onClick={() => setIsExpanded(!isExpanded)}
+                  size="sm"
+                  className="btn-ghost text-xs"
+                  data-testid="expand-chat"
+                  title={isExpanded ? 'Contraer chat' : 'Expandir chat'}
+                >
+                  <i className={`fas ${isExpanded ? 'fa-compress' : 'fa-expand'}`}></i>
+                </Button>
+                <Button 
+                  onClick={() => setIsOpen(false)}
+                  size="sm"
+                  className="btn-ghost text-xs"
+                  data-testid="close-chat"
+                >
+                  <i className="fas fa-times"></i>
+                </Button>
+              </div>
             </div>
             <div className="flex items-center text-xs text-green-400">
               <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
