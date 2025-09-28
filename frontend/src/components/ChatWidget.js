@@ -149,7 +149,7 @@ export const ChatWidget = () => {
                 value={inputMessage}
                 onChange={(e) => setInputMessage(e.target.value)}
                 placeholder="Escribe tu pregunta..."
-                className="flex-1 bg-gray-800 border-gray-600 text-white text-sm"
+                className="flex-1 text-sm bg-gray-800 border-gray-600 focus:border-cyan-500"
                 disabled={isLoading}
                 data-testid="chat-input"
               />
