@@ -52,13 +52,13 @@ html, body {
 }
 
 [data-theme='light'] {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8fafc;
-  --text-primary: #1a202c;
-  --text-secondary: #4a5568;
-  --card-bg: rgba(255, 255, 255, 0.9);
-  --border-color: rgba(0, 0, 0, 0.1);
-  --progress-bg: rgba(226, 232, 240, 1.0);
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --card-bg: rgba(248, 250, 252, 0.95);
+  --border-color: rgba(0, 0, 0, 0.08);
+  --progress-bg: rgba(203, 213, 225, 1.0);
   --progress-track: rgba(0, 212, 255, 1.0);
 }
 
