@@ -18,6 +18,8 @@ const translations = {
     description: 'Join the next generation of developers. Learn Deep Agents, AI programming, and create real projects with cutting-edge technology.',
     getStarted: 'Get Started',
     learnMore: 'Learn More',
+    whyStudyAcademy: 'Why study at Academy?',
+    downloadPresentation: 'Click here to download our complete presentation',
     
     // Auth
     login: 'Login',
