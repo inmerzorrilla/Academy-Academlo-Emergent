@@ -79,8 +79,7 @@ export const ChatWidget = () => {
 
   return (
     <div className="chat-widget">
-      {isOpen && (
-        <Card className={`fixed bottom-20 ${isExpanded ? 'right-4 w-96 h-[500px]' : 'right-4 w-80 h-96'} z-40 flex flex-col glass-card shadow-2xl border-cyan-500/30 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0 pointer-events-none'} transition-all duration-300`}>
+      <Card className={`fixed bottom-20 ${isExpanded ? 'right-4 w-96 h-[500px]' : 'right-4 w-80 h-96'} z-40 flex flex-col glass-card shadow-2xl border-cyan-500/30 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0 pointer-events-none'} transition-all duration-300`}>
           <CardHeader className="pb-2">
             <div className="flex justify-between items-center">
               <CardTitle className="text-lg text-gradient flex items-center">
