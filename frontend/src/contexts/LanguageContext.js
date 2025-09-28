@@ -75,6 +75,14 @@ const translations = {
     buyMeACoffee: 'Buy me a Coffee',
     supportMessage: 'Your support helps keep ACADEMY free!',
     promptModuleProgress: 'Prompt Module Progress',
+    
+    // Missing translations
+    promptModuleCompleted: 'Prompt Module Completed!',
+    promptMasteryMessage: 'You have mastered the art of creating effective prompts. Continue with the last module!',
+    continueToDashboard: 'Continue to Dashboard',
+    theoreticalModuleProgress: 'Theoretical Module Progress',
+    answer: 'Answer',
+    codeExample: 'Code Example',
     close: 'Close',
     continue: 'Continue',
     
