@@ -614,7 +614,7 @@ async def generate_certificate(current_user: User = Depends(get_current_user)):
     cert_width = p.stringWidth(cert_text, "Helvetica", 18)
     p.drawString((width - cert_width)/2, height-250, cert_text)
     
-    # Student name with decorative box
+    # Student name with decorative box (MOVED DOWN)
     p.setFillColor(HexColor('#00d4ff'))
     p.setFont("Helvetica-Bold", 28)  # Reduced from 32 for better fit
     name_width = p.stringWidth(current_user.name, "Helvetica-Bold", 28)
@@ -626,12 +626,12 @@ async def generate_certificate(current_user: User = Depends(get_current_user)):
         name_width = p.stringWidth(current_user.name, "Helvetica-Bold", 24)
         name_x = (width - name_width)/2
     
-    # Name background box
+    # Name background box (moved down 20 pixels)
     p.setFillColorRGB(0.1, 0.2, 0.3)
-    p.roundRect(name_x - 20, height-300, name_width + 40, 45, 5, fill=1)
+    p.roundRect(name_x - 20, height-320, name_width + 40, 45, 5, fill=1)
     
     p.setFillColor(HexColor('#00d4ff'))
-    p.drawString(name_x, height-290, current_user.name)
+    p.drawString(name_x, height-310, current_user.name)
     
     # Achievement description
     p.setFillColorRGB(0.9, 0.9, 0.9)
