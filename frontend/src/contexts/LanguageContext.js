@@ -590,6 +590,14 @@ const translations = {
     supportMessage: '¡Tu apoyo ayuda a mantener ACADEMY gratis!',
     promptModuleProgress: 'Progreso del Módulo Prompt',
     
+    // Missing translations
+    promptModuleCompleted: '¡Módulo Prompt Completado!',
+    promptMasteryMessage: 'Has dominado el arte de crear prompts efectivos. ¡Continúa con el último módulo!',
+    continueToDashboard: 'Continuar al Dashboard',
+    theoreticalModuleProgress: 'Progreso del Módulo Teórico',
+    answer: 'Respuesta',
+    codeExample: 'Ejemplo de Código',
+    
     // Project Module
     createYourProject: 'Crea tu Proyecto con Emergent',
     yourMission: 'Tu misión',
