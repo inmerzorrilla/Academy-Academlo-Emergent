@@ -261,11 +261,9 @@
 
 ## test_plan:
   current_focus:
-    - "Complete ModuleProyecto translation implementation"
-    - "Fix authentication session persistence issue"
-    - "Fix remaining hardcoded Spanish text in modules"
-  stuck_tasks:
-    - "Complete ModuleProyecto translation implementation"
+    - "Fix mobile overflow issues in ModuleEscucha and other components"
+    - "Verify chatbot functionality after input text fixes"
+  stuck_tasks: []
   test_all: false
   test_priority: "high_first"
 
