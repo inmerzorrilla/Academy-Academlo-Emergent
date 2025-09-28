@@ -76,13 +76,13 @@ html, body {
 
 [data-theme='light'] .bg-gray-800,
 [data-theme='light'] .bg-gray-900 {
-  background-color: #f7fafc !important;
-  border: 1px solid #e2e8f0 !important;
+  background-color: #f1f5f9 !important;
+  border: 1px solid #d1d5db !important;
 }
 
 [data-theme='light'] .bg-gray-700 {
-  background-color: #edf2f7 !important;
-  color: #2d3748 !important;
+  background-color: #e2e8f0 !important;
+  color: #374151 !important;
 }
 
 [data-theme='light'] .border-gray-700,
