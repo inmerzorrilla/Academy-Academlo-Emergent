@@ -894,6 +894,22 @@ TEMAS TÉCNICOS QUE DOMINAS:
             
         return {"response": fallback_response}
 
+# Static file serving for PDF presentation
+from fastapi.responses import FileResponse
+import os
+
+@app.get("/Academy-Presentation.pdf")
+async def download_presentation():
+    file_path = "/app/backend/Academy-Presentation.pdf"
+    if os.path.exists(file_path):
+        return FileResponse(
+            path=file_path,
+            filename="Academy-Presentation.pdf",
+            media_type="application/pdf"
+        )
+    else:
+        raise HTTPException(status_code=404, detail="Presentation not found")
+
 # Include the router in the main app
 app.include_router(api_router)
 
