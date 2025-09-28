@@ -327,6 +327,8 @@ const translations = {
     description: 'Únete a la próxima generación de desarrolladores. Aprende sobre Deep Agents, programación con IA y crea proyectos reales con tecnología de vanguardia.',
     getStarted: 'Comenzar',
     learnMore: 'Saber Más',
+    whyStudyAcademy: '¿Por qué estudiar en Academy?',
+    downloadPresentation: 'Haz clic aquí para descargar nuestra presentación completa',
     
     // Auth
     login: 'Iniciar Sesión',
