@@ -633,14 +633,14 @@ async def generate_certificate(current_user: User = Depends(get_current_user)):
     p.setFillColor(HexColor('#00d4ff'))
     p.drawString(name_x, height-310, current_user.name)
     
-    # Achievement description
+    # Achievement description (adjusted for name position)
     p.setFillColorRGB(0.9, 0.9, 0.9)
     p.setFont("Helvetica", 16)
     achievement1 = "ha completado exitosamente el programa de certificación"
     achievement1_width = p.stringWidth(achievement1, "Helvetica", 16)
-    p.drawString((width - achievement1_width)/2, height-340, achievement1)
+    p.drawString((width - achievement1_width)/2, height-360, achievement1)
     
-    # Course title with emphasis
+    # Course title with emphasis (adjusted for name position)
     p.setFillColor(HexColor('#0080ff'))
     p.setFont("Helvetica-Bold", 20)  # Reduced from 22
     course_title = "DEEP AGENTS & PROGRAMACIÓN CON IA"
@@ -648,7 +648,7 @@ async def generate_certificate(current_user: User = Depends(get_current_user)):
     if course_width > (width - 100):
         p.setFont("Helvetica-Bold", 18)
         course_width = p.stringWidth(course_title, "Helvetica-Bold", 18)
-    p.drawString((width - course_width)/2, height-380, course_title)
+    p.drawString((width - course_width)/2, height-400, course_title)
     
     # Additional achievement details
     p.setFillColorRGB(0.8, 0.8, 0.8)
