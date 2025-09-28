@@ -661,10 +661,10 @@ async def generate_certificate(current_user: User = Depends(get_current_user)):
         line2 = "inteligencia artificial y desarrollo futuro"
         line1_width = p.stringWidth(line1, "Helvetica", 12)
         line2_width = p.stringWidth(line2, "Helvetica", 12)
-        p.drawString((width - line1_width)/2, height-410, line1)
-        p.drawString((width - line2_width)/2, height-425, line2)
+        p.drawString((width - line1_width)/2, height-430, line1)
+        p.drawString((width - line2_width)/2, height-445, line2)
     else:
-        p.drawString((width - details_width)/2, height-410, details)
+        p.drawString((width - details_width)/2, height-430, details)
     
     # Date with proper Spanish format
     p.setFillColorRGB(0.7, 0.7, 0.7)
