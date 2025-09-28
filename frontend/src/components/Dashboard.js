@@ -249,7 +249,7 @@ export const Dashboard = () => {
                   {module.progress === 100 ? (
                     <div className="flex items-center justify-center text-green-400">
                       <i className="fas fa-check-circle mr-2"></i>
-                      Completado
+                      {t('completed')}
                     </div>
                   ) : (
                     <div className="text-center">
