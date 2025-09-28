@@ -164,7 +164,6 @@ export const ChatWidget = () => {
             </form>
           </CardContent>
         </Card>
-      )}
       
       <button 
         onClick={() => setIsOpen(!isOpen)}
