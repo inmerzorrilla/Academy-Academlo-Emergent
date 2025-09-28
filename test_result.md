@@ -239,8 +239,7 @@
   current_focus:
     - "Complete ModuleProyecto translation implementation"
     - "Fix authentication session persistence issue"
-    - "ModuleEscucha complete translations"
-    - "Variable interpolation in translation function"
+    - "Fix remaining hardcoded Spanish text in modules"
   stuck_tasks:
     - "Complete ModuleProyecto translation implementation"
   test_all: false
