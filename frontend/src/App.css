@@ -51,11 +51,27 @@ html, body {
   --progress-track: rgba(0, 212, 255, 0.3);
 }
 
+[data-theme='light'] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text-primary: #1a202c;
+  --text-secondary: #4a5568;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --border-color: rgba(0, 0, 0, 0.1);
+  --progress-bg: rgba(226, 232, 240, 1.0);
+  --progress-track: rgba(0, 212, 255, 1.0);
+}
+
 /* Light theme specific overrides */
 [data-theme='light'] .text-gray-300,
 [data-theme='light'] .text-gray-400,
 [data-theme='light'] .text-gray-500 {
   color: #4a5568 !important;
+}
+
+[data-theme='light'] .text-gray-100,
+[data-theme='light'] .text-gray-200 {
+  color: #2d3748 !important;
 }
 
 [data-theme='light'] .bg-gray-800,
@@ -64,9 +80,28 @@ html, body {
   border: 1px solid #e2e8f0 !important;
 }
 
+[data-theme='light'] .bg-gray-700 {
+  background-color: #edf2f7 !important;
+  color: #2d3748 !important;
+}
+
 [data-theme='light'] .border-gray-700,
 [data-theme='light'] .border-gray-800 {
   border-color: #e2e8f0 !important;
+}
+
+[data-theme='light'] .futuristic-bg {
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+}
+
+[data-theme='light'] .glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+[data-theme='light'] .particles {
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 1px, transparent 1px);
 }
 
 [data-theme='dark'] {
