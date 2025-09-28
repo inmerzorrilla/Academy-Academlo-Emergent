@@ -428,7 +428,7 @@ export const ModulePrompt = () => {
               </p>
               <Link to="/dashboard" className="btn-futuristic">
                 <i className="fas fa-arrow-right mr-2"></i>
-                Continuar al Dashboard
+                {t('continueToDashboard')}
               </Link>
             </CardContent>
           </Card>
