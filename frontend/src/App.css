@@ -249,7 +249,8 @@ body {
   border-radius: 4px;
   transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  box-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+  border: 1px solid rgba(0, 212, 255, 0.3);
 }
 
 .progress-bar::after {
