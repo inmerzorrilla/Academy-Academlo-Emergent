@@ -114,7 +114,7 @@ export const ChatWidget = () => {
           </CardHeader>
           
           <CardContent className="flex-1 flex flex-col p-4">
-            <div className="flex-1 overflow-y-auto mb-4 space-y-3" style={{ maxHeight: '240px' }}>
+            <div className="flex-1 overflow-y-auto mb-4 space-y-3" style={{ maxHeight: isExpanded ? '360px' : '240px' }}>
               {messages.map((msg, index) => (
                 <div key={index} className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div 
