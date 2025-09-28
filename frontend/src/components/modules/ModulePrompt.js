@@ -421,7 +421,7 @@ export const ModulePrompt = () => {
                 🎉
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gradient">
-                ¡Módulo Prompt Completado!
+                {t('promptModuleCompleted')}
               </h3>
               <p className="text-xl mb-6 text-gray-300">
                 Has dominado el arte de crear prompts efectivos. ¡Continúa con el último módulo!
