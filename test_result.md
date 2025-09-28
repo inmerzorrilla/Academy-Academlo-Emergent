@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-## user_problem_statement: Complete the full translation implementation for ModuleEscucha.js and enhance the chatbot to respond to all Academy-related, theoretical (ML, chatbots), and general AI questions in English/Spanish
+## user_problem_statement: Fix chatbot error message and dark mode input text visibility, resolve mobile overflow issues in ModuleEscucha and other components
 
 ## backend:
   - task: "Install emergentintegrations library and dependencies"
