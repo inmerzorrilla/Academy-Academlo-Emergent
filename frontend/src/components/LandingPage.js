@@ -83,7 +83,7 @@ export const LandingPage = () => {
             {t('description')}
           </p>
           
-          <div className="flex justify-center">
+          <div className="flex justify-center mt-16">
             <Link 
               to="/auth" 
               className="btn-futuristic text-xl px-12 py-6 text-center"
