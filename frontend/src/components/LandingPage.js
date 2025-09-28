@@ -100,7 +100,7 @@ export const LandingPage = () => {
               {t('whyStudyAcademy')}
             </h3>
             <a 
-              href={`${process.env.REACT_APP_BACKEND_URL || ''}/Academy-Presentation.pdf`}
+              href="/Academy-Presentation.pdf"
               download="Academy-Presentation.pdf"
               target="_blank"
               rel="noopener noreferrer"
