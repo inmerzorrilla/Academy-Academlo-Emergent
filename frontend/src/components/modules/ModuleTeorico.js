@@ -147,7 +147,7 @@ export const ModuleTeorico = () => {
                     <div className="bg-gray-800/50 p-4 rounded-lg">
                       <h4 className="text-green-400 font-semibold mb-3 flex items-center">
                         <i className="fas fa-lightbulb mr-2"></i>
-                        Respuesta:
+                        {t('answer')}:
                       </h4>
                       <p className="text-primary leading-relaxed">{question.answer}</p>
                     </div>
