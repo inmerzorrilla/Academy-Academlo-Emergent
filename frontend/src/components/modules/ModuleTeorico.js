@@ -101,7 +101,7 @@ export const ModuleTeorico = () => {
           <CardHeader>
             <CardTitle className="text-xl text-gradient flex items-center">
               <i className="fas fa-brain mr-2"></i>
-              Progreso del Módulo Teórico
+              {t('theoreticalModuleProgress')}
             </CardTitle>
           </CardHeader>
           <CardContent>
