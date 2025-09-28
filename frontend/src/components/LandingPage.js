@@ -152,7 +152,7 @@ export const LandingPage = () => {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="glass-card p-12">
             <h3 className="text-4xl font-bold mb-6 text-gradient">
-              ¿Quieres ser un programador completo?
+              {t('wantToBeCompleteProgrammer')}
             </h3>
             <p className="text-xl mb-8 text-gray-300">
               {t('studyAcademlo')}
