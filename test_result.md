@@ -202,6 +202,18 @@
           agent: "testing"
           comment: "CRITICAL ISSUES FOUND: 1) Authentication session not persisting properly - users get redirected back to auth page when accessing /module/proyecto, 2) Multiple hardcoded Spanish texts found that are not using translation functions: 'Volver al Dashboard' (line 92), 'Módulo Proyecto' (line 97), 'Proyecto Final' (line 98), '% Completado' (line 120), 'Progreso del Módulo Proyecto' (line 133), 'Proyecto completado y enviado' and 'Pendiente de completar el proyecto' (lines 141-142). 3) Browser API calls to /api/user/profile failing with ERR_ABORTED. Translation keys exist in LanguageContext but component is not fully using them."
 
+  - task: "Fix remaining hardcoded Spanish text in modules"
+    implemented: false
+    working: false
+    file: "frontend/src/components/modules/ModulePrompt.js, frontend/src/components/modules/ModuleTeorico.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+        - working: false
+          agent: "testing"
+          comment: "❌ HARDCODED TEXT FOUND: During comprehensive translation testing, found remaining hardcoded Spanish text in modules: ModulePrompt.js lines 297, 302, 441, 444, 454 ('Marcar como Leído (+20%)', '¡Ejemplo Completado!', '¿Quieres ser un programador completo?', 'Estudia en Academlo y complementa tu educación con ACADEMY', 'Visitar Academlo') and ModuleTeorico.js lines 177, 182, 218, 221, 230 ('Marcar como Completada', '¡Pregunta Completada!', same Academlo ad text). These should use translation functions t() instead of hardcoded Spanish text."
+
   - task: "Footer improvements with PayPal donation section"
     implemented: true
     working: true
