@@ -132,7 +132,7 @@ export const Footer = () => {
             </h4>
             <div className="flex justify-center mb-2">
               <a 
-                href="https://paypal.me/pastorinmerzorrilla" 
+                href="https://www.paypal.com/paypalme/pastorinmerzorrilla" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
