@@ -10,6 +10,7 @@ const API = `${BACKEND_URL}/api`;
 
 export const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false); // New state for expanded mode
   const [messages, setMessages] = useState([
     {
       type: 'bot',
