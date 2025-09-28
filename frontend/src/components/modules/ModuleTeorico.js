@@ -157,7 +157,7 @@ export const ModuleTeorico = () => {
                       <div className="bg-gray-900 p-4 rounded-lg border border-gray-700">
                         <h4 className="text-purple-400 font-semibold mb-3 flex items-center">
                           <i className="fas fa-code mr-2"></i>
-                          Ejemplo de Código:
+                          {t('codeExample')}:
                         </h4>
                         <pre className="text-green-300 text-sm overflow-x-auto">
                           <code>{question.code}</code>
