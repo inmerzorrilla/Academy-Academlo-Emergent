@@ -692,9 +692,9 @@ async def generate_certificate(current_user: User = Depends(get_current_user)):
     partnership_width = p.stringWidth(partnership, "Helvetica", 12)
     p.drawString((width - partnership_width)/2, logo_y + 40, partnership)
     
-    # Logo positioning (improved layout)
-    logo_size = 40
-    logo_spacing = 150
+    # Logo positioning (IMPROVED: larger logos and better spacing)
+    logo_size = 60  # Increased from 40 to 60
+    logo_spacing = 160  # Increased spacing
     start_x = (width - (logo_spacing * 2)) / 2
     
     # Academy Logo
