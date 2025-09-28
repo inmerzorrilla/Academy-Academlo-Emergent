@@ -118,7 +118,7 @@ export const ChatWidget = () => {
               {messages.map((msg, index) => (
                 <div key={index} className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div 
-                    className={`max-w-xs p-3 rounded-lg text-sm ${
+                    className={`${isExpanded ? 'max-w-sm' : 'max-w-xs'} p-3 rounded-lg text-sm ${
                       msg.type === 'user' 
                         ? 'bg-cyan-500 text-white' 
                         : 'bg-gray-700 text-gray-100'
