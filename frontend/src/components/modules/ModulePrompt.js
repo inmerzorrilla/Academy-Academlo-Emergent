@@ -98,9 +98,10 @@ export const ModulePrompt = () => {
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
         const recognition = new SpeechRecognition();
         
-        recognition.continuous = true;
-        recognition.interimResults = true;
+        recognition.continuous = false;  // Changed to false to stop after one phrase
+        recognition.interimResults = false;  // Changed to false to avoid duplicates
         recognition.lang = language === 'es' ? 'es-ES' : 'en-US';
+        recognition.maxAlternatives = 1;  // Only get best result
         
         recognition.onstart = () => {
           setIsRecording(true);
@@ -110,9 +111,16 @@ export const ModulePrompt = () => {
         recognition.onresult = (event) => {
           let transcript = '';
           for (let i = event.resultIndex; i < event.results.length; i++) {
-            transcript += event.results[i][0].transcript;
+            if (event.results[i].isFinal) {
+              transcript += event.results[i][0].transcript;
+            }
           }
-          setUserPrompt(prev => prev + ' ' + transcript);
+          if (transcript.trim()) {
+            // Clean up transcript - remove extra spaces and trim
+            const cleanTranscript = transcript.trim().replace(/\s+/g, ' ');
+            setUserPrompt(prev => prev ? prev + ' ' + cleanTranscript : cleanTranscript);
+            toast.success(t('recordingFinishedTranscribed'));
+          }
         };
         
         recognition.onerror = (event) => {
