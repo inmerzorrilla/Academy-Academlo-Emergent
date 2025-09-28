@@ -680,10 +680,10 @@ async def generate_certificate(current_user: User = Depends(get_current_user)):
     spanish_month = spanish_months.get(english_month, english_month.lower())
     date_str = f"Completado el {datetime.now().strftime('%d')} de {spanish_month} de {datetime.now().strftime('%Y')}"
     date_width = p.stringWidth(date_str, "Helvetica", 14)
-    p.drawString((width - date_width)/2, height-460, date_str)
+    p.drawString((width - date_width)/2, height-480, date_str)
     
-    # IMPROVED LOGOS SECTION with actual logo images
-    logo_y = 200
+    # IMPROVED LOGOS SECTION with larger images and better positioning
+    logo_y = 240  # Moved up from 200
     
     # Partnership text (moved up)
     p.setFillColorRGB(0.6, 0.6, 0.6)
