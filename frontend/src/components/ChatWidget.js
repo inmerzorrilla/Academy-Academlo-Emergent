@@ -80,7 +80,7 @@ export const ChatWidget = () => {
   return (
     <div className="chat-widget">
       {isOpen && (
-        <Card className="glass-card w-80 h-96 mb-4 flex flex-col">
+        <Card className={`glass-card ${isExpanded ? 'w-96 h-[500px]' : 'w-80 h-96'} mb-4 flex flex-col`}>
           <CardHeader className="pb-2">
             <div className="flex justify-between items-center">
               <CardTitle className="text-lg text-gradient flex items-center">
